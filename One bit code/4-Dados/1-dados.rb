@@ -131,5 +131,12 @@ Type:  \copyright for distribution terms
        \g or terminate with semicolon to execute query
        \q to quit
 postgres=# 
+
+
+                  Criar Usuário com senha 
+postgres=# CREATE USER kim WITH ENCRYPTED PASSWORD '4321' CREATEDB;
+
+ # Se deu certo ele retorna CREATE ROLE
+
 = end
 
