@@ -139,5 +139,34 @@ postgres=# CREATE USER kim WITH ENCRYPTED PASSWORD '' CREATEDB;
 
  # Se deu certo ele retorna CREATE ROLE
 
+Para sair do menu postgre digita exit
+postgres=> exit
+kim@kim:~$ 
+
+
+                 Entrar com o usuário que foi criado
+
+-d Especifica o banco de dados 
+-U Especifica o Usuário
+-W Pedir a senha do usuário
+
+        login direto
+kim@kim:~$ psql -d postgres
+psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+Type "help" for help.
+postgres=> exit
+
+      login especificando mais
+kim@kim:~$ psql -d postgres -U kim
+psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+Type "help" for help.
+postgres=> 
+
+      login pedindo a senha
+kim@kim:~$ psql -d postgres -U kim -W
+Password: 
+psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+Type "help" for help.
+postgres=> 
 = end
 
