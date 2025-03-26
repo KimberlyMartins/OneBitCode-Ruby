@@ -134,7 +134,8 @@ postgres=#
 
 
                   Criar Usuário com senha 
-postgres=# CREATE USER kim WITH ENCRYPTED PASSWORD '4321' CREATEDB;
+postgres=# CREATE USER kim WITH ENCRYPTED PASSWORD '' CREATEDB;
+#senha entre aspas simples
 
  # Se deu certo ele retorna CREATE ROLE
 
