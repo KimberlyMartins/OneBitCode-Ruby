@@ -1,5 +1,5 @@
 =begin
-                BANCO DE DADOOS
+                        BANCO DE DADOS
 Um banco de dados é uma coleção organizada de informações
 (dados) estruturadas normalmente armazenadas eletronicamente 
 em um sistema.
