@@ -66,9 +66,12 @@ DOBLE - Número com ponto flutuante de precisão dupla (para números maiores)
 DECIMAL / NUMERIC - Número de precisão fixa, útil para valores monetários (dinheiros)
 
 
+                            DADOS DE TEXTO:
+CHAR(n): Cadeia de caracteres de comprimento fixo específicado dentro do parênteses
 
+VARCHAR(n): Cadeia de caracteres de comprimento variável (string de até X caracteres colocados no parêntese, geralmente de 0 a 255)
 
-
+TEXT: Cadeia de caracteres de comprimento muito grande como textos (ocupa mais espaço no armazenamento)
 
                                PostgreSQL 
 Para saber se o postgresql está funcionando usa o comando: sudo systemctl status postgresql.
