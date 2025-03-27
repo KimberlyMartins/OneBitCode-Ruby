@@ -46,6 +46,30 @@ não for bem sucedida ele volta a transação para evitar erro.
   ex: BEGIN, COMMIT, ROLLBACK (iniciar transação, confirmar se deu certo e desfazer a transação caso dê erro)
 
 
+
+
+                       Tipos de dados linguagem SQL 
+Tipos de dados definem a natureza dos valores que podem ser armazenadosem uma coluna de uma tabela.
+Escolher o tipo de dado pe crucial para a eficiencia, integridade e otimização do banco de dados.
+
+                           DADOS NUMÉRICOS:
+SMALLINT - inteiro de 2 bytes- ocupa 2 bytes na coluna
+
+INT / INTERGER - inteiro de 4 bytes ocupa 4 bytes na coluna (mais usado)
+
+BIGINT - inteiro de 8 bytes ocupa 8 bytes na coluna
+
+FLOAT - Número com ponto flutuante simples (número com vírgula)
+
+DOBLE - Número com ponto flutuante de precisão dupla (para números maiores)
+
+DECIMAL / NUMERIC - Número de precisão fixa, útil para valores monetários (dinheiros)
+
+
+
+
+
+
                                PostgreSQL 
 Para saber se o postgresql está funcionando usa o comando: sudo systemctl status postgresql.
 *** Pode acessar comandos sql pelo site https://halleyoliv.gitlab.io/pgdocptbr/app-psql.html ***
