@@ -7,7 +7,7 @@ Um banco de dados é geralmente controlado por um SGBD - Sistema
 de Gerenciamento de Banco de Dados ( DBMS - Database Management System),
 juntos, os DBMS e os dados são chamados de BANCO DE DADOS.
 	 
-	       Banco de dados relacionais(SQL)
+	               Banco de dados relacionais(SQL)
 O banco de dados relacional é o tipo de banco que trabalha com tabelas 
 relacionais e bem definidas, isto é, tabelas compostas por linhas e colunas, lembrando 
 muito uma estrutura de tabela de Excel. Cada tabela representa uma entidade 
@@ -17,7 +17,7 @@ A SQL(Structured Query Language - SEQUEL) é uma linguagem de programação
 para trabalhar com dados relacionais. Os programas mais utilizados  que usam o SQL
 são: Oracle, MySQL, SQL Server e  PostgreSQL.
 
-          Banco de dados não relacionais(NoSQL)
+                Banco de dados não relacionais(NoSQL)
 Já os não relacionais, não seguem o modelo de tabelas e relacionamentos 
 utilizado pelos bancos de dados relacionais tradicionais. Para esses 
 bancos de dados NoSQL, temos uma variedade de modelos, incluindo o modelo 
@@ -28,8 +28,10 @@ NoSQL (Not Only Sequel - Não só SQL),podemos ter a sql mas ela não vai ser a 
 linguagem de programação. Os programas mais utilizados são MongoDB, Cassandra, Neo4j 
 e Riak.
 
-                  PostgreSQL 
+
+                               PostgreSQL 
 Para saber se o postgresql está funcionando usa o comando: sudo systemctl status postgresql.
+*** Pode acessar comandos sql pelo site https://halleyoliv.gitlab.io/pgdocptbr/app-psql.html ***
 
 que retorna:
 [sudo] senha para kim: 
@@ -45,8 +47,9 @@ mar 21 09:51:20 kim systemd[1]: Finished postgresql.service - PostgreSQL RDBMS.
 lines 1-9/9 (END)
 
 ------------------------------------
-
-Psql é o terminal interativo do postgres.
+                            PSQL
+Psql é o terminal interativo do postgres. O psql é uma interface no modo texto para o PostgreSQL. 
+Ele permite que se digite consultas interativamente, envie-as para o PostgreSQL, e ver os resultados da consulta
 O comando psql --help nos traz algumas informações
 
 psql --help
