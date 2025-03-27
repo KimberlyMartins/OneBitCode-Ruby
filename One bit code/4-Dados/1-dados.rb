@@ -55,11 +55,11 @@ Escolher o tipo de dado pe crucial para a eficiencia, integridade e otimização
                            DADOS NUMÉRICOS:
 SMALLINT - inteiro de 2 bytes- ocupa 2 bytes na coluna
 
-INT / INTERGER - inteiro de 4 bytes ocupa 4 bytes na coluna (mais usado)
+* INT / INTERGER - inteiro de 4 bytes ocupa 4 bytes na coluna (mais usado)
 
 BIGINT - inteiro de 8 bytes ocupa 8 bytes na coluna
 
-FLOAT - Número com ponto flutuante simples (número com vírgula)
+* FLOAT - Número com ponto flutuante simples (número com vírgula)
 
 DOBLE - Número com ponto flutuante de precisão dupla (para números maiores)
 
@@ -67,21 +67,30 @@ DECIMAL / NUMERIC - Número de precisão fixa, útil para valores monetários (d
 
 
                             DADOS DE TEXTO:
-CHAR(n): Cadeia de caracteres de comprimento fixo específicado dentro do parênteses
+* CHAR(n): Cadeia de caracteres de comprimento fixo específicado dentro do parênteses
 
-VARCHAR(n): Cadeia de caracteres de comprimento variável (string de até X caracteres colocados no parêntese, geralmente de 0 a 255)
+* VARCHAR(n): Cadeia de caracteres de comprimento variável (string de até X caracteres colocados no parêntese, geralmente de 0 a 255)
 
-TEXT: Cadeia de caracteres de comprimento muito grande como textos (ocupa mais espaço no armazenamento)
+* TEXT: Cadeia de caracteres de comprimento muito grande como textos (ocupa mais espaço no armazenamento)
+
 
                             DADOS E DATA E HORA:
 DATE: Data (ano, mês e dia)
 
 TIME: Hora (hora, minuto e segundo)
 
-DATETIME: Combinação de datas e horários
+* DATETIME: Combinação de datas e horários
 
 TIMESTAMP: Data e hora muito usada para metadados(informações do proprio registro tipo quando foi acessado, atualizado ou afins)
 
+                            DADOS VARIÁVEIS:
+* BOOLEAN: Representa valores lógicos (TRUE or FALSE)
+
+BLOB: Dados binários grandes, usado para armazenar arquivos como imagens e vídeos ocupa mais espaço (pouco usado pois é melhor salvar imagem na nuvem e adc como dado de texto com a url)
+
+ENUM: Conjunto de valores predefinidos (só aceita os valores pré definidos - em preparação, em produção, pedido enviado)
+
+JSON:  Armazena dados em formato JSON            
 
 
                                PostgreSQL 
