@@ -29,6 +29,23 @@ linguagem de programação. Os programas mais utilizados são MongoDB, Cassandra
 e Riak.
 
 
+                          Linguagem SQL
+
+               Categorias de comandos da linguagem SQL
+DDL(Data Definition Language): Comandos para definir a estrutura do banco de dados.
+  ex: CREATE TABLE, ALTER TABLE (criar e alterar tabelas)
+
+DDM(Data Manipulation Language): Comandos para manipular os dados diretamente.
+  ex: SELECT, INSERT , UPDATE, DELETE (selecionar, inserir, atualizar e deletar)
+
+DCL(Data Control Language): Comando para controlar o acesso aos dados.
+  ex: GRANT, REVOKE (garantir acesso, revogar acesso)
+
+TCL(Transaction Control Language): Comando para transações financeiras onde se a transação 
+não for bem sucedida ele volta a transação para evitar erro.
+  ex: BEGIN, COMMIT, ROLLBACK (iniciar transação, confirmar se deu certo e desfazer a transação caso dê erro)
+
+
                                PostgreSQL 
 Para saber se o postgresql está funcionando usa o comando: sudo systemctl status postgresql.
 *** Pode acessar comandos sql pelo site https://halleyoliv.gitlab.io/pgdocptbr/app-psql.html ***
