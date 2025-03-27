@@ -49,8 +49,32 @@ lines 1-9/9 (END)
 ------------------------------------
                             PSQL
 Psql é o terminal interativo do postgres. O psql é uma interface no modo texto para o PostgreSQL. 
-Ele permite que se digite consultas interativamente, envie-as para o PostgreSQL, e ver os resultados da consulta
-O comando psql --help nos traz algumas informações
+Ele permite que se digite consultas interativamente, envie-as para o PostgreSQL, e ver os resultados da consulta.
+Para se conectar a um banco de dados, é necessário saber o nome do banco de dados de destino, o nome do hospedeiro 
+e o número da porta do servidor, e com qual nome de usuário se deseja conectar. O psql pode ser informado sobre esses 
+parâmetros por meio de opções de linha de comando, ou seja, as opções -d, -h, -p, e -U, respectivamente. 
+Se for encontrado um argumento que não pertença a nenhuma opção, será interpretado como o nome do banco de dados (ou o 
+nome do usuário, se o nome do banco de dados já tiver sido fornecido).
+
+Alguns comandos psql:
+-d = nome_do_banco_de_dados. Especifica o nome do banco de dados ao qual se conectar. Equivale a especificar o 
+nome_do_banco_de_dados como o primeiro argumento sem opção na linha de comando. O nome_do_banco_de_dados pode ser 
+uma cadeia de caracteres de conexão. Nesse caso, os parâmetros da cadeia de caracteres de conexão prevalecem sobre quaisquer 
+opções de linha de comando conflitantes.
+
+-h = nome_do_hospedeiro. Especifica o nome de hospedeiro da máquina na qual o servidor está sendo executado. Se o valor começar 
+com uma barra, será usado como o diretório para o soquete de domínio Unix.
+
+-p = porta. Especifica a porta TCP, ou a extensão do arquivo de soquete de domínio Unix local, na qual o servidor está 
+aguardando conexões. O padrão é o valor da variável de ambiente PGPORT ou, se não estiver definida, a porta especificada no 
+tempo de construção, geralmente 5432.
+
+-U = nome_do_usuário. Conecta ao banco de dados como o usuário nome_do_usuário, em vez do padrão.
+(É necessário ter permissão para fazê-lo, é claro.)
+
+-W = senha. Força o psql a solicitar a senha antes de se conectar a um banco de dados, mesmo que a senha não seja usada.
+
+--help = Ajuda. Nos traz algumas informações úteis para usar o psql
 
 psql --help
 psql is the PostgreSQL interactive terminal.
