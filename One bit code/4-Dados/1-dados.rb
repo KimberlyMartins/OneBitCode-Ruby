@@ -73,6 +73,17 @@ VARCHAR(n): Cadeia de caracteres de comprimento variável (string de até X cara
 
 TEXT: Cadeia de caracteres de comprimento muito grande como textos (ocupa mais espaço no armazenamento)
 
+                            DADOS E DATA E HORA:
+DATE: Data (ano, mês e dia)
+
+TIME: Hora (hora, minuto e segundo)
+
+DATETIME: Combinação de datas e horários
+
+TIMESTAMP: Data e hora muito usada para metadados(informações do proprio registro tipo quando foi acessado, atualizado ou afins)
+
+
+
                                PostgreSQL 
 Para saber se o postgresql está funcionando usa o comando: sudo systemctl status postgresql.
 *** Pode acessar comandos sql pelo site https://halleyoliv.gitlab.io/pgdocptbr/app-psql.html ***
