@@ -138,6 +138,8 @@ tempo de construção, geralmente 5432.
 
 -W = senha. Força o psql a solicitar a senha antes de se conectar a um banco de dados, mesmo que a senha não seja usada.
 
+\q para fechar depois do END onde não dá para adicionar mais comandos.
+  
 --help = Ajuda. Nos traz algumas informações úteis para usar o psql
 
 psql --help
