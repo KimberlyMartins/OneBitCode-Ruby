@@ -288,7 +288,7 @@ DETAIL:  There is 1 other session using the database.
              
 
                     Excluir banco de dados
-****8CAUTION!!! O comando para a exclusão de bancos é irreversível***
+****CAUTION!!! O comando para a exclusão de bancos é irreversível***
 Comando DROP DATABASE seguido do banco a ser excluído;
 
 postgres=> DROP DATABASE meu_primeiro_database;
