@@ -69,7 +69,8 @@ DECIMAL / NUMERIC - Número de precisão fixa, útil para valores monetários (d
                             DADOS DE TEXTO:
 * CHAR(n): Cadeia de caracteres de comprimento fixo específicado dentro do parênteses
 
-* VARCHAR(n): Cadeia de caracteres de comprimento variável (string de até X caracteres colocados no parêntese, geralmente de 0 a 255)
+* VARCHAR(n): Cadeia de caracteres de comprimento variável (string de até X caracteres colocados no parêntese,
+ geralmente de 0 a 255)
 
 * TEXT: Cadeia de caracteres de comprimento muito grande como textos (ocupa mais espaço no armazenamento)
 
@@ -261,5 +262,17 @@ Password:
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
 Type "help" for help.
 postgres=> 
+
+
+      Conectar a um novo banco
+\c Conecta a um novo banco com esse comando
+
+psql -d meu_primeiro_database
+psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+Type "help" for help.
+
+meu_primeiro_database=> \c postgres
+You are now connected to database "postgres" as user "kim".
+
 = end
 
