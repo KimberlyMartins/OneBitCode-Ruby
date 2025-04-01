@@ -244,28 +244,24 @@ kim@kim:~$
 -U Especifica o Usuário
 -W Pedir a senha do usuário
 
-        login direto
+                login direto
 kim@kim:~$ psql -d postgres
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
 Type "help" for help.
 postgres=> exit
 
-      login especificando mais
+                login especificando mais
 kim@kim:~$ psql -d postgres -U kim
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
 Type "help" for help.
 postgres=> 
 
-      login pedindo a senha
+                login pedindo a senha
 kim@kim:~$ psql -d postgres -U kim -W
 Password: 
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
 Type "help" for help.
 postgres=> 
-
-
-                      Conectar a um novo banco
-\c Conecta a um novo banco com esse comando
 
 psql -d meu_primeiro_database
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
@@ -273,6 +269,10 @@ Type "help" for help.
 
 meu_primeiro_database=> \c postgres
 You are now connected to database "postgres" as user "kim".
+
+
+                     Conectar a um novo banco
+\c Conecta a um novo banco com esse comando
 
                      Renomear banco de dados 
 Comando ALTER DATABASE + nome do banco a ser renomeado + RENAME TO + novo nome;
