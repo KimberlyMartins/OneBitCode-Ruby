@@ -275,6 +275,7 @@ meu_primeiro_database=> \c postgres
 You are now connected to database "postgres" as user "kim".
 
                      Renomear banco de dados 
+Comando ALTER DATABASE + nome do banco a ser renomeado + RENAME TO + novo nome;
 ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
 ALTER DATABASE
 
@@ -284,6 +285,14 @@ mudar o nome
 postgres=> ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
 ERROR:  database "meu_primeiro_database" is being accessed by other users
 DETAIL:  There is 1 other session using the database.
+             
+
+                    Excluir banco de dados
+****8CAUTION!!! O comando para a exclusão de bancos é irreversível***
+Comando DROP DATABASE seguido do banco a ser excluído;
+
+postgres=> DROP DATABASE meu_primeiro_database;
+DROP DATABASE
 
 = end
 
