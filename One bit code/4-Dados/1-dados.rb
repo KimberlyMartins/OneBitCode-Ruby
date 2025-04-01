@@ -238,7 +238,7 @@ postgres=> exit
 kim@kim:~$ 
 
 
-                 Entrar com o usuário que foi criado
+                      Entrar com o usuário que foi criado
 
 -d Especifica o banco de dados 
 -U Especifica o Usuário
@@ -264,7 +264,7 @@ Type "help" for help.
 postgres=> 
 
 
-      Conectar a um novo banco
+                      Conectar a um novo banco
 \c Conecta a um novo banco com esse comando
 
 psql -d meu_primeiro_database
@@ -273,6 +273,17 @@ Type "help" for help.
 
 meu_primeiro_database=> \c postgres
 You are now connected to database "postgres" as user "kim".
+
+                     Renomear banco de dados 
+ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
+ALTER DATABASE
+
+ERRO = Se o pg admin estiver aberto com o banco de dados, dá erro ao tentar
+mudar o nome
+
+postgres=> ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
+ERROR:  database "meu_primeiro_database" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
 
 = end
 
