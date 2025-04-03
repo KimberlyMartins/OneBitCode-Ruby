@@ -227,6 +227,10 @@ Type:  \copyright for distribution terms
 postgres=# 
 
 
+                  Criar banco de dados
+CREATE DATABASE + nome_do_banco;
+
+
                   Criar Usuário com senha 
 postgres=# CREATE USER kim WITH ENCRYPTED PASSWORD '' CREATEDB;
 #senha entre aspas simples
@@ -293,6 +297,14 @@ Comando DROP DATABASE seguido do banco a ser excluído;
 
 postgres=> DROP DATABASE meu_primeiro_database;
 DROP DATABASE
+
+
+
+
+            Criando tabelas em banco de dados postgres
+Muito semelhante aos comandos do banco de dados direto:
+para criar tabelas usamos CREATE TABLE;
+para excluir tabelas usamos DROP TABLE;
 
 = end
 
