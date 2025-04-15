@@ -301,8 +301,9 @@ DROP DATABASE
 
             Criando tabelas em banco de dados postgres
 Muito semelhante aos comandos do banco de dados direto:
-para criar tabelas usamos CREATE TABLE;
-para excluir tabelas usamos DROP TABLE;
+para CRIAR tabelas usamos CREATE TABLE;
+para EXCLUIR tabelas usamos DROP TABLE;
+para ALTERAR tabelas usamos ALTER TABLE;
 
 
 Dentro do pg admin vc abre o banco de dados, clica em schema, public e tables. Em tables
@@ -311,6 +312,20 @@ clica com o botão esquerdo e seleciona QUERY TOOL, para abrir o termminal de ed
                            QUERY
 É uma solicitação de informações feita ao banco de dados. que retorna uma tabela ou um conjunto 
 delas, figuras, gráficos ou resultados complexos.
+
+                CRIAÇÃO DE TABELAS
+Para CRIAR tabelas usamos CREATE TABLE;
+- Palavras chaves obrigatórias não precisam estar em maíusculas mas  por convenção e clareza geralmente estão.
+- Nomes de tabelas não podem ter espaços, se usa _
+- Cada definição de coluna é separada por virgula, exceto a ultima onde para finalizar o comando usa ;
+
+CREATE TABLE cliente(
+id SERIAL PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+phone VARCHAR(20) NOT NULL,
+email VARCHAR(100)
+);
+
 = end
 
 
