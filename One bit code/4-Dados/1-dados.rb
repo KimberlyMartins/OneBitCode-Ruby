@@ -299,7 +299,7 @@ postgres=> DROP DATABASE meu_primeiro_database;
 DROP DATABASE
 
 
-            Criando tabelas em banco de dados postgres
+                       COMANDOS POSTGRESQL
 Muito semelhante aos comandos do banco de dados direto:
 para CRIAR tabelas usamos CREATE TABLE;
 para EXCLUIR tabelas usamos DROP TABLE;
@@ -340,6 +340,15 @@ db_concessionaria=> \d
 (2 rows)
 
 db_concessionaria=> 
+
+               EXCLUSÃO DE TABELAS
+****CAUTION!!! O comando para a exclusão de tabelas também é irreversível***
+Comando DROP TABLE seguido do banco a ser excluído;
+
+DROP TABLE clientes;
+
+
+                ALTERAÇÃO DE TABELAS
 
 = end
 
