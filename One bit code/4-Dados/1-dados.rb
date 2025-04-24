@@ -326,6 +326,21 @@ phone VARCHAR(20) NOT NULL,
 email VARCHAR(100)
 );
 
+
+              ESPECIFICAÇÃO DENTRO DO BANCO DE DADOS
+Para conferir o que está dentro do banco de dados usamos o \d , que mostra a lista de relações de dentro
+do banco de dados.
+
+db_concessionaria=> \d
+             List of relations
+ Schema |      Name      |   Type   | Owner 
+--------+----------------+----------+-------
+ public | cliente        | table    | kim
+ public | cliente_id_seq | sequence | kim
+(2 rows)
+
+db_concessionaria=> 
+
 = end
 
 
