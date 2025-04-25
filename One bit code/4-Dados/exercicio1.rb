@@ -1,5 +1,7 @@
 =begin
-Crie um arquivo SQL (no formato do PostgreSQL) com os comandos para criar um banco de dados para uma lanchonete armazenar as informações do seu sistema. Esse arquivo deve então criar, caso não existam, as seguintes tabelas e colunas:
+Crie um arquivo SQL (no formato do PostgreSQL) com os comandos para criar um banco 
+de dados para uma lanchonete armazenar as informações do seu sistema. 
+Esse arquivo deve então criar, caso não existam, as seguintes tabelas e colunas:
 
 Clientes
 id
