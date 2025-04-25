@@ -372,6 +372,19 @@ ALTER TABLE clientes RENAME COLUMN phone TO telephone;
 
 
 
+
+"DEFAULT" é uma cláusula usada para definir um valor padrão para uma coluna de uma tabela. 
+Quando um valor não é fornecido explicitamente ao inserir dados numa coluna com um valor 
+padrão definido, essa coluna assumirá o valor padrão
+
+Valor padrão pode ser uma expressão:
+O valor padrão não precisa ser um valor constante. Pode ser uma função ou expressão que será avaliada 
+quando um novo registro for inserido, como DEFAULT CURRENT_TIMESTAMP para colunas de data e hora. 
+
+por exemplo, se a pessoa não preencher o valor da data, com oDEFAULT CURRENT_TIMESTAMP ele será preenchido automaticamente 
+com  a data e hora daquele momento
+
+
 = end
 
 
