@@ -349,6 +349,28 @@ DROP TABLE clientes;
 
 
                 ALTERAÇÃO DE TABELAS
+Na alteração podemos fazer diversas operações usando o comando ALTER TABLE + npme da tabela e especificar o
+que precisa ser alterado.
+
+          Para alterar o nome da tabela:
+ALTER TABLE clientes RENAME TO customer;
+
+          Para adicionar coluna:
+ALTER TABLE clientes ADD COLUMN birthday DATE;
+
+          Para excluir coluna:
+ALTER TABLE clientes DROP COLUMN birthday;
+
+          Para dizer que não pode ser nulo:
+ALTER TABLE clientes ALTER COLUMN email SET NOT NULL;        
+
+          Para mudar de not null para nulo:
+ALTER TABLE clientes ALTER COLUMN phone DROP NOT NULL;
+
+          Para renomear coluna:
+ALTER TABLE clientes RENAME COLUMN phone TO telephone;
+
+
 
 = end
 
