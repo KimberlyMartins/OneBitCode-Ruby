@@ -55,7 +55,7 @@ Escolher o tipo de dado pe crucial para a eficiencia, integridade e otimização
                            DADOS NUMÉRICOS:
 SMALLINT - inteiro de 2 bytes- ocupa 2 bytes na coluna
 
-* INT / INTERGER - inteiro de 4 bytes ocupa 4 bytes na coluna (mais usado)
+* INT  = INTERGER - inteiro de 4 bytes ocupa 4 bytes na coluna (mais usado)
 
 BIGINT - inteiro de 8 bytes ocupa 8 bytes na coluna
 
@@ -370,8 +370,8 @@ ALTER TABLE clientes ALTER COLUMN phone DROP NOT NULL;
           Para renomear coluna:
 ALTER TABLE clientes RENAME COLUMN phone TO telephone;
 
-
-
+          Para adicionar o default na coluna:
+ALTER TABLE suppliers ALTER COLUMN hiring_date SET DEFAULT CURRENT_DATE;
 
 "DEFAULT" é uma cláusula usada para definir um valor padrão para uma coluna de uma tabela. 
 Quando um valor não é fornecido explicitamente ao inserir dados numa coluna com um valor 
