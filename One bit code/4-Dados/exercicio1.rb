@@ -82,3 +82,7 @@ CREATE TABLE IF NOT EXISTS stock_ingredients (
   category VARCHAR(50),
   quantity INT NOT NULL DEFAULT 0  # para usar inteiro usa-se o INT, e o default 0 é pra iniciar o estoque no 0
 );
+
+=begin
+teste
+=end
