@@ -39,10 +39,10 @@ quantidade
 
 #                   Resolução no banco de dados
 # -- Crie o banco de dados
-CREATE DATABASE db_burguer_queen;
+CREATE DATABASE db_coffee_shop;
 
 # -- Conecte=se ap banco de dados criado
-\c db_burguer_queen;
+\c db_coffee_shop;
 
 # -- Crie as tabelas, caso não existam
 CREATE TABLE IF NOT EXISTS clientes (
