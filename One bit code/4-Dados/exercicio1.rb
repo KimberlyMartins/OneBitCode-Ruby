@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS clientes (
   name VARCHAR(255) NOT NULL,
   phone VARCHAR(20),
   address VARCHAR(255),
-  created_at DATE NOT NULL DEFAULT CURRENT_DATE    #default para preencher automaticamente se tiver em branco, current date pega a data do momento
+  created_at DATE NOT NULL DEFAULT CURRENT_DATE    #DEFAULT para preencher automaticamente se tiver em branco, current date pega a data do momento
 );
 
 CREATE TABLE IF NOT EXISTS suppliers (
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS suppliers (
   name VARCHAR(255) NOT NULL,
   phone VARCHAR(20),
   email VARCHAR(100),
-  hiring_date DATE NOT NULL DEFAULT CURRENT_DATE, #default para preencher automaticamente se tiver em branco, current date pega a data do momento
+  hiring_date DATE NOT NULL DEFAULT CURRENT_DATE, #DEFAULT para preencher automaticamente se tiver em branco, current date pega a data do momento
   notes TEXT # TEXT pois precisa de um arquivo de texto maior, já que nao sabemos quanto de VARCHAR seria usado
 );
 
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS snacks (
 CREATE TABLE IF NOT EXISTS orders (
   id SERIAL PRIMARY KEY,
   table_number INT NOT NULL,
-  order_datetime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  #timestamp datas com menos variação de tempo
+  order_datetime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  #TIMESTAMP datas com menos variação de tempo
   status VARCHAR(50) NOT NULL
 );
 
@@ -80,9 +80,9 @@ CREATE TABLE IF NOT EXISTS stock_ingredients (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   category VARCHAR(50),
-  quantity INT NOT NULL DEFAULT 0  # para usar inteiro usa-se o INT, e o default 0 é pra iniciar o estoque no 0
+  quantity INT NOT NULL DEFAULT 0  # para usar inteiro usa-se o INT, e o DEFAULT 0 é pra iniciar o estoque no 0
 );
 
 =begin
-teste
+teste  
 =end
