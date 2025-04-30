@@ -59,14 +59,14 @@ CREATE TABLE IF NOT EXISTS suppliers (
   phone VARCHAR(20),
   email VARCHAR(100),
   hiring_date DATE NOT NULL DEFAULT CURRENT_DATE, #default para preencher automaticamente se tiver em branco, current date pega a data do momento
-  notes TEXT
+  notes TEXT # TEXT pois precisa de um arquivo de texto maior, já que nao sabemos quanto de VARCHAR seria usado
 );
 
 CREATE TABLE IF NOT EXISTS snacks (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  description TEXT,
-  price DECIMAL(10, 2) NOT NULL
+  description TEXT, # TEXT pois precisa de um arquivo de texto maior, já que nao sabemos quanto de VARCHAR seria usado
+  price DECIMAL(10, 2) NOT NULL # DECIMAL com 2 referencias pois tem ate 10 antes da virgula e dois depois dela
 );
 
 CREATE TABLE IF NOT EXISTS orders (
