@@ -30,4 +30,7 @@ VALUES
  ('Café', 'Bebidas', 10),
  ('Queijo', 'Laticínios', '30'),
  ('Presunto', 'Proteínas', '40');
+
+ INSERT 0 4
+Query returned successfully in 73 msec.
 =end
