@@ -20,4 +20,14 @@ EX:
 INSERT INTO suppliers (name, phone, email, notes) 
 VALUES ('Mellita do Brasil', '0800 595 0203','sim@melitta.com.br','Fornecimento de café Mellita');
 
+
+           INSERIR MAIS DE UM ITEM AO MESMO TEMPO 
+Para inserir dados nas tabelas criadas usamos o comando INSERT INTO + nome da tabela + (nomes da coluna a ser prenchida) + VALUES + (infos das colunas escolhidas) colocando vários parenteses até terminar os itens e por fim usar ;
+EX:
+INSERT INTO stocl_ingredients (name, category, quantity)
+VALUES 
+ ('Ovos', 'Proteínas', '45'),
+ ('Café', 'Bebidas', 10),
+ ('Queijo', 'Laticínios', '30'),
+ ('Presunto', 'Proteínas', '40');
 =end
