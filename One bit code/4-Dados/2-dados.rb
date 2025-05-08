@@ -15,4 +15,9 @@ No PgADMIN se tiver sido executada com sucesso ela retornará
 INSERT 0 1
 Query returned successfully in 168 msec.
 
+
+EX:
+INSERT INTO suppliers (name, phone, email, notes) 
+VALUES ('Mellita do Brasil', '0800 595 0203','sim@melitta.com.br','Fornecimento de café Mellita');
+
 =end
