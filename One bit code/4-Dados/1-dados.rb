@@ -1,4 +1,4 @@
-=begin
+
                         BANCO DE DADOS
 Um banco de dados é uma coleção organizada de informações
 (dados) estruturadas normalmente armazenadas eletronicamente 
@@ -7,7 +7,7 @@ Um banco de dados é geralmente controlado por um SGBD - Sistema
 de Gerenciamento de Banco de Dados ( DBMS - Database Management System),
 juntos, os DBMS e os dados são chamados de BANCO DE DADOS.
 	 
-	               Banco de dados relacionais(SQL)
+	               BANCO DE DADOS RELACIONAIS(SQL)
 O banco de dados relacional é o tipo de banco que trabalha com tabelas 
 relacionais e bem definidas, isto é, tabelas compostas por linhas e colunas, lembrando 
 muito uma estrutura de tabela de Excel. Cada tabela representa uma entidade 
@@ -17,7 +17,7 @@ A SQL(Structured Query Language - SEQUEL) é uma linguagem de programação
 para trabalhar com dados relacionais. Os programas mais utilizados  que usam o SQL
 são: Oracle, MySQL, SQL Server e  PostgreSQL.
 
-                Banco de dados não relacionais(NoSQL)
+                BANCO DE DADOS NÃO RELACIONAIS(NOSQL)
 Já os não relacionais, não seguem o modelo de tabelas e relacionamentos 
 utilizado pelos bancos de dados relacionais tradicionais. Para esses 
 bancos de dados NoSQL, temos uma variedade de modelos, incluindo o modelo 
@@ -29,7 +29,7 @@ linguagem de programação. Os programas mais utilizados são MongoDB, Cassandra
 e Riak.
 
 
-                          Linguagem SQL
+                          LINGUAGEM SQL
 
                Categorias de comandos da linguagem SQL
 DDL(Data Definition Language): Comandos para definir a estrutura do banco de dados.
@@ -46,9 +46,7 @@ não for bem sucedida ele volta a transação para evitar erro.
   ex: BEGIN, COMMIT, ROLLBACK (iniciar transação, confirmar se deu certo e desfazer a transação caso dê erro)
 
 
-
-
-                       Tipos de dados linguagem SQL 
+                       TIPOS DE DADOS LINGUAGEM SQL 
 Tipos de dados definem a natureza dos valores que podem ser armazenadosem uma coluna de uma tabela.
 Escolher o tipo de dado pe crucial para a eficiencia, integridade e otimização do banco de dados.
 
@@ -99,6 +97,7 @@ Para saber se o postgresql está funcionando usa o comando: sudo systemctl statu
 *** Pode acessar comandos sql pelo site https://halleyoliv.gitlab.io/pgdocptbr/app-psql.html ***
 
 que retorna:
+=begin
 [sudo] senha para kim: 
 ● postgresql.service - PostgreSQL RDBMS
      Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; prese>
@@ -110,6 +109,8 @@ que retorna:
 mar 21 09:51:20 kim systemd[1]: Starting postgresql.service - PostgreSQL RDBMS.>
 mar 21 09:51:20 kim systemd[1]: Finished postgresql.service - PostgreSQL RDBMS.
 lines 1-9/9 (END)
+=end
+
 
 ------------------------------------
                             PSQL
@@ -143,6 +144,7 @@ tempo de construção, geralmente 5432.
   
 --help = Ajuda. Nos traz algumas informações úteis para usar o psql
 
+=begin
 psql --help
 psql is the PostgreSQL interactive terminal.
 
@@ -207,11 +209,10 @@ documentation.
 
 Report bugs to <pgsql-bugs@lists.postgresql.org>.
 PostgreSQL home page: <https://www.postgresql.org/>
+=end
 
-
-
-                          Entrar com o usuário postgres
-
+                          ENTRAR COM O USUÁRIO POSTGRES
+=begin
 sudo -u postgres psql
 [sudo] senha para kim: 
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
@@ -224,14 +225,14 @@ Type:  \copyright for distribution terms
        \? for help with psql commands
        \g or terminate with semicolon to execute query
        \q to quit
-postgres=# 
-
-
-                  Criar banco de dados
+postgres=#
+=end
+ 
+                  CRIAR BANCO DE DADOS
 CREATE DATABASE + nome_do_banco;
 
 
-                  Criar Usuário com senha 
+                  CRIAR USUÁRIO COM SENHA 
 postgres=# CREATE USER kim WITH ENCRYPTED PASSWORD '' CREATEDB;
 #senha entre aspas simples
 
@@ -242,12 +243,11 @@ postgres=> exit
 kim@kim:~$ 
 
 
-                      Entrar com o usuário que foi criado
-
+                      ENTRAR COM O USUÁRIO QUE FOI CRIADO
 -d Especifica o banco de dados 
 -U Especifica o Usuário
 -W Pedir a senha do usuário
-
+=begin
                 login direto
 kim@kim:~$ psql -d postgres
 psql (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
@@ -273,12 +273,12 @@ Type "help" for help.
 
 meu_primeiro_database=> \c postgres
 You are now connected to database "postgres" as user "kim".
+=end
 
-
-                     Conectar a um novo banco
+                     CONECTAR A UM NOVO BANCO
 \c Conecta a um novo banco com esse comando
 
-                     Renomear banco de dados 
+                     RENOMEAR BANCO DE DADOS 
 Comando ALTER DATABASE + nome do banco a ser renomeado + RENAME TO + novo nome;
 ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
 ALTER DATABASE
@@ -286,12 +286,12 @@ ALTER DATABASE
 ERRO = Se o pg admin estiver aberto com o banco de dados, dá erro ao tentar
 mudar o nome
 
-postgres=> ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
-ERROR:  database "meu_primeiro_database" is being accessed by other users
-DETAIL:  There is 1 other session using the database.
+# postgres=> ALTER DATABASE meu_primeiro_database RENAME TO teste_database;
+# ERROR:  database "meu_primeiro_database" is being accessed by other users
+# DETAIL:  There is 1 other session using the database.
              
 
-                    Excluir banco de dados
+                    EXCLUIR BANCO DE DADOS
 ****CAUTION!!! O comando para a exclusão de bancos é irreversível***
 Comando DROP DATABASE seguido do banco a ser excluído;
 
@@ -330,7 +330,7 @@ email VARCHAR(100)
               ESPECIFICAÇÃO DENTRO DO BANCO DE DADOS
 Para conferir o que está dentro do banco de dados usamos o \d , que mostra a lista de relações de dentro
 do banco de dados.
-
+=begin
 db_concessionaria=> \d
              List of relations
  Schema |      Name      |   Type   | Owner 
@@ -339,7 +339,8 @@ db_concessionaria=> \d
  public | cliente_id_seq | sequence | kim
 (2 rows)
 
-db_concessionaria=> 
+db_concessionaria=>
+=end
 
                EXCLUSÃO DE TABELAS
 ****CAUTION!!! O comando para a exclusão de tabelas também é irreversível***
@@ -352,39 +353,32 @@ DROP TABLE clientes;
 Na alteração podemos fazer diversas operações usando o comando ALTER TABLE + npme da tabela e especificar o
 que precisa ser alterado.
 
-          Para alterar o nome da tabela:
+          PARA ALTERAR O NOME DA TABELA:
 ALTER TABLE clientes RENAME TO customer;
 
-          Para adicionar coluna:
+          PARA ADICIONAR COLUNA:
 ALTER TABLE clientes ADD COLUMN birthday DATE;
 
-          Para excluir coluna:
+          PARA EXCLUIR COLUNA:
 ALTER TABLE clientes DROP COLUMN birthday;
 
-          Para dizer que não pode ser nulo:
+          PARA DIZER QUE NÃO PODE SER NULO:
 ALTER TABLE clientes ALTER COLUMN email SET NOT NULL;        
 
-          Para mudar de not null para nulo:
+          PARA MUDAR DE NOT NULL PARA NULO:
 ALTER TABLE clientes ALTER COLUMN phone DROP NOT NULL;
 
-          Para renomear coluna:
+          PARA RENOMEAR COLUNA:
 ALTER TABLE clientes RENAME COLUMN phone TO telephone;
 
-          Para adicionar o default na coluna:
+          PARA ADICIONAR O DEFAULT NA COLUNA:
 ALTER TABLE suppliers ALTER COLUMN hiring_date SET DEFAULT CURRENT_DATE;
 
-"DEFAULT" é uma cláusula usada para definir um valor padrão para uma coluna de uma tabela. 
-Quando um valor não é fornecido explicitamente ao inserir dados numa coluna com um valor 
-padrão definido, essa coluna assumirá o valor padrão
+# "DEFAULT" é uma cláusula usada para definir um valor padrão para uma coluna de uma tabela. 
+# Quando um valor não é fornecido explicitamente ao inserir dados numa coluna com um valor 
+# padrão definido, essa coluna assumirá o valor padrão
 
-Valor padrão pode ser uma expressão:
-O valor padrão não precisa ser um valor constante. Pode ser uma função ou expressão que será avaliada 
-quando um novo registro for inserido, como DEFAULT CURRENT_TIMESTAMP para colunas de data e hora. 
-
-por exemplo, se a pessoa não preencher o valor da data, com oDEFAULT CURRENT_TIMESTAMP ele será preenchido automaticamente 
-com  a data e hora daquele momento
-
-
-= end
-
-
+# Valor padrão pode ser uma expressão:
+# O valor padrão não precisa ser um valor constante. Pode ser uma função ou expressão que será avaliada 
+# quando um novo registro for inserido, como DEFAULT CURRENT_TIMESTAMP para colunas de data e hora. 
+# Por exemplo, se a pessoa não preencher o valor da data, com oDEFAULT CURRENT_TIMESTAMP ele será preenchido automaticamente com  a data e hora daquele momento
