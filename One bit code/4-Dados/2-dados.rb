@@ -94,10 +94,12 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein';
 (2 rows)
 =end
 
-#                     CONSULTAR USANDO MAIS DE UMA CONDIÇÃO
-Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e AND.
-SELECT * FROM + nome da tabela WHERE nome da coluna + = +  'dado procurado' + AND + nome da coluna (< ou >) + número procurado;
+#                     CONSULTAR USANDO MAIS DE UMA CONDIÇÃO, OPERADOR E
+Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e AND. O famoso operador E.
+Para essa consulta, usamos SELECT * FROM + nome da tabela WHERE nome da coluna + = 'dado procurado' + AND + nome da coluna (< ou >) + número procurado + ;
 =begin
+A busca vai equivaler a selecionar da tabela tal onde tal categoria seja protein E a quantidade maior que 20.
+
 coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' AND quantity > 20;
  id | name | category | quantity
 ----+------+----------+----------
@@ -106,3 +108,50 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' AND qua
 (2 rows)
 =end
 
+#               CONSULTAR USANDO MAIS DE UMA CONDIÇÃO, OPERADOR OU BUSCANDO NÚMEROS
+Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e OR. O famoso operador OU.
+Para essa consulta, usamos SELECT * FROM + nome da tabela WHERE nome da coluna + = 'dado procurado' + OR + nome da coluna (< ou >) + número procurado + ;
+=begin
+A busca vai equivaler a selecionar da tabela tal onde tal categoria seja protein OU a quantidade maior que 20.
+
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' OR quantity > 20; 
+ id |  name  | category | quantity
+----+--------+----------+----------
+  1 | Eggs   | Protein  |       45
+  3 | Cheese | Dairy    |       30
+  4 | Ham    | Protein  |       40
+(3 rows)
+=end
+
+#               CONSULTAR USANDO MAIS DE UMA CONDIÇÃO, OPERADOR OU BUSCANDO PALAVRAS
+Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e OR. O famoso operador OU.
+Para essa consulta, usamos SELECT * FROM + nome da tabela WHERE nome da coluna = 'dado procurado' + OR + nome da coluna = 'dado procurado'+;
+
+=begin
+A busca vai equivaler a selecionar tudo da tabela stock_ingredients onde a category = Proteina OU  a category = Dairy.
+
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' OR category = 'Dairy';
+ id |  name  | category | quantity
+----+--------+----------+----------
+  1 | Eggs   | Protein  |       45
+  3 | Cheese | Dairy    |       30
+  4 | Ham    | Protein  |       40
+(3 rows)
+
+A busca vai equivaler a selecionar tudo da tabela stock_ingredients onde a category = Proteina OU  a category = Drinks.
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' OR category = 'Drinks';
+ id |  name  | category | quantity
+----+--------+----------+----------
+  1 | Eggs   | Protein  |       45
+  2 | Coffee | Drinks   |       10
+  4 | Ham    | Protein  |       40
+(3 rows)
+
+A busca vai equivaler a selecionar tudo da tabela stock_ingredients onde a category = Drinks OU a category = Dairy.
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Dairy' OR category = 'Drinks';
+ id |  name  | category | quantity
+----+--------+----------+----------
+  2 | Coffee | Drinks   |       10
+  3 | Cheese | Dairy    |       30
+(2 rows)
+=end
