@@ -52,7 +52,6 @@ coffee_shop=# SELECT * FROM stock_ingredients;
   4 | Presunto | ProteÝnas  |       40
 (4 linhas)
 
-
 coffee_shop=# SELECT category FROM stock_ingredients;
   category
 ------------
@@ -61,7 +60,6 @@ coffee_shop=# SELECT category FROM stock_ingredients;
  LaticÝnios
  ProteÝnas
 (4 linhas)
-
 
 coffee_shop=# SELECT name, quantity FROM stock_ingredients;
    name   | quantity
@@ -73,10 +71,10 @@ coffee_shop=# SELECT name, quantity FROM stock_ingredients;
 (4 linhas)
 =end
 
-
  #                      CONSULTAR APENAS ITENS QUE ESTÃO ACABANDO
+Outro comando importante do SQL e que é usado juntamente com o SELECT é o WHERE, que permite filtrarmos os resultados de acordo com uma condição.
 Para consultar os itens da tabela usamos o comando SELECT + * + FROM + nome da tabela + WHERE + nome da coluna +
-(< ou >) e ;
+(< ou >) + ;
 =begin
 EX:
 coffee_shop=# SELECT * FROM stock_ingredients WHERE quantity < 20;
@@ -85,3 +83,26 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE quantity < 20;
   2 | CafÚ | Bebidas  |       10
 (1 linha)
 =end
+#                     CONSULTAR APENAS DETERMINADA COLUNA   
+Para consultar os itens da tabela usamos o comando SELECT + * + FROM + nome da tabela + WHERE + nome da coluna + ;
+=begin
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein';
+ id | name | category | quantity
+----+------+----------+----------
+  1 | Eggs | Protein  |       45
+  4 | Ham  | Protein  |       40
+(2 rows)
+=end
+
+#                     CONSULTAR USANDO MAIS DE UMA CONDIÇÃO
+Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e AND.
+SELECT * FROM + nome da tabela WHERE nome da coluna + = +  'dado procurado' + AND + nome da coluna (< ou >) + número procurado;
+=begin
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' AND quantity > 20;
+ id | name | category | quantity
+----+------+----------+----------
+  1 | Eggs | Protein  |       45
+  4 | Ham  | Protein  |       40
+(2 rows)
+=end
+
