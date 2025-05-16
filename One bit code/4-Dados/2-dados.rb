@@ -123,7 +123,7 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Protein' OR quan
 (3 rows)
 =end
 
-#               CONSULTAR USANDO MAIS DE UMA CONDIÇÃO, OPERADOR OU BUSCANDO PALAVRAS
+#                     CONSULTAR USANDO MAIS DE UMA CONDIÇÃO, OPERADOR OU 
 Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e OR. O famoso operador OU.
 Para essa consulta, usamos SELECT * FROM + nome da tabela WHERE nome da coluna = 'dado procurado' + OR + nome da coluna = 'dado procurado'+;
 
@@ -155,3 +155,20 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category = 'Dairy' OR catego
   3 | Cheese | Dairy    |       30
 (2 rows)
 =end
+
+#                     CONSULTAR USANDO MAIS DE UMA CONDIÇÃO, OPERADOR IN 
+Aqui a busca vai ser realizada de acordo com ambas as condições WHERE e IN. O famoso operador EM. Vai buscar os dados que esteja na lista entre parenteses, podendo ser inclusive mais de uma lista.
+Para essa consulta, usamos SELECT * FROM + nome da tabela WHERE nome da coluna + IN + ('dado procurado','dado procurado');
+=begin
+A busca vai equivaler a selecionar tudo da tabela stock_ingredients onde a category esteja em  Protein e Dairy.
+coffee_shop=# SELECT * FROM stock_ingredients WHERE category IN ('Protein', 'Dairy');
+ id |  name  | category | quantity
+----+--------+----------+----------
+  1 | Eggs   | Protein  |       45
+  3 | Cheese | Dairy    |       30
+  4 | Ham    | Protein  |       40
+(3 rows)
+=end
+
+                                 CONSULTAS AVANÇADAS DOS DADOS
+ 

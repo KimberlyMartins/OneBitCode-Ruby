@@ -86,4 +86,4 @@ CREATE TABLE IF NOT EXISTS stock_ingredients (
 =begin
 Renomeei a tabela Clientes para client em inglês para acompanhar o restante do banco de dados
 ALTER TABLE clientes RENAME TO clients;
-=end
+=end 
