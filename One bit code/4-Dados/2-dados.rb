@@ -170,7 +170,7 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category IN ('Protein', 'Dai
 (3 rows)
 =end
 
-                                 CONSULTAS AVANÇADAS DOS DADOS
+ #                                CONSULTAS AVANÇADAS DOS DADOS
              ORDEM ALFABÉTICA ASC (ASCENDING - CRESCENTE) E DESC (DESCENDING - DECRESCENTE)
 Para ordenar por nome baseado nas primeiras letras em ordem crescente.
 SELECT * FROM Clients ORDER BY name ASC; 
@@ -237,6 +237,57 @@ coffee_shop=# SELECT * FROM clients ORDER BY name DESC;
  17 | Bo Collie          | (163) 2032492 | 0 Straubel Terrace      | 2025-05-16
  13 | Abigale Ofield     | (414) 2709709 | 4526 Ronald Regan Point | 2025-05-16
 (22 rows)
-
 =end
  
+#                BUSCAR UM NUMERO LIMITADO DE ITENS 
+Para evitar buscas quilométricas de dados, conseguimos fazer buscas com determinado número usando LIMIT + número de itens a serem mostrados.
+SELECT * FROM Clients LIMIT 4;
+=begin
+A busca vai equivaler a:
+selecionar tudo da tabela Clients com um limite de 4 linhas;
+
+coffee_shop=# SELECT * FROM clients LIMIT 3;
+ id |      name      |     phone     |        address         | created_at
+----+----------------+---------------+------------------------+------------
+  4 | Nadeen Nassy   | (894) 3770999 | 344 Comanche Circle    | 2025-05-16
+  5 | Rufe Woolforde | (876) 3190195 | 1199 Garrison Junction | 2025-05-16
+  6 | Erl Bumphrey   | (828) 4611193 | 279 Carey Way          | 2025-05-16
+(3 rows)
+
+A busca vai equivaler a:
+selecionar tudo da tabela Clients com um limite de 3 linhas, nesse caso só tem uma então só aparece esse item;
+coffee_shop=# SELECT * FROM suppliers LIMIT 3;
+
+ id |       name        |     phone     |       email        | hiring_date |            notes
+----+-------------------+---------------+--------------------+-------------+------------------------------
+  1 | Mellita do Brasil | 0800 595 0203 | sim@melitta.com.br | 2025-05-08  | Fornecimento de café Mellita
+(1 row)
+=end
+
+Na busca limitada também conseguimos fazer busca combinada usando o ORDER BY + LIMIT pra deixar a busca mais precisa.
+=begin   
+A busca vai equivaler a:
+selecionar tudo da tabela Clients com o name em ordem crescente mas com limite de 4 itens;
+
+coffee_shop=# SELECT * FROM clients ORDER BY name ASC LIMIT 4;
+ id |      name       |     phone     |         address         | created_at
+----+-----------------+---------------+-------------------------+------------
+ 13 | Abigale Ofield  | (414) 2709709 | 4526 Ronald Regan Point | 2025-05-16
+ 17 | Bo Collie       | (163) 2032492 | 0 Straubel Terrace      | 2025-05-16
+ 10 | Cathrin Balcers | (854) 2908154 | 58 Kipling Alley        | 2025-05-16
+ 21 | Cordie Voce     | (937) 6629079 | 767 Prairieview Road    | 2025-05-16
+(4 rows)
+
+Ou DESC
+A busca vai equivaler a:
+selecionar tudo da tabela Clients com o name em ordem decrescente mas com limite de 4 itens;
+
+coffee_shop=# SELECT * FROM clients ORDER BY name DESC LIMIT 4;
+ id |       name       |     phone     |         address         | created_at
+----+------------------+---------------+-------------------------+------------
+ 15 | Vito Breach      | (516) 2554781 | 86120 Towne Court       | 2025-05-16
+  8 | Vick Saterthwait | (858) 2707342 | 8098 Carpenter Crossing | 2025-05-16
+  9 | Valma Leathlay   | (988) 1855788 | 52 Pankratz Point       | 2025-05-16
+  3 | Solis            | 4321          | 66 Rua das Boiadeiras   | 2025-05-14
+(4 rows)
+=end
