@@ -291,3 +291,30 @@ coffee_shop=# SELECT * FROM clients ORDER BY name DESC LIMIT 4;
   3 | Solis            | 4321          | 66 Rua das Boiadeiras   | 2025-05-14
 (4 rows)
 =end
+
+ #              BUSCA EM OFFSET
+ A cláusula OFFSET no SQL é usada para ignorar um número específico de linhas antes de retornar as linhas no conjunto de resultados. É frequentemente usado em combinação com a cláusula LIMIT para paginar os resultados.    
+ 
+=begin
+coffee_shop=# SELECT * FROM clients ORDER BY name ASC LIMIT 4;
+ id |      name       |     phone     |         address         | created_at
+----+-----------------+---------------+-------------------------+------------
+ 13 | Abigale Ofield  | (414) 2709709 | 4526 Ronald Regan Point | 2025-05-16
+ 17 | Bo Collie       | (163) 2032492 | 0 Straubel Terrace      | 2025-05-16
+ 10 | Cathrin Balcers | (854) 2908154 | 58 Kipling Alley        | 2025-05-16
+ 21 | Cordie Voce     | (937) 6629079 | 767 Prairieview Road    | 2025-05-16
+(4 rows
+
+ COM O OFFSET A PAGINAÇÃO CONTINUA, MAS PULANDO O NÚMERO DE LINHAS SELECIONADAS
+ A busca vai equivaler a:
+selecionar tudo da tabela Clients com o name em ordem crescente mas com limite de 4 itens pulando os 4 primeiros;
+
+coffee_shop=# SELECT * FROM clients ORDER BY name ASC LIMIT 4 OFFSET 4;
+ id |        name        |     phone     |      address       | created_at
+----+--------------------+---------------+--------------------+------------
+ 22 | Easter Petrescu    | (135) 9137473 | 32 Dayton Crossing | 2025-05-16
+  6 | Erl Bumphrey       | (828) 4611193 | 279 Carey Way      | 2025-05-16
+ 11 | Fidelity Hurleston | (169) 2896946 | 99412 Nova Place   | 2025-05-16
+  2 | Gabriel            | 12345         | 97 Rua da Esquina  | 2025-05-14
+(4 rows)
+=end
