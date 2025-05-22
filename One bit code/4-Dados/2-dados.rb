@@ -172,9 +172,12 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category IN ('Protein', 'Dai
 
                                  CONSULTAS AVANÇADAS DOS DADOS
              ORDEM ALFABÉTICA ASC (ASCENDING - CRESCENTE) E DESC (DESCENDING - DECRESCENTE)
-Para ordenar por telefone baseado nos primeiros dígitos em ordem crescente
+Para ordenar por nome baseado nas primeiras letras em ordem crescente.
 SELECT * FROM Clients ORDER BY name ASC; 
 =begin
+A busca vai equivaler a:
+selecionar tudo da tabela Clients que vai ser ordenada a categoria name de forma crescente;
+
 coffee_shop=# SELECT * FROM clients ORDER BY name ASC;
  id |        name        |     phone     |         address         | created_at
 ----+--------------------+---------------+-------------------------+------------
@@ -201,10 +204,13 @@ coffee_shop=# SELECT * FROM clients ORDER BY name ASC;
   8 | Vick Saterthwait   | (858) 2707342 | 8098 Carpenter Crossing | 2025-05-16
  15 | Vito Breach        | (516) 2554781 | 86120 Towne Court       | 2025-05-16
 =end
-Para ordenar pelo nome em ordem alfabética decrescente
-SELECT * FROM Clients ORDER BY name DESC;
 
+Para ordenar por nome baseado nas primeiras letras em ordem decrescente.
+SELECT * FROM Clients ORDER BY name DESC;
 =begin
+A busca vai equivaler a:
+selecionar tudo da tabela Clients que vai ser ordenada a categoria name de forma decrescente;
+
 coffee_shop=# SELECT * FROM clients ORDER BY name DESC;
  id |        name        |     phone     |         address         | created_at
 ----+--------------------+---------------+-------------------------+------------
