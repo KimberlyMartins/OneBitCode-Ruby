@@ -171,4 +171,66 @@ coffee_shop=# SELECT * FROM stock_ingredients WHERE category IN ('Protein', 'Dai
 =end
 
                                  CONSULTAS AVANÇADAS DOS DADOS
+             ORDEM ALFABÉTICA ASC (ASCENDING - CRESCENTE) E DESC (DESCENDING - DECRESCENTE)
+Para ordenar por telefone baseado nos primeiros dígitos em ordem crescente
+SELECT * FROM Clients ORDER BY name ASC; 
+=begin
+coffee_shop=# SELECT * FROM clients ORDER BY name ASC;
+ id |        name        |     phone     |         address         | created_at
+----+--------------------+---------------+-------------------------+------------
+ 13 | Abigale Ofield     | (414) 2709709 | 4526 Ronald Regan Point | 2025-05-16
+ 17 | Bo Collie          | (163) 2032492 | 0 Straubel Terrace      | 2025-05-16
+ 10 | Cathrin Balcers    | (854) 2908154 | 58 Kipling Alley        | 2025-05-16
+ 21 | Cordie Voce        | (937) 6629079 | 767 Prairieview Road    | 2025-05-16
+ 22 | Easter Petrescu    | (135) 9137473 | 32 Dayton Crossing      | 2025-05-16
+  6 | Erl Bumphrey       | (828) 4611193 | 279 Carey Way           | 2025-05-16
+ 11 | Fidelity Hurleston | (169) 2896946 | 99412 Nova Place        | 2025-05-16
+  2 | Gabriel            | 12345         | Rua da Esquina          | 2025-05-14
+ 16 | Jessalin Duckett   | (333) 6498842 | 02 Artisan Center       | 2025-05-16
+  1 | Kim                | 41 123456789  | Rua do Medo             | 2025-05-08
+ 12 | Lane Beggio        | (102) 4251437 | 625 Mcguire Place       | 2025-05-16
+  7 | Libbey Allbut      | (780) 9682663 | 0 Tennyson Pass         | 2025-05-16
+ 19 | Lucian Draxford    | (827) 4937186 | 739 Toban Way           | 2025-05-16
+ 14 | Melisse Stappard   | (828) 1752818 | 4 Sunnyside Lane        | 2025-05-16
+  4 | Nadeen Nassy       | (894) 3770999 | 344 Comanche Circle     | 2025-05-16
+ 20 | Philippa Sidon     | (475) 4933015 | 64985 Clarendon Way     | 2025-05-16
+ 18 | Raphaela Krates    | (916) 8872820 | 7798 3rd Street         | 2025-05-16
+  5 | Rufe Woolforde     | (876) 3190195 | 1199 Garrison Junction  | 2025-05-16
+  3 | Solis              | 4321          | Rua das Boiadeiras      | 2025-05-14
+  9 | Valma Leathlay     | (988) 1855788 | 52 Pankratz Point       | 2025-05-16
+  8 | Vick Saterthwait   | (858) 2707342 | 8098 Carpenter Crossing | 2025-05-16
+ 15 | Vito Breach        | (516) 2554781 | 86120 Towne Court       | 2025-05-16
+=end
+Para ordenar pelo nome em ordem alfabética decrescente
+SELECT * FROM Clients ORDER BY name DESC;
+
+=begin
+coffee_shop=# SELECT * FROM clients ORDER BY name DESC;
+ id |        name        |     phone     |         address         | created_at
+----+--------------------+---------------+-------------------------+------------
+ 15 | Vito Breach        | (516) 2554781 | 86120 Towne Court       | 2025-05-16
+  8 | Vick Saterthwait   | (858) 2707342 | 8098 Carpenter Crossing | 2025-05-16
+  9 | Valma Leathlay     | (988) 1855788 | 52 Pankratz Point       | 2025-05-16
+  3 | Solis              | 4321          | Rua das Boiadeiras      | 2025-05-14
+  5 | Rufe Woolforde     | (876) 3190195 | 1199 Garrison Junction  | 2025-05-16
+ 18 | Raphaela Krates    | (916) 8872820 | 7798 3rd Street         | 2025-05-16
+ 20 | Philippa Sidon     | (475) 4933015 | 64985 Clarendon Way     | 2025-05-16
+  4 | Nadeen Nassy       | (894) 3770999 | 344 Comanche Circle     | 2025-05-16
+ 14 | Melisse Stappard   | (828) 1752818 | 4 Sunnyside Lane        | 2025-05-16
+ 19 | Lucian Draxford    | (827) 4937186 | 739 Toban Way           | 2025-05-16
+  7 | Libbey Allbut      | (780) 9682663 | 0 Tennyson Pass         | 2025-05-16
+ 12 | Lane Beggio        | (102) 4251437 | 625 Mcguire Place       | 2025-05-16
+  1 | Kim                | 41 123456789  | Rua do Medo             | 2025-05-08
+ 16 | Jessalin Duckett   | (333) 6498842 | 02 Artisan Center       | 2025-05-16
+  2 | Gabriel            | 12345         | Rua da Esquina          | 2025-05-14
+ 11 | Fidelity Hurleston | (169) 2896946 | 99412 Nova Place        | 2025-05-16
+  6 | Erl Bumphrey       | (828) 4611193 | 279 Carey Way           | 2025-05-16
+ 22 | Easter Petrescu    | (135) 9137473 | 32 Dayton Crossing      | 2025-05-16
+ 21 | Cordie Voce        | (937) 6629079 | 767 Prairieview Road    | 2025-05-16
+ 10 | Cathrin Balcers    | (854) 2908154 | 58 Kipling Alley        | 2025-05-16
+ 17 | Bo Collie          | (163) 2032492 | 0 Straubel Terrace      | 2025-05-16
+ 13 | Abigale Ofield     | (414) 2709709 | 4526 Ronald Regan Point | 2025-05-16
+(22 rows)
+
+=end
  
