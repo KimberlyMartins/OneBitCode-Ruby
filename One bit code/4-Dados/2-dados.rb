@@ -322,6 +322,8 @@ coffee_shop=# SELECT * FROM clients ORDER BY name ASC LIMIT 4 OFFSET 4;
 #                    BUSCA POR CONTAGEM SELECT COUNT
 A função COUNT() é uma função de agregação que conta o número de linhas ou valores não nulos de uma coluna específica. Neste caso, COUNT(id) irá contar quantos valores existem na coluna id que não são nulos.
 =begin  
+A busca vai equivaler a contar os ids da tabela clients.
+
 coffee_shop=# SELECT COUNT(id) FROM clients;
  count
 -------
@@ -332,6 +334,8 @@ coffee_shop=# SELECT COUNT(id) FROM clients;
 #                      RENOMEAR A BUSCA COUNT
 AS é usado para dar um nome ao resultado da consulta. Isso permite que você se referencie ao resultado da contagem como clients_count no resultado da consulta.
 =begin
+Vai ser a mesma busca por id da tabela clients porém renomeando a busca por clients_count.
+
 coffee_shop=# SELECT COUNT(id)AS clients_count FRO
 M clients;
  clients_count
@@ -339,4 +343,39 @@ M clients;
             22
 (1 row)
 =end
+
+#                    CONTAGEM USANDO MATEMÁTICA
+Podemos realizar a busca usando operações matemáticas.Para somar usamos SUM.
+SELECT SUM(quantity) AS Total FROM stock_ingredients;
+ total
+=begin
+coffee_shop=# SELECT * FROM stock_ingredients;
+ id |  name  | category | quantity
+----+--------+----------+----------
+  1 | Eggs   | Protein  |       45
+  2 | Coffee | Drinks   |       10            Aqui estão todos os itens da tabela stock_ingredients
+  3 | Cheese | Dairy    |       30
+  4 | Ham    | Protein  |       40
+(4 rows)
+
+A busca vai somar de toda a coluna quantity, da tabela stock_ingredients.
+coffee_shop=# SELECT SUM(quantity) AS Total FROM stock_ingredients;
+ total
+-------
+   125                                     Aqui foram somados dentro do próprio pg admin todas as quantidades
+(1 row)
+=end
+
+
+#                       CALCULAR A MÉDIA 
+A função AVG() retorna o valor médio de uma coluna numérica sem precisar fazer nada no de programação.
+=begin
+A busca vai retornar a médoa de toda a coluna quantity, da tabela stock_ingredients.
+coffee_shop=# SELECT AVG(quantity) AS Total FROM s
+tock_ingredients;
+        total
+---------------------
+ 31.2500000000000000
+(1 row)
+=end 
 
