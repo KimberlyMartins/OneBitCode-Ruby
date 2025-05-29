@@ -318,3 +318,25 @@ coffee_shop=# SELECT * FROM clients ORDER BY name ASC LIMIT 4 OFFSET 4;
   2 | Gabriel            | 12345         | 97 Rua da Esquina  | 2025-05-14
 (4 rows)
 =end
+ 
+#                    BUSCA POR CONTAGEM SELECT COUNT
+A função COUNT() é uma função de agregação que conta o número de linhas ou valores não nulos de uma coluna específica. Neste caso, COUNT(id) irá contar quantos valores existem na coluna id que não são nulos.
+=begin  
+coffee_shop=# SELECT COUNT(id) FROM clients;
+ count
+-------
+    22
+(1 row)
+=end
+
+#                      RENOMEAR A BUSCA COUNT
+AS é usado para dar um nome ao resultado da consulta. Isso permite que você se referencie ao resultado da contagem como clients_count no resultado da consulta.
+=begin
+coffee_shop=# SELECT COUNT(id)AS clients_count FRO
+M clients;
+ clients_count
+---------------
+            22
+(1 row)
+=end
+
