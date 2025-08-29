@@ -367,10 +367,10 @@ coffee_shop=# SELECT SUM(quantity) AS Total FROM stock_ingredients;
 =end
 
 
-#                       CALCULAR A MÉDIA 
+#                      CALCULAR A MÉDIA 
 A função AVG() retorna o valor médio de uma coluna numérica sem precisar fazer nada no de programação.
 =begin
-A busca vai retornar a médoa de toda a coluna quantity, da tabela stock_ingredients.
+A busca vai retornar a média de toda a coluna quantity, da tabela stock_ingredients.
 coffee_shop=# SELECT AVG(quantity) AS Total FROM s
 tock_ingredients;
         total
@@ -379,3 +379,4 @@ tock_ingredients;
 (1 row)
 =end 
 
+.
