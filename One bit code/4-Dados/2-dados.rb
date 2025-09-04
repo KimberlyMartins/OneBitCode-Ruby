@@ -293,7 +293,9 @@ coffee_shop=# SELECT * FROM clients ORDER BY name DESC LIMIT 4;
 =end
 
  #              BUSCA EM OFFSET
- A cláusula OFFSET no SQL é usada para ignorar um número específico de linhas antes de retornar as linhas no conjunto de resultados. É frequentemente usado em combinação com a cláusula LIMIT para paginar os resultados.    
+ A cláusula OFFSET no SQL é usada para ignorar um número específico de linhas antes de retornar as linhas no conjunto de resultados. É frequentemente usado em combinação com a cláusula LIMIT para paginar os resultados. 
+ LIMIT = quantos dados quero exibir
+ OFFSET = quantos dados quero pular antes de exibir os dados do LIMIT.
  
 =begin
 coffee_shop=# SELECT * FROM clients ORDER BY name ASC LIMIT 4;
