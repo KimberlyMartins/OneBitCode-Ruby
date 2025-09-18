@@ -382,4 +382,14 @@ tock_ingredients;
 (1 row)
 =end 
 
-#           BUSCA LIKE
+#                        BUSCA COM O OPERADOR LIKE
+O comando  LIKE é utilizado em conjunto com a cláusula WHERE e serve para realizar uma busca mais refinada em um campo de uma tabela. Para isso ele utiliza símbolos coringas associados ao termo que será pesquisado, o que ajuda a tornar a busca mais refinada e precisa. 
+É importante dizer que o uso da cláusula WHERE é obrigatória ao utilizarmos o LIKE. Caso contrário, teremos um erro de sintaxe. Além disso, o comando SQL LIKE é padrão da linguagem SQL, ou seja, sua sintaxe é a mesma em diferentes modelos de banco de dados relacionais, como no MySQL, Sql Server, Oracle, MS Access e outros.
+
+Como carácteres coringas temos: 
+SINAL DE PORCENTAGEM % -  utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado.  ‘%’ significa qualquer número de caracteres e o caractere.
+
+UNDERLINE “_” : usado para representar um único caractere antes ou após o termo procurado. ‘_’ representa apenas um único caractere.
+
+palavra-chave ESCAPE: utilizada para que seja possível incluir os caracteres curingas (% e _ ) ao realizar uma busca
+.
