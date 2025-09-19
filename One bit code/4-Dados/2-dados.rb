@@ -391,17 +391,26 @@ SINAL DE PORCENTAGEM '%' -  utilizado para indicar zero, um ou múltiplos caract
 - USANDO A LETRA ANTES DA PORCENTAGEM: - Buscar registros que comecem com uma determinada letra. Devemos utilizar o sinal de porcentagem após o caractere que vamos pesquisar para compor o termo da busca'K%';
 =begin
 SELECT * FROM clients WHERE name LIKE 'K%';
+
 "id"	"name"	"phone"	"address"	"created_at"
 1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
 =end
 - USANDO A LETRA DEPOIS DA PORCENTAGEM:  Recuperar registros terminados com determinado caractere. Utilizamos o caractere de percentual logo no início da expressão. Isso significa que apenas a última letra do campo será considerada '%l';
 =begin
 SELECT * FROM clients WHERE name LIKE '%l';
+
 "id"	"name"	"phone"	"address"	"created_at"
 2	"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
 =end
-
+- USANDO A PORCENTAGEM ANTES E DEPOIS DA LETRA: Também é possível realizar a busca por um determinado termo em qualquer posição do campo. Para isso, devemos utilizar o % antes e depois das letras pesquisadas '%al%'
 =begin
+SELECT * FROM clients WHERE name LIKE '%al%';
+
+"id"	"name"	"phone"
+9	"Valma Leathlay"	"(988) 1855788"
+10	"Cathrin Balcers"	"(854) 2908154"
+13	"Abigale Ofield"	"(414) 2709709"
+16	"Jessalin Duckett"	"(333) 6498842"
 =end
 
 =begin
