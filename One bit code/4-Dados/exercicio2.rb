@@ -96,6 +96,5 @@ Query returned successfully in 289 msec.
  SELECT * FROM movies;
  id | title | director | release_year | genre | duration | rating | box_office | production_cost
 ----+-------+----------+--------------+-------+----------+--------+------------+-----------------
-(0 linha)
-
+(0 linha) 
 =end
