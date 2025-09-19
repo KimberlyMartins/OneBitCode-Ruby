@@ -387,9 +387,39 @@ O comando  LIKE é utilizado em conjunto com a cláusula WHERE e serve para real
 É importante dizer que o uso da cláusula WHERE é obrigatória ao utilizarmos o LIKE. Caso contrário, teremos um erro de sintaxe. Além disso, o comando SQL LIKE é padrão da linguagem SQL, ou seja, sua sintaxe é a mesma em diferentes modelos de banco de dados relacionais, como no MySQL, Sql Server, Oracle, MS Access e outros.
 
 Como carácteres coringas temos: 
-SINAL DE PORCENTAGEM % -  utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado.  ‘%’ significa qualquer número de caracteres e o caractere.
+SINAL DE PORCENTAGEM '%' -  utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado. %  significa qualquer número de caracteres e o caractere.
+- USANDO A LETRA ANTES DA PORCENTAGEM: - Buscar registros que comecem com uma determinada letra. Devemos utilizar o sinal de porcentagem após o caractere que vamos pesquisar para compor o termo da busca'K%';
+=begin
+SELECT * FROM clients WHERE name LIKE 'K%';
+"id"	"name"	"phone"	"address"	"created_at"
+1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
+=end
+- USANDO A LETRA DEPOIS DA PORCENTAGEM:  Recuperar registros terminados com determinado caractere. Utilizamos o caractere de percentual logo no início da expressão. Isso significa que apenas a última letra do campo será considerada '%l';
+=begin
+SELECT * FROM clients WHERE name LIKE '%l';
+"id"	"name"	"phone"	"address"	"created_at"
+2	"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
+=end
 
-UNDERLINE “_” : usado para representar um único caractere antes ou após o termo procurado. ‘_’ representa apenas um único caractere.
+=begin
+=end
+
+=begin
+=end
+
+UNDERLINE '_' : usado para representar um único caractere antes ou após o termo procurado. '_' representa apenas um único caractere.
+USANDO 
+=begin
+- Obtém todos os clientes onde a segunda letra do nome é 'i'
+
+
+  "id"	"name"	"phone"	"address"	"created_at"
+7	"Libbey Allbut"	"(780) 9682663"	"0 Tennyson Pass"	"2025-05-16"
+8	"Vick Saterthwait"	"(858) 2707342"	"8098 Carpenter Crossing"	"2025-05-16"
+11	"Fidelity Hurleston"	"(169) 2896946"	"99412 Nova Place"	"2025-05-16"
+15	"Vito Breach"	"(516) 2554781"	"86120 Towne Court"	"2025-05-16"
+1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
+=end
+
 
 palavra-chave ESCAPE: utilizada para que seja possível incluir os caracteres curingas (% e _ ) ao realizar uma busca
-.
