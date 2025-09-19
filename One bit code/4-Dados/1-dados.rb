@@ -61,7 +61,8 @@ BIGINT - inteiro de 8 bytes ocupa 8 bytes na coluna
 
 DOBLE - Número com ponto flutuante de precisão dupla (para números maiores)
 
-DECIMAL / NUMERIC - Número de precisão fixa, útil para valores monetários (dinheiros)
+DECIMAL / NUMERIC - Número de precisão fixa, útil para valores monetários (dinheiros) 
+Em decimal, precisa dizer quantos números antes e depois da vírgula ex: DECIMAL(15,2)
 
 
                             DADOS DE TEXTO:
