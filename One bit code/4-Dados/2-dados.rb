@@ -388,7 +388,7 @@ O comando  LIKE é utilizado em conjunto com a cláusula WHERE e serve para real
 
 Como carácteres coringas temos: 
                                   SINAL DE PORCENTAGEM '%'  
- Utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado. %  significa qualquer número de caracteres e o caractere.
+ Utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado. % é usado sem determinar a quantidade específica de caracteres que a palavra buscada possui.
 
 - USANDO A LETRA ANTES DA PORCENTAGEM 'K%'; - Buscar registros que comecem com uma determinada letra. Devemos utilizar o sinal de porcentagem após o caractere que vamos pesquisar para compor o termo da busca.
 =begin
@@ -431,7 +431,7 @@ id |  name   | phone |      address       | created_at
 =end
 
                                      UNDERLINE '_' : 
-Usado para representar um único caractere antes ou após o termo procurado. '_' representa apenas um único caractere.
+Usado para representar um único caractere antes ou após o termo procurado '_'. Cada _ representa apenas um único caractere. Por exemplo, caso o usuário queira encontrar palavras que comecem com a letra C, mas que tenha obrigatoriamente apenas 4 caracteres, utiliza-se 'C_ _ _' .
 
 USANDO UNDERLINE ANTES DA LETRA MAIS PORCENTAGEM '_i%'; - Imagine que precisamos recuperar todos os alunos que tenham a letra “i” no segundo caractere do nome. Para isso, utilizaremos os dois caracteres curingas para compor a expressão de busca. 
 =begin
