@@ -394,37 +394,40 @@ Como carácteres coringas temos:
 =begin
 - Obtem todos os clientes onde a primeira letra do nome for k
 SELECT * FROM clients WHERE name LIKE 'K%';
-
-"id"	"name"	"phone"	"address"	"created_at"
-1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
+ id | name |    phone     |     address     | created_at
+----+------+--------------+-----------------+------------
+  1 | Kim  | 41 123456789 | 80 Rua do Medo  | 2025-05-08
+(1 linha)
 =end
 - USANDO A LETRA DEPOIS DA PORCENTAGEM'%l'; - Recuperar registros terminados com determinado caractere. Utilizamos o caractere de percentual logo no início da expressão. Isso significa que apenas a última letra do campo será considerada.
 =begin
 - Obtem todos os clientes onde a última letra do nome for l
 SELECT * FROM clients WHERE name LIKE '%l';
-
-"id"	"name"	"phone"	"address"	"created_at"
-2	"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
+ id |  name   | phone |      address       | created_at
+----+---------+-------+--------------------+------------
+  2 | Gabriel | 12345 | 97 Rua da Esquina  | 2025-05-14
+(1 linha)
 =end
 - USANDO A PORCENTAGEM ANTES E DEPOIS DA LETRA '%al%': Também é possível realizar a busca por um determinado termo em qualquer posição do campo. Para isso, devemos utilizar o % antes e depois das letras pesquisadas.
 =begin
 - Obtem todos os clientes onde o nome possui al em qualquer posição do campo de pesquisa
 SELECT * FROM clients WHERE name LIKE '%al%';
-
-"id"	"name"	"phone"
-9	"Valma Leathlay"	"(988) 1855788"
-10	"Cathrin Balcers"	"(854) 2908154"
-13	"Abigale Ofield"	"(414) 2709709"
-16	"Jessalin Duckett"	"(333) 6498842"
+ id |       name       |     phone     |         address         | created_at
+----+------------------+---------------+-------------------------+------------
+  9 | Valma Leathlay   | (988) 1855788 | 52 Pankratz Point       | 2025-05-16
+ 10 | Cathrin Balcers  | (854) 2908154 | 58 Kipling Alley        | 2025-05-16
+ 13 | Abigale Ofield   | (414) 2709709 | 4526 Ronald Regan Point | 2025-05-16
+ 16 | Jessalin Duckett | (333) 6498842 | 02 Artisan Center       | 2025-05-16
+(4 linhas)
 =end
 - USANDO A PORCENTAGEM ENTRE AS LETRAS 'G%l'; -  Podemos pesquisar por palavras que começam e terminam com determinado caractere. Para isso devemos indicar qual a letra inicial e final ao realizarmos uma seleção.
 =begin
 - Obtem todos os clientes onde o nome possuem inicial G e final l
 SELECT * FROM clients WHERE name LIKE 'G%l';
-
-"id"	"name"	"phone"	"address"	"created_at"
-2	"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
-
+id |  name   | phone |      address       | created_at
+----+---------+-------+--------------------+------------
+  2 | Gabriel | 12345 | 97 Rua da Esquina  | 2025-05-14
+(1 linha)
 =end
 
                                      UNDERLINE '_' : 
@@ -434,22 +437,24 @@ USANDO UNDERLINE ANTES DA LETRA MAIS PORCENTAGEM '_i%'; - Imagine que precisamos
 =begin
 - Obtém todos os clientes onde a segunda letra do nome é 'i'
 SELECT * FROM clients WHERE name LIKE '_i%';
-
-  "id"	"name"	"phone"	"address"	"created_at"
-7	"Libbey Allbut"	"(780) 9682663"	"0 Tennyson Pass"	"2025-05-16"
-8	"Vick Saterthwait"	"(858) 2707342"	"8098 Carpenter Crossing"	"2025-05-16"
-11	"Fidelity Hurleston"	"(169) 2896946"	"99412 Nova Place"	"2025-05-16"
-15	"Vito Breach"	"(516) 2554781"	"86120 Towne Court"	"2025-05-16"
-1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
+ id |        name        |     phone     |         address         | created_at
+----+--------------------+---------------+-------------------------+------------
+  7 | Libbey Allbut      | (780) 9682663 | 0 Tennyson Pass         | 2025-05-16
+  8 | Vick Saterthwait   | (858) 2707342 | 8098 Carpenter Crossing | 2025-05-16
+ 11 | Fidelity Hurleston | (169) 2896946 | 99412 Nova Place        | 2025-05-16
+ 15 | Vito Breach        | (516) 2554781 | 86120 Towne Court       | 2025-05-16
+  1 | Kim                | 41 123456789  | 80 Rua do Medo          | 2025-05-08
+(5 linhas)
 =end
 
 - USANDO UNDERLINE ENTRE PORCENTAGEM E LETRAS '%S___s%'; - O caractere sublinhado “_” pode ser utilizado mais que uma vez. Com isso podemos pesquisar palavras com mais caracteres entre outras letras, sendo é possível determinar características mais específicas em relação à busca.
 =begin
 - - Obtém todos os clientes onde a tenham 3 letras entre as duas selecionadas, nesse caso 'S___s'
 SELECT * FROM clients WHERE name LIKE '%S___s%';
-
-"id"	"name"	"phone"	"address"	"created_at"
-3	"Solis"	"4321"	"66 Rua das Boiadeiras "	"2025-05-14"
+ id | name  | phone |        address         | created_at
+----+-------+-------+------------------------+------------
+  3 | Solis | 4321  | 66 Rua das Boiadeiras  | 2025-05-14
+(1 linha)
 =end
 
 #                                    OPERADOR ILIKE
@@ -460,9 +465,10 @@ Para acontecer realmente teremos que usar SELECT * FROM clients WHERE name ILIKE
 =begin
 - Obtem todos os clientes onde o nome possuem inicial G e final l independente de maiúscas ou minúsculas.
 SELECT * FROM clients WHERE name ILIKE 'g%l';
-
-"name"	"phone"	"address"	"created_at"
-"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
+ id |  name   | phone |      address       | created_at
+----+---------+-------+--------------------+------------
+  2 | Gabriel | 12345 | 97 Rua da Esquina  | 2025-05-14
+(1 linha)
 =end
 LIKE
 -- Obtém os clientes com a letra 'B' em qualquer parte do nome
