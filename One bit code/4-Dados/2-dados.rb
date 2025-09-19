@@ -382,13 +382,15 @@ tock_ingredients;
 (1 row)
 =end 
 
-#                        BUSCA COM O OPERADOR LIKE
+#                                  BUSCA COM O OPERADOR LIKE
 O comando  LIKE é utilizado em conjunto com a cláusula WHERE e serve para realizar uma busca mais refinada em um campo de uma tabela. Para isso ele utiliza símbolos coringas associados ao termo que será pesquisado, o que ajuda a tornar a busca mais refinada e precisa. 
 É importante dizer que o uso da cláusula WHERE é obrigatória ao utilizarmos o LIKE. Caso contrário, teremos um erro de sintaxe. Além disso, o comando SQL LIKE é padrão da linguagem SQL, ou seja, sua sintaxe é a mesma em diferentes modelos de banco de dados relacionais, como no MySQL, Sql Server, Oracle, MS Access e outros.
 
 Como carácteres coringas temos: 
-SINAL DE PORCENTAGEM '%' -  utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado. %  significa qualquer número de caracteres e o caractere.
-- USANDO A LETRA ANTES DA PORCENTAGEM: - Buscar registros que comecem com uma determinada letra. Devemos utilizar o sinal de porcentagem após o caractere que vamos pesquisar para compor o termo da busca'K%';
+                                  SINAL DE PORCENTAGEM '%'  
+ Utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado. %  significa qualquer número de caracteres e o caractere.
+
+- USANDO A LETRA ANTES DA PORCENTAGEM 'K%'; - Buscar registros que comecem com uma determinada letra. Devemos utilizar o sinal de porcentagem após o caractere que vamos pesquisar para compor o termo da busca.
 =begin
 - Obtem todos os clientes onde a primeira letra do nome for k
 SELECT * FROM clients WHERE name LIKE 'K%';
@@ -396,7 +398,7 @@ SELECT * FROM clients WHERE name LIKE 'K%';
 "id"	"name"	"phone"	"address"	"created_at"
 1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
 =end
-- USANDO A LETRA DEPOIS DA PORCENTAGEM:  Recuperar registros terminados com determinado caractere. Utilizamos o caractere de percentual logo no início da expressão. Isso significa que apenas a última letra do campo será considerada '%l';
+- USANDO A LETRA DEPOIS DA PORCENTAGEM'%l'; - Recuperar registros terminados com determinado caractere. Utilizamos o caractere de percentual logo no início da expressão. Isso significa que apenas a última letra do campo será considerada.
 =begin
 - Obtem todos os clientes onde a última letra do nome for l
 SELECT * FROM clients WHERE name LIKE '%l';
@@ -404,7 +406,7 @@ SELECT * FROM clients WHERE name LIKE '%l';
 "id"	"name"	"phone"	"address"	"created_at"
 2	"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
 =end
-- USANDO A PORCENTAGEM ANTES E DEPOIS DA LETRA: Também é possível realizar a busca por um determinado termo em qualquer posição do campo. Para isso, devemos utilizar o % antes e depois das letras pesquisadas '%al%'
+- USANDO A PORCENTAGEM ANTES E DEPOIS DA LETRA '%al%': Também é possível realizar a busca por um determinado termo em qualquer posição do campo. Para isso, devemos utilizar o % antes e depois das letras pesquisadas.
 =begin
 - Obtem todos os clientes onde o nome possui al em qualquer posição do campo de pesquisa
 SELECT * FROM clients WHERE name LIKE '%al%';
@@ -415,8 +417,7 @@ SELECT * FROM clients WHERE name LIKE '%al%';
 13	"Abigale Ofield"	"(414) 2709709"
 16	"Jessalin Duckett"	"(333) 6498842"
 =end
-- USANDO A PORCENTAGEM ENTRE AS LETRAS: Podemos pesquisar por palavras que começam e terminam com determinado caractere,
-Para isso devemos indicar qual a letra inicial e final ao realizarmos uma seleção 'G%l';
+- USANDO A PORCENTAGEM ENTRE AS LETRAS 'G%l'; -  Podemos pesquisar por palavras que começam e terminam com determinado caractere. Para isso devemos indicar qual a letra inicial e final ao realizarmos uma seleção.
 =begin
 - Obtem todos os clientes onde o nome possuem inicial G e final l
 SELECT * FROM clients WHERE name LIKE 'G%l';
@@ -426,8 +427,10 @@ SELECT * FROM clients WHERE name LIKE 'G%l';
 
 =end
 
-UNDERLINE '_' : usado para representar um único caractere antes ou após o termo procurado. '_' representa apenas um único caractere.
-USANDO UNDERLINE ANTES DA LETRA MAIS PORCENTAGEM: Imagine que precisamos recuperar todos os alunos que tenham a letra “i” no segundo caractere do nome. Para isso, utilizaremos os dois caracteres curingas para compor a expressão de busca  '_i%';
+                                     UNDERLINE '_' : 
+Usado para representar um único caractere antes ou após o termo procurado. '_' representa apenas um único caractere.
+
+USANDO UNDERLINE ANTES DA LETRA MAIS PORCENTAGEM '_i%'; - Imagine que precisamos recuperar todos os alunos que tenham a letra “i” no segundo caractere do nome. Para isso, utilizaremos os dois caracteres curingas para compor a expressão de busca. 
 =begin
 - Obtém todos os clientes onde a segunda letra do nome é 'i'
 SELECT * FROM clients WHERE name LIKE '_i%';
@@ -440,4 +443,31 @@ SELECT * FROM clients WHERE name LIKE '_i%';
 1	"Kim"	"41 123456789"	"80 Rua do Medo "	"2025-05-08"
 =end
 
+- USANDO UNDERLINE ENTRE PORCENTAGEM E LETRAS '%S___s%'; - O caractere sublinhado “_” pode ser utilizado mais que uma vez. Com isso podemos pesquisar palavras com mais caracteres entre outras letras, sendo é possível determinar características mais específicas em relação à busca.
+=begin
+- - Obtém todos os clientes onde a tenham 3 letras entre as duas selecionadas, nesse caso 'S___s'
+SELECT * FROM clients WHERE name LIKE '%S___s%';
 
+"id"	"name"	"phone"	"address"	"created_at"
+3	"Solis"	"4321"	"66 Rua das Boiadeiras "	"2025-05-14"
+=end
+
+#                                    OPERADOR ILIKE
+O buscador ILIKE possui as mesmas características do LIKE, porém não é case-sensitive, ou seja, não faz distinção entre maiúsculas e minusculas, então Maria é igual maria para o ILIKE.
+Por exemplo, se criarmos nossa tabela usando letras maísculas e minúsculas, na hora da busca usando LIKE, pode acontecer da busca não ser feita corretamente.
+Se eu buscar SELECT * FROM clients WHERE name LIKE 'g%l'; vai retornar nulo, pois foi criada com iniciais maiúsculas.
+Para acontecer realmente teremos que usar SELECT * FROM clients WHERE name ILIKE 'g%l';
+=begin
+- Obtem todos os clientes onde o nome possuem inicial G e final l independente de maiúscas ou minúsculas.
+SELECT * FROM clients WHERE name ILIKE 'g%l';
+
+"name"	"phone"	"address"	"created_at"
+"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
+=end
+LIKE
+-- Obtém os clientes com a letra 'B' em qualquer parte do nome
+SELECT * FROM Clients WHERE name LIKE '%B%';
+
+ILIKE
+-- Obtém os clientes com as letras 'B' ou 'b' em qualquer parte do nome
+SELECT * FROM Clients WHERE name ILIKE '%B%';
