@@ -3,8 +3,6 @@
 Crie utilizando a linguagem SQL um banco de dados com duas tabelas: **filmes** e **série de TV**. Inclua também o código de inserção dos dados usando como referência as tabelas abaixo:
 
 - **Filmes**
-    
-    
     | ID | Título | Diretor | Ano | Gênero | Duração | Avaliação | Bilheteria | Custo |
     | --- | --- | --- | --- | --- | --- | --- | --- | --- |
     | 1 | Mad Max: Fury Road | George Miller | 2015 | Ação | 120 | 8.1 | 375.200.000,00 | 150.000.000,00 |
@@ -19,7 +17,7 @@ Crie utilizando a linguagem SQL um banco de dados com duas tabelas: **filmes** e
     | 10 | About Time | Richard Curtis | 2013 | Romance | 123 | 7.8 | 87.100.000,00 | 12.000.000,00 |
     | 11 | Transformers | Michael Bay | 2007 | Ação | 144 | 7.0 | 709.709.780,00 | 150.000.000,00 |
 
-- **Séries de TV**
+- **Séries**
     | ID | Título | Criador | Ano | Gênero | Temporadas | Episódios | Avaliação | Canal | Situação |
     | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
     | 1 | Breaking Bad | Vince Gilligan | 2008 | Drama | 5 | 62 | 9.5 | AMC | Finalizada |
