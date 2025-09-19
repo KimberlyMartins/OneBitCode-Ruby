@@ -390,6 +390,7 @@ Como carácteres coringas temos:
 SINAL DE PORCENTAGEM '%' -  utilizado para indicar zero, um ou múltiplos caracteres antes ou depois do termo pesquisado. %  significa qualquer número de caracteres e o caractere.
 - USANDO A LETRA ANTES DA PORCENTAGEM: - Buscar registros que comecem com uma determinada letra. Devemos utilizar o sinal de porcentagem após o caractere que vamos pesquisar para compor o termo da busca'K%';
 =begin
+- Obtem todos os clientes onde a primeira letra do nome for k
 SELECT * FROM clients WHERE name LIKE 'K%';
 
 "id"	"name"	"phone"	"address"	"created_at"
@@ -397,6 +398,7 @@ SELECT * FROM clients WHERE name LIKE 'K%';
 =end
 - USANDO A LETRA DEPOIS DA PORCENTAGEM:  Recuperar registros terminados com determinado caractere. Utilizamos o caractere de percentual logo no início da expressão. Isso significa que apenas a última letra do campo será considerada '%l';
 =begin
+- Obtem todos os clientes onde a última letra do nome for l
 SELECT * FROM clients WHERE name LIKE '%l';
 
 "id"	"name"	"phone"	"address"	"created_at"
@@ -404,6 +406,7 @@ SELECT * FROM clients WHERE name LIKE '%l';
 =end
 - USANDO A PORCENTAGEM ANTES E DEPOIS DA LETRA: Também é possível realizar a busca por um determinado termo em qualquer posição do campo. Para isso, devemos utilizar o % antes e depois das letras pesquisadas '%al%'
 =begin
+- Obtem todos os clientes onde o nome possui al em qualquer posição do campo de pesquisa
 SELECT * FROM clients WHERE name LIKE '%al%';
 
 "id"	"name"	"phone"
@@ -412,15 +415,22 @@ SELECT * FROM clients WHERE name LIKE '%al%';
 13	"Abigale Ofield"	"(414) 2709709"
 16	"Jessalin Duckett"	"(333) 6498842"
 =end
-
+- USANDO A PORCENTAGEM ENTRE AS LETRAS: Podemos pesquisar por palavras que começam e terminam com determinado caractere,
+Para isso devemos indicar qual a letra inicial e final ao realizarmos uma seleção 'G%l';
 =begin
+- Obtem todos os clientes onde o nome possuem inicial G e final l
+SELECT * FROM clients WHERE name LIKE 'G%l';
+
+"id"	"name"	"phone"	"address"	"created_at"
+2	"Gabriel"	"12345"	"97 Rua da Esquina "	"2025-05-14"
+
 =end
 
 UNDERLINE '_' : usado para representar um único caractere antes ou após o termo procurado. '_' representa apenas um único caractere.
-USANDO 
+USANDO UNDERLINE ANTES DA LETRA MAIS PORCENTAGEM: Imagine que precisamos recuperar todos os alunos que tenham a letra “i” no segundo caractere do nome. Para isso, utilizaremos os dois caracteres curingas para compor a expressão de busca  '_i%';
 =begin
 - Obtém todos os clientes onde a segunda letra do nome é 'i'
-
+SELECT * FROM clients WHERE name LIKE '_i%';
 
   "id"	"name"	"phone"	"address"	"created_at"
 7	"Libbey Allbut"	"(780) 9682663"	"0 Tennyson Pass"	"2025-05-16"
@@ -431,4 +441,3 @@ USANDO
 =end
 
 
-palavra-chave ESCAPE: utilizada para que seja possível incluir os caracteres curingas (% e _ ) ao realizar uma busca
