@@ -42,3 +42,60 @@ Além disso, crie também as seguintes consultas:
 - A média de avaliação entre os filmes de até 2 horas e a média de avaliação dos filmes de mais de 2 horas (em colunas separadas).
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
 =end
+
+=begin
+Tentativas de resolver passo a passo
+- No pgAdmin clica em database - create database 
+coloca o nome desejado, ok e refresh para atualizar.
+
+Tentativa 1
+CREATE TABLE movies(
+id SERIAL PRIMARY KEY,
+title VARCHAR(300) NOT NULL,
+director VARCHAR(250) NOT NULL,
+release_year VARCHAR(5) NOT NULL,
+genre VARCHAR(70) NOT NULL,              # SE PREENCHER TUDO COM NOT NULL, PRA CADASTRAR QUALQUER ITEM BVAI SER OBRIGADO
+duration VARCHAR(15) NOT NULL,           # A PREENCHER TODAS AS COLUNAS, POR ISSO MELHOR EVITAR
+rating VARCHAR(FLOAT) NOT NULL,
+box_office VARCHAR(DECIMAL) NOT NULL,
+production_cost VARCHAR(DECIMAL) NOT NULL
+);
+
+Tentativa 2
+CREATE TABLE IF NOT EXISTS movies (
+id SERIAL PRIMARY KEY,
+title VARCHAR(300) NOT NULL,        # ASSIM SÓ O TITULO E DIRETOR SÃO OBRIGATÓRIOS NO COMEÇO
+director VARCHAR(250) NOT NULL,     #  E O RESTO PODE SER PREENCHIDO DEPOIS
+release_year INT,
+genre VARCHAR(100),
+duration INT,
+rating DECIMAL,
+box_office DECIMAL,
+production_cost DECIMAL
+)
+
+Em decimal, precisa dizer quantos números antes e depois da vírgula ex: DECIMAL(15,2)
+=end 
+RESOLUÇÃO 
+CREATE TABLE IF NOT EXISTS movies (
+id SERIAL PRIMARY KEY,
+title VARCHAR(300) NOT NULL,
+director VARCHAR(250) NOT NULL,
+release_year INT,
+genre VARCHAR(100),
+duration INT,
+rating DECIMAL(3,2),     # Em decimal, precisa dizer quantos números antes e depois da vírgula
+box_office DECIMAL(15,2), # Em decimal, precisa dizer quantos números antes e depois da vírgula
+production_cost DECIMAL(15,2) # Em decimal, precisa dizer quantos números antes e depois da vírgula
+);
+=begin
+Executar query
+CREATE TABLE
+Query returned successfully in 289 msec.
+
+ SELECT * FROM movies;
+ id | title | director | release_year | genre | duration | rating | box_office | production_cost
+----+-------+----------+--------------+-------+----------+--------+------------+-----------------
+(0 linha)
+
+=end
