@@ -241,8 +241,8 @@ streaming=# SELECT * FROM movies ORDER BY title ASC;
 =end
 
 - Todos os filmes com bilheteria acima de US$ 500 milhões.
-=begin
-streaming=# SELECT * FROM movies WHERE box_office >  500000000.00;
+#RESOLUÇÃO
+ SELECT * FROM movies WHERE box_office >  500000000.00;
 
  id |                     title                     |            director            | release_year |   genre   | duration | rating |  box_office   | production_cost
 ----+-----------------------------------------------+--------------------------------+--------------+-----------+----------+--------+---------------+-----------------
@@ -252,15 +252,128 @@ streaming=# SELECT * FROM movies WHERE box_office >  500000000.00;
   9 | Jurassic Park                                 | Steven Spielberg               |         1993 | Adventure |      127 |   8.10 | 1043580597.00 |     63000000.00
  11 | Transformers                                  | Michael Bay                    |         2007 | Action    |      144 |   7.00 |  709709780.00 |    150000000.00
 (5 linhas)
-=end
+
 - Os IDs, nomes, anos de lançamento, gêneros, número de temporadas e episódios, avaliações e situações das séries, ordenadas da mais recente para a mais antiga.
 =begin
+TENTATIVA 1
+SELECT * FROM tv_series ORDER BY release_year;
+ id |      title       |                   creator                   | release_year |      genre       | seasons | episodes | rating |     network     | status
+----+------------------+---------------------------------------------+--------------+------------------+---------+----------+--------+-----------------+---------
+ 10 | Star Trek        | Gene Roddenberry                            |         1966 | Sci-Fi           |       3 |       79 |   8.40 | NBC             | Ended
+  4 | Friends          | David Crane, Marta Kauffman                 |         1994 | Comedy           |      10 |      236 |   8.90 | NBC             | Ended
+  7 | Lost             | J.J. Abrams, Damon Lindelof                 |         2004 | Mystery          |       6 |      121 |   8.40 | ABC             | Ended
+  5 | The Office       | Greg Daniels                                |         2005 | Comedy           |       9 |      201 |   8.80 | NBC             | Ended
+  9 | The Mentalist    | Bruno Heller                                |         2008 | Crime            |       7 |      151 |   8.10 | CBS             | Ended
+  1 | Breaking Bad     | Vince Gilligan                              |         2008 | Drama            |       5 |       62 |   9.50 | AMC             | Ended
+  2 | Game of Thrones  | David Benioff, D.B. Weiss                   |         2011 | Fantasy          |       8 |       73 |   9.30 | HBO             | Ended
+  8 | Once Upon a Time | Edward Kitsis, Adam Horowitz                |         2011 | Fantasy          |       7 |      155 |   7.70 | ABC             | Ended
+  6 | Vikings          | Michael Hirst                               |         2013 | Historical Drama |       6 |       89 |   8.50 | History Channel | Ended
+  3 | Stranger Things  | The Duffer Brothers                         |         2016 | Sci-Fi           |       4 |       34 |   8.70 | Netflix         | Ongoing
+ 11 | Cobra Kai        | Josh Heald, Jon Hurwitz, Hayden Schlossberg |         2018 | Action           |       6 |       50 |   8.60 | Netflix         | Ongoing
+(11 linhas)
 
+Tentativa 2 
+
+ SELECT FROM tv_series  id, genre, seasons, episodes rating, status ORDER BY release_year DESC;
+ERRO:  erro de sintaxe em ou próximo a "id"
+LINHA 1: id |      genre       | seasons | rating | status
+         ^
 =end
 
+# RESOLUÇÃO 
+SELECT id, genre, seasons, episodes rating, status FROM tv_series ORDER BY release_year DESC;
+ id |      genre       | seasons | rating | status
+----+------------------+---------+--------+---------
+ 11 | Action           |       6 |     50 | Ongoing
+  3 | Sci-Fi           |       4 |     34 | Ongoing
+  6 | Historical Drama |       6 |     89 | Ended
+  2 | Fantasy          |       8 |     73 | Ended
+  8 | Fantasy          |       7 |    155 | Ended
+  1 | Drama            |       5 |     62 | Ended
+  9 | Crime            |       7 |    151 | Ended
+  5 | Comedy           |       9 |    201 | Ended
+  7 | Mystery          |       6 |    121 | Ended
+  4 | Comedy           |      10 |    236 | Ended
+ 10 | Sci-Fi           |       3 |     79 | Ended
+(11 linhas)
+
 - Todas as séries já finalizadas ordenadas da melhor avaliação para a pior.
+=begin
+Tentativa 1 
+streaming=# SELECT * FROM tv_series WHERE status 'Ended';
+ERRO:  tipo "status" não existe
+LINHA 1: SELECT * FROM tv_series WHERE status 'Ended'; 
+^
+
+Tentativa 2 
+SELECT * FROM tv_series WHERE status = 'Ended';
+ id |      title       |           creator            | release_year |      genre       | seasons | episodes | rating |     network     | status
+----+------------------+------------------------------+--------------+------------------+---------+----------+--------+-----------------+--------
+  1 | Breaking Bad     | Vince Gilligan               |         2008 | Drama            |       5 |       62 |   9.50 | AMC             | Ended
+  2 | Game of Thrones  | David Benioff, D.B. Weiss    |         2011 | Fantasy          |       8 |       73 |   9.30 | HBO             | Ended
+  4 | Friends          | David Crane, Marta Kauffman  |         1994 | Comedy           |      10 |      236 |   8.90 | NBC             | Ended
+  5 | The Office       | Greg Daniels                 |         2005 | Comedy           |       9 |      201 |   8.80 | NBC             | Ended
+  6 | Vikings          | Michael Hirst                |         2013 | Historical Drama |       6 |       89 |   8.50 | History Channel | Ended
+  7 | Lost             | J.J. Abrams, Damon Lindelof  |         2004 | Mystery          |       6 |      121 |   8.40 | ABC             | Ended
+  8 | Once Upon a Time | Edward Kitsis, Adam Horowitz |         2011 | Fantasy          |       7 |      155 |   7.70 | ABC             | Ended
+  9 | The Mentalist    | Bruno Heller                 |         2008 | Crime            |       7 |      151 |   8.10 | CBS             | Ended
+ 10 | Star Trek        | Gene Roddenberry             |         1966 | Sci-Fi           |       3 |       79 |   8.40 | NBC             | Ended
+(9 linhas)
+=end
+# RESOLUÇÃO
+SELECT * FROM tv_series WHERE status = 'Ended'ORDER BY rating DESC;
+ id |      title       |           creator            | release_year |      genre       | seasons | episodes | rating |     network     | status
+----+------------------+------------------------------+--------------+------------------+---------+----------+--------+-----------------+--------
+  1 | Breaking Bad     | Vince Gilligan               |         2008 | Drama            |       5 |       62 |   9.50 | AMC             | Ended
+  2 | Game of Thrones  | David Benioff, D.B. Weiss    |         2011 | Fantasy          |       8 |       73 |   9.30 | HBO             | Ended
+  4 | Friends          | David Crane, Marta Kauffman  |         1994 | Comedy           |      10 |      236 |   8.90 | NBC             | Ended
+  5 | The Office       | Greg Daniels                 |         2005 | Comedy           |       9 |      201 |   8.80 | NBC             | Ended
+  6 | Vikings          | Michael Hirst                |         2013 | Historical Drama |       6 |       89 |   8.50 | History Channel | Ended
+  7 | Lost             | J.J. Abrams, Damon Lindelof  |         2004 | Mystery          |       6 |      121 |   8.40 | ABC             | Ended
+ 10 | Star Trek        | Gene Roddenberry             |         1966 | Sci-Fi           |       3 |       79 |   8.40 | NBC             | Ended
+  9 | The Mentalist    | Bruno Heller                 |         2008 | Crime            |       7 |      151 |   8.10 | CBS             | Ended
+  8 | Once Upon a Time | Edward Kitsis, Adam Horowitz |         2011 | Fantasy          |       7 |      155 |   7.70 | ABC             | Ended
+(9 linhas)
+ 
 - Todos os filmes lançados antes dos anos 2000.
+=begin
+TENTATIVA 1 
+streaming=# SELECT * FROM movies WHERE year_release > 2000;
+ERRO:  coluna "year_release" não existe
+=end
+#RESOLUÇÃO 
+ SELECT * FROM movies WHERE release_year < 2000;
+ id |       title        |       director       | release_year |   genre   | duration | rating |  box_office   | production_cost
+----+--------------------+----------------------+--------------+-----------+----------+--------+---------------+-----------------
+  2 | Star Wars          | George Lucas         |         1977 | Sci-Fi    |      121 |   8.60 |  775398007.00 |     11000000.00
+  5 | Back to the Future | Robert Zemeckis      |         1985 | Sci-Fi    |      116 |   8.50 |  381109762.00 |     19000000.00
+  6 | The Godfather      | Francis Ford Coppola |         1972 | Crime     |      175 |   9.20 |  246120974.00 |      6000000.00
+  9 | Jurassic Park      | Steven Spielberg     |         1993 | Adventure |      127 |   8.10 | 1043580597.00 |     63000000.00
+(4 linhas)
 - Os títulos, anos de lançamento, gênero e avaliação dos filmes ordenados por sua avaliação pela crítica.
+=begin
+TENTATIVA 1 
+SELECT title, release_year, genre, rating ORDER BY rating DESC;
+ERRO:  coluna "title" não existe
+LINHA 1: SELECT title, release_year, genre, rating ORDER BY rating DE...
+=end
+#RESOLUÇÃO
+SELECT title, release_year, genre, rating FROM movies ORDER BY rating DESC;
+                     title                     | release_year |   genre   | rating
+-----------------------------------------------+--------------+-----------+--------
+ The Godfather                                 |         1972 | Crime     |   9.20
+ The Lord of the Rings: The Return of the King |         2003 | Fantasy   |   9.00
+ Star Wars                                     |         1977 | Sci-Fi    |   8.60
+ Back to the Future                            |         1985 | Sci-Fi    |   8.50
+ Mad Max: Fury Road                            |         2015 | Action    |   8.10
+ Jurassic Park                                 |         1993 | Adventure |   8.10
+ About Time                                    |         2013 | Romance   |   7.80
+ Pride and Prejudice                           |         2005 | Romance   |   7.80
+ Super Mario Bros                              |         2023 | Animation |   7.30
+ Treasure Planet                               |         2002 | Animation |   7.20
+ Transformers                                  |         2007 | Action    |   7.00
+(11 linhas)
+
 - A média de avaliação entre os filmes de até 2 horas e a média de avaliação dos filmes de mais de 2 horas (em colunas separadas).
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
 
