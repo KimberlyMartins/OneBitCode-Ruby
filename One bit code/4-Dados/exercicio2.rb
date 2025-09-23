@@ -281,7 +281,7 @@ LINHA 1: id |      genre       | seasons | rating | status
 =end
 
 # RESOLUÇÃO 
-SELECT id, title, genre, seasons, episodes rating, status FROM tv_series ORDER BY release_year DESC;
+SELECT id, title, genre, seasons, episodes, rating, status FROM tv_series ORDER BY release_year DESC;
  id |      title       |      genre       | seasons | rating | status
 ----+------------------+------------------+---------+--------+---------
  11 | Cobra Kai        | Action           |       6 |     50 | Ongoing
