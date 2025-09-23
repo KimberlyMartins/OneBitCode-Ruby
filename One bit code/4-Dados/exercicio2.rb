@@ -263,3 +263,5 @@ streaming=# SELECT * FROM movies WHERE box_office >  500000000.00;
 - Os títulos, anos de lançamento, gênero e avaliação dos filmes ordenados por sua avaliação pela crítica.
 - A média de avaliação entre os filmes de até 2 horas e a média de avaliação dos filmes de mais de 2 horas (em colunas separadas).
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
+
+  #  id  title   release_year genre seasons episodes rating # status
