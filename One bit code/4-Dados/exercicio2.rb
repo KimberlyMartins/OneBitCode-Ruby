@@ -218,3 +218,48 @@ id |      title       |                   creator                   | release_ye
 (11 linhas)
 =end
 
+                                        PARTE 4
+Além disso, crie também as seguintes consultas:
+-Toodos os filmes em ordem alfabética.
+=begin
+streaming=# SELECT * FROM movies ORDER BY title ASC;
+
+ id |                     title                     |            director            | release_year |   genre   | duration | rating |  box_office   | production_cost
+----+-----------------------------------------------+--------------------------------+--------------+-----------+----------+--------+---------------+-----------------
+ 10 | About Time                                    | Richard Curtis                 |         2013 | Romance   |      123 |   7.80 |   87100000.00 |     12000000.00
+  5 | Back to the Future                            | Robert Zemeckis                |         1985 | Sci-Fi    |      116 |   8.50 |  381109762.00 |     19000000.00
+  9 | Jurassic Park                                 | Steven Spielberg               |         1993 | Adventure |      127 |   8.10 | 1043580597.00 |     63000000.00
+  1 | Mad Max: Fury Road                            | George Miller                  |         2015 | Action    |      120 |   8.10 |  375200000.00 |    150000000.00
+  4 | Pride and Prejudice                           | Joe Wright                     |         2005 | Romance   |      129 |   7.80 |  121147947.00 |     28000000.00
+  2 | Star Wars                                     | George Lucas                   |         1977 | Sci-Fi    |      121 |   8.60 |  775398007.00 |     11000000.00
+  3 | Super Mario Bros                              | Aaron Horvath, Michael Jelenic |         2023 | Animation |       92 |   7.30 | 1300000000.00 |    100000000.00
+  6 | The Godfather                                 | Francis Ford Coppola           |         1972 | Crime     |      175 |   9.20 |  246120974.00 |      6000000.00
+  7 | The Lord of the Rings: The Return of the King | Peter Jackson                  |         2003 | Fantasy   |      201 |   9.00 | 1146030912.00 |     94000000.00
+ 11 | Transformers                                  | Michael Bay                    |         2007 | Action    |      144 |   7.00 |  709709780.00 |    150000000.00
+  8 | Treasure Planet                               | Ron Clements, John Musker      |         2002 | Animation |       95 |   7.20 |  109578115.00 |    140000000.00
+(11 linhas)
+=end
+
+- Todos os filmes com bilheteria acima de US$ 500 milhões.
+=begin
+streaming=# SELECT * FROM movies WHERE box_office >  500000000.00;
+
+ id |                     title                     |            director            | release_year |   genre   | duration | rating |  box_office   | production_cost
+----+-----------------------------------------------+--------------------------------+--------------+-----------+----------+--------+---------------+-----------------
+  2 | Star Wars                                     | George Lucas                   |         1977 | Sci-Fi    |      121 |   8.60 |  775398007.00 |     11000000.00
+  3 | Super Mario Bros                              | Aaron Horvath, Michael Jelenic |         2023 | Animation |       92 |   7.30 | 1300000000.00 |    100000000.00
+  7 | The Lord of the Rings: The Return of the King | Peter Jackson                  |         2003 | Fantasy   |      201 |   9.00 | 1146030912.00 |     94000000.00
+  9 | Jurassic Park                                 | Steven Spielberg               |         1993 | Adventure |      127 |   8.10 | 1043580597.00 |     63000000.00
+ 11 | Transformers                                  | Michael Bay                    |         2007 | Action    |      144 |   7.00 |  709709780.00 |    150000000.00
+(5 linhas)
+=end
+- Os IDs, nomes, anos de lançamento, gêneros, número de temporadas e episódios, avaliações e situações das séries, ordenadas da mais recente para a mais antiga.
+=begin
+
+=end
+
+- Todas as séries já finalizadas ordenadas da melhor avaliação para a pior.
+- Todos os filmes lançados antes dos anos 2000.
+- Os títulos, anos de lançamento, gênero e avaliação dos filmes ordenados por sua avaliação pela crítica.
+- A média de avaliação entre os filmes de até 2 horas e a média de avaliação dos filmes de mais de 2 horas (em colunas separadas).
+- Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
