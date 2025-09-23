@@ -43,6 +43,7 @@ Além disso, crie também as seguintes consultas:
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
 =end
                                    PARTE 1
+ Crie utilizando a linguagem SQL um banco de dados com duas tabelas: **filmes** e **série de TV**
 =begin
 Tentativas de resolver passo a passo
 - No pgAdmin clica em database - create database 
@@ -100,6 +101,7 @@ Query returned successfully in 289 msec.
 (0 linha) 
 =end
                                    PARTE 2
+ Crie utilizando a linguagem SQL um banco de dados com duas tabelas: **filmes** e **série de TV**
 =begin
 Tentativa 1
 CREATE TABLE IF NOT EXISTS series (
@@ -140,7 +142,9 @@ Query returned successfully in 270 msec.
 ----+-------+---------+--------------+-------+---------+----------+--------+---------+--------
 (0 linha)
 =end
-PARTE 3 
+                                 PARTE 3 
+Inclua também o código de inserção dos dados.
+
 RESOLUÇÃO
 
 INSERT INTO movies(title, director, release_year, genre, duration, rating, box_office, production_cost)
@@ -156,6 +160,22 @@ VALUES
 ('Jurassic Park', 'Steven Spielberg', 1993, 'Adventure', 127, 8.1, 1043580597.00, 63000000.00),
 ('About Time', 'Richard Curtis', 2013, 'Romance', 123, 7.8, 87100000.00, 12000000.00),
 ('Transformers', 'Michael Bay', 2007, 'Action', 144, 7.0, 709709780.00, 150000000.00);
+
+#Inclua também o código de inserção dos dados usando
+
+INSERT INTO series( title, creator, release_year, genre, seasons, episodes, rating, network, status)
+VALUES
+('Breaking Bad', 'Vince Gilligan', 2008, 'Drama', 5, 62, 9.5, 'AMC', 'Ended'),
+('Game of Thrones', 'David Benioff, D.B. Weiss', 2011, 'Fantasy', 8, 73, 9.3, 'HBO', 'Ended'),
+('Stranger Things', 'The Duffer Brothers', 2016, 'Sci-Fi', 4, 34, 8.7, 'Netflix', 'Ongoing'),
+('Friends', 'David Crane, Marta Kauffman', 1994, 'Comedy', 10, 236, 8.9, 'NBC', 'Ended'),
+('The Office', 'Greg Daniels', 2005, 'Comedy', 9, 201, 8.8, 'NBC', 'Ended'),
+('Vikings', 'Michael Hirst', 2013, 'Historical Drama', 6, 89, 8.5, 'History Channel', 'Ended'),
+('Lost', 'J.J. Abrams, Damon Lindelof', 2004, 'Mystery', 6, 121, 8.4, 'ABC', 'Ended'),
+('Once Upon a Time', 'Edward Kitsis, Adam Horowitz', 2011, 'Fantasy', 7, 155, 7.7, 'ABC', 'Ended'),
+('The Mentalist', 'Bruno Heller', 2008, 'Crime', 7, 151, 8.1, 'CBS', 'Ended'),
+('Star Trek', 'Gene Roddenberry', 1966, 'Sci-Fi', 3, 79, 8.4, 'NBC', 'Ended'),
+('Cobra Kai', 'Josh Heald, Jon Hurwitz, Hayden Schlossberg', 2018, 'Action', 6, 50, 8.6, 'Netflix', 'Ongoing');
 
 =begin
 INSERT 0 11
@@ -177,4 +197,24 @@ SELECT * FROM movies;
  10 | About Time                                    | Richard Curtis                 |         2013 | Romance   |      123 |   7.80 |   87100000.00 |     12000000.00
  11 | Transformers                                  | Michael Bay                    |         2007 | Action    |      144 |   7.00 |  709709780.00 |    150000000.00
 (11 linhas)
+
+
+INSERT 0 11
+Query returned successfully in 128 msec.
+
+id |      title       |                   creator                   | release_year |      genre       | seasons | episodes | rating |     network     | status
+----+------------------+---------------------------------------------+--------------+------------------+---------+----------+--------+-----------------+---------
+  1 | Breaking Bad     | Vince Gilligan                              |         2008 | Drama            |       5 |       62 |   9.50 | AMC             | Ended
+  2 | Game of Thrones  | David Benioff, D.B. Weiss                   |         2011 | Fantasy          |       8 |       73 |   9.30 | HBO             | Ended
+  3 | Stranger Things  | The Duffer Brothers                         |         2016 | Sci-Fi           |       4 |       34 |   8.70 | Netflix         | Ongoing
+  4 | Friends          | David Crane, Marta Kauffman                 |         1994 | Comedy           |      10 |      236 |   8.90 | NBC             | Ended
+  5 | The Office       | Greg Daniels                                |         2005 | Comedy           |       9 |      201 |   8.80 | NBC             | Ended
+  6 | Vikings          | Michael Hirst                               |         2013 | Historical Drama |       6 |       89 |   8.50 | History Channel | Ended
+  7 | Lost             | J.J. Abrams, Damon Lindelof                 |         2004 | Mystery          |       6 |      121 |   8.40 | ABC             | Ended
+  8 | Once Upon a Time | Edward Kitsis, Adam Horowitz                |         2011 | Fantasy          |       7 |      155 |   7.70 | ABC             | Ended
+  9 | The Mentalist    | Bruno Heller                                |         2008 | Crime            |       7 |      151 |   8.10 | CBS             | Ended
+ 10 | Star Trek        | Gene Roddenberry                            |         1966 | Sci-Fi           |       3 |       79 |   8.40 | NBC             | Ended
+ 11 | Cobra Kai        | Josh Heald, Jon Hurwitz, Hayden Schlossberg |         2018 | Action           |       6 |       50 |   8.60 | Netflix         | Ongoing
+(11 linhas)
 =end
+
