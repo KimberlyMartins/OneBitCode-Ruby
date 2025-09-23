@@ -221,7 +221,7 @@ id |      title       |                   creator                   | release_ye
                                         PARTE 4
 Além disso, crie também as seguintes consultas:
 -Toodos os filmes em ordem alfabética.
-=begin
+
 streaming=# SELECT * FROM movies ORDER BY title ASC;
 
  id |                     title                     |            director            | release_year |   genre   | duration | rating |  box_office   | production_cost
@@ -238,7 +238,7 @@ streaming=# SELECT * FROM movies ORDER BY title ASC;
  11 | Transformers                                  | Michael Bay                    |         2007 | Action    |      144 |   7.00 |  709709780.00 |    150000000.00
   8 | Treasure Planet                               | Ron Clements, John Musker      |         2002 | Animation |       95 |   7.20 |  109578115.00 |    140000000.00
 (11 linhas)
-=end
+
 
 - Todos os filmes com bilheteria acima de US$ 500 milhões.
 #RESOLUÇÃO
@@ -281,20 +281,20 @@ LINHA 1: id |      genre       | seasons | rating | status
 =end
 
 # RESOLUÇÃO 
-SELECT id, genre, seasons, episodes rating, status FROM tv_series ORDER BY release_year DESC;
- id |      genre       | seasons | rating | status
-----+------------------+---------+--------+---------
- 11 | Action           |       6 |     50 | Ongoing
-  3 | Sci-Fi           |       4 |     34 | Ongoing
-  6 | Historical Drama |       6 |     89 | Ended
-  2 | Fantasy          |       8 |     73 | Ended
-  8 | Fantasy          |       7 |    155 | Ended
-  1 | Drama            |       5 |     62 | Ended
-  9 | Crime            |       7 |    151 | Ended
-  5 | Comedy           |       9 |    201 | Ended
-  7 | Mystery          |       6 |    121 | Ended
-  4 | Comedy           |      10 |    236 | Ended
- 10 | Sci-Fi           |       3 |     79 | Ended
+SELECT id, title, genre, seasons, episodes rating, status FROM tv_series ORDER BY release_year DESC;
+ id |      title       |      genre       | seasons | rating | status
+----+------------------+------------------+---------+--------+---------
+ 11 | Cobra Kai        | Action           |       6 |     50 | Ongoing
+  3 | Stranger Things  | Sci-Fi           |       4 |     34 | Ongoing
+  6 | Vikings          | Historical Drama |       6 |     89 | Ended
+  2 | Game of Thrones  | Fantasy          |       8 |     73 | Ended
+  8 | Once Upon a Time | Fantasy          |       7 |    155 | Ended
+  1 | Breaking Bad     | Drama            |       5 |     62 | Ended
+  9 | The Mentalist    | Crime            |       7 |    151 | Ended
+  5 | The Office       | Comedy           |       9 |    201 | Ended
+  7 | Lost             | Mystery          |       6 |    121 | Ended
+  4 | Friends          | Comedy           |      10 |    236 | Ended
+ 10 | Star Trek        | Sci-Fi           |       3 |     79 | Ended
 (11 linhas)
 
 - Todas as séries já finalizadas ordenadas da melhor avaliação para a pior.
