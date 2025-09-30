@@ -375,6 +375,20 @@ SELECT title, release_year, genre, rating FROM movies ORDER BY rating DESC;
 (11 linhas)
 
 - A média de avaliação entre os filmes de até 2 horas e a média de avaliação dos filmes de mais de 2 horas (em colunas separadas).
+=begin
+
+SELECT AVG(rating) AS media FROM movies WHERE duration >= 120;
+       media
+--------------------
+ 8.2000000000000000
+(1 linha)
+
+ SELECT AVG(rating) AS medias FROM movies WHERE duration <= 120;
+       media
+--------------------
+ 7.7750000000000000
+(1 linha)
+=end
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
 
   #  id  title   release_year genre seasons episodes rating # status
