@@ -406,5 +406,11 @@ SELECT AVG(rating) AS media FROM movies WHERE duration >= 120;
  The Lord of the Rings: The Return of the King |         2003 |   9.00
  Super Mario Bros                              |         2023 |   7.30
 (11 linhas)
+
+SELECT SUM (box_office - production_cost) AS total_cost FROM movies;
+  total_cost
+---------------
+ 5521976094.00
+(1 linha)
 =end
-  #  id  title   release_year genre seasons episodes rating # status
+  #  id  title   release_year genre seasons episodes rating # status 
