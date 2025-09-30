@@ -390,5 +390,21 @@ SELECT AVG(rating) AS media FROM movies WHERE duration >= 120;
 (1 linha)
 =end
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
-
+=begin
+ SELECT title, release_year, rating FROM movies ORDER BY box_office ASC;
+                     title                     | release_year | rating
+-----------------------------------------------+--------------+--------
+ About Time                                    |         2013 |   7.80
+ Treasure Planet                               |         2002 |   7.20
+ Pride and Prejudice                           |         2005 |   7.80
+ The Godfather                                 |         1972 |   9.20
+ Mad Max: Fury Road                            |         2015 |   8.10
+ Back to the Future                            |         1985 |   8.50
+ Transformers                                  |         2007 |   7.00
+ Star Wars                                     |         1977 |   8.60
+ Jurassic Park                                 |         1993 |   8.10
+ The Lord of the Rings: The Return of the King |         2003 |   9.00
+ Super Mario Bros                              |         2023 |   7.30
+(11 linhas)
+=end
   #  id  title   release_year genre seasons episodes rating # status
