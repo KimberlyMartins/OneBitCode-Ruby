@@ -389,6 +389,17 @@ SELECT AVG(rating) AS media FROM movies WHERE duration >= 120;
  7.7750000000000000
 (1 linha)
 =end
+# RESOLUÇÃO 
+SELECT 
+AVG(CASE WHEN duration <= 120 THEN rating ELSE NULL END ) AS avg_rating_up_to_2_hours,
+AVG(CASE WHEN duration > 120 THEN rating ELSE NULL END) AS avg_rating_over_2_hours 
+FROM movies;
+
+ avg_rating_up_to_2_hours | avg_rating_over_2_hours
+--------------------------+-------------------------
+       7.7750000000000000 |      8.2142857142857143
+(1 linha)
+
 - Os nomes, anos de lançamento e avaliações dos filmes ordenados pelo lucro obtido, além do próprio lucro obtido (considere lucro como bilheteria - custo).
 =begin
  SELECT title, release_year, rating FROM movies ORDER BY box_office ASC;
