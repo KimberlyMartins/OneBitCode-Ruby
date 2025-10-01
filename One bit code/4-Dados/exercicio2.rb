@@ -424,4 +424,20 @@ SELECT SUM (box_office - production_cost) AS total_cost FROM movies;
  5521976094.00
 (1 linha)
 =end
-  #  id  title   release_year genre seasons episodes rating # status 
+# RESOLUÇÃO
+SELECT id, title, release_year, rating, (box_office - production_cost) AS profit FROM movies ORDER BY profit DESC;
+ id |                     title                     | release_year | rating |    profit
+----+-----------------------------------------------+--------------+--------+---------------
+  3 | Super Mario Bros                              |         2023 |   7.30 | 1200000000.00
+  7 | The Lord of the Rings: The Return of the King |         2003 |   9.00 | 1052030912.00
+  9 | Jurassic Park                                 |         1993 |   8.10 |  980580597.00
+  2 | Star Wars                                     |         1977 |   8.60 |  764398007.00
+ 11 | Transformers                                  |         2007 |   7.00 |  559709780.00
+  5 | Back to the Future                            |         1985 |   8.50 |  362109762.00
+  6 | The Godfather                                 |         1972 |   9.20 |  240120974.00
+  1 | Mad Max: Fury Road                            |         2015 |   8.10 |  225200000.00
+  4 | Pride and Prejudice                           |         2005 |   7.80 |   93147947.00
+ 10 | About Time                                    |         2013 |   7.80 |   75100000.00
+  8 | Treasure Planet                               |         2002 |   7.20 |  -30421885.00
+(11 linhas)
+ 
