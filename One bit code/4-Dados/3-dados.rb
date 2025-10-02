@@ -1,11 +1,11 @@
 #                        CONTINUAÇÃO DADOS 
              ATUALIZAÇÃO DE DADOS E EXCLUSÃO DE LINHAS 
-
+Para atualizar os dados de uma linha na tabela SQL é a UPDATE. 
+Para isso usamos UPDATE nome_da_tabela SET nome_coluna = valor_novo WHERE nome_coluna = valor_a_ser_modificado;
 =begin
 UPDATE tv_series SET status = 'Airing' WHERE status = 'Ongoing';
 
 UPDATE 2
-
 Query returned successfully in 168 msec.
 
 SELECT * FROM tv_series;
@@ -23,4 +23,13 @@ SELECT * FROM tv_series;
   3 | Stranger Things  | The Duffer Brothers                         |         2016 | Sci-Fi           |       4 |       34 |   8.70 | Netflix         | Airing
  11 | Cobra Kai        | Josh Heald, Jon Hurwitz, Hayden Schlossberg |         2018 | Action           |       6 |       50 |   8.60 | Netflix         | Airing
 (11 linhas)
+=end
+
+
+
+=begin
+UPDATE movies SET title = 'Star Wars: A New Hope', genre= 'Sci-fi/Fantasy' WHERE id = 2;
+
+UPDATE 1
+Query returned successfully in 128 msec.
 =end
