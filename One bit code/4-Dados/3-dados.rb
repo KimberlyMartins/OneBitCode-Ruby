@@ -36,3 +36,6 @@ UPDATE 1
 Query returned successfully in 128 msec.
 =end
 
+                 EXCLUSÃO DE DADOS 
+O comando para deletar dados é semelhante ao SELECT.
+É MUITO importante lembrar que ao usar o comando DELETE devemos especificar a condição (WHERE), senão pode causar atualizações incorretas e comprometer toda a tabela.
