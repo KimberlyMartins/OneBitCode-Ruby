@@ -1,5 +1,5 @@
 #                        CONTINUAÇÃO DADOS 
-             ATUALIZAÇÃO DE DADOS E EXCLUSÃO DE LINHAS 
+                      ATUALIZAÇÃO DE DADOS E EXCLUSÃO DE LINHAS 
 Para atualizar os dados de uma linha na tabela SQL é a UPDATE. 
 Para isso usamos UPDATE nome_da_tabela SET nome_coluna = valor_novo WHERE nome_coluna = valor_a_ser_modificado;
 =begin
@@ -24,9 +24,9 @@ SELECT * FROM tv_series;
  11 | Cobra Kai        | Josh Heald, Jon Hurwitz, Hayden Schlossberg |         2018 | Action           |       6 |       50 |   8.60 | Netflix         | Airing
 (11 linhas)
 =end
-
-
-
+                        ATUALIZAR VARIOS CAMPOS 
+Também podemos alterar vários campos por vez usando o comando UPDATE de uma forma muito comum, especificando
+pelo id qual linha queremos atualizar 
 =begin
 UPDATE movies SET title = 'Star Wars: A New Hope', genre= 'Sci-fi/Fantasy' WHERE id = 2;
 
