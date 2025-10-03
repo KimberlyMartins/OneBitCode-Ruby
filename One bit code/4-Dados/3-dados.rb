@@ -2,7 +2,7 @@
                       ATUALIZAÇÃO DE DADOS E EXCLUSÃO DE LINHAS 
 Para atualizar os dados de uma linha na tabela SQL é a UPDATE. 
 É MUITO importante lembrar que ao usar o comando UPDATE devemos especificar a condição, senão pode causar atualizações
-incorretas e comprometer toda a tabela.
+incorretas e comprometer toda a tabela. #(UPDATE movies SET rating=8;) esse comando sem condição compromete a tabela!!!
 Para isso usamos UPDATE nome_da_tabela SET nome_coluna = valor_novo WHERE nome_coluna = valor_a_ser_modificado;
 =begin
 UPDATE tv_series SET status = 'Airing' WHERE status = 'Ongoing';
