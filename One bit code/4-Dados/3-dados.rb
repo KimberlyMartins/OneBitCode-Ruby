@@ -39,3 +39,8 @@ Query returned successfully in 128 msec.
                  EXCLUSÃO DE DADOS 
 O comando para deletar dados é semelhante ao SELECT.
 É MUITO importante lembrar que ao usar o comando DELETE devemos especificar a condição (WHERE), senão pode causar atualizações incorretas e comprometer toda a tabela.
+Para o delete usamos DELETE FROM nome_da_tabela WHERE nome_coluna = 'condição' ;
+=begin
+DELETE FROM tvseries WHERE title='The Office';
+
+=end
