@@ -107,4 +107,8 @@ streaming=# SELECT * FROM tv_series;
 
 Deletamos a coluna friends que tem mais de 5 temporadas
 4 | Friends          | David Crane, Marta Kauffman                 |         1994 | Comedy           |      10 |      236 |   8.90 | NBC             | Ended
- =end
+=end
+
+            !!!! JAMAIS USAR DELETE SEM ESPECIFICAR A CONDIÇÃO WHERE!!!
+DELETE FROM tvseries;
+Usá-lo assim, deletará a tabela inteira!!!!1
