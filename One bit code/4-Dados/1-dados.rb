@@ -35,7 +35,12 @@ e Riak.
 DDL(Data Definition Language): Comandos para definir a estrutura do banco de dados.
   ex: CREATE TABLE, ALTER TABLE (criar e alterar tabelas)
 
-DDM(Data Manipulation Language): Comandos para manipular os dados diretamente.
+DML(Data Manipulation Language): Comandos para manipular os dados diretamente. Famoso CRUD.
+O CRUD (Create, Read, Update, Delete) é um acrônimo que representa as quatro operações fundamentais que podem ser realizadas em qualquer sistema de armazenamento de dados.
+Create (Criação): Esta operação envolve a criação de novos registros no banco de dados. Em um sistema de gerenciamento de banco de dados relacional (RDBMS), isso geralmente é feito usando a instrução SQL INSERT.
+Read (Leitura): A operação de leitura envolve a recuperação de dados do banco de dados. Isso pode ser feito usando a instrução SQL SELECT, que retorna os registros correspondentes a uma determinada condição.
+Update (Atualização): A operação de atualização envolve a modificação de registros existentes no banco de dados. Isso é feito usando a instrução SQL UPDATE, que modifica os registros que correspondem a uma determinada condição.
+Delete (Exclusão): A operação de exclusão envolve a remoção de registros existentes do banco de dados. Isso é feito usando a instrução SQL DELETE, que remove os registros que correspondem a uma determinada condição.
   ex: SELECT, INSERT , UPDATE, DELETE (selecionar, inserir, atualizar e deletar)
 
 DCL(Data Control Language): Comando para controlar o acesso aos dados.
