@@ -97,3 +97,4 @@ Connection options:
 If no database name is supplied, then the PGDATABASE environment
 variable value is used.
 =end
+
