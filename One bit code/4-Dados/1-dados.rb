@@ -43,11 +43,11 @@ Update (Atualização): A operação de atualização envolve a modificação de
 Delete (Exclusão): A operação de exclusão envolve a remoção de registros existentes do banco de dados. Isso é feito usando a instrução SQL DELETE, que remove os registros que correspondem a uma determinada condição.
   ex: SELECT, INSERT , UPDATE, DELETE (selecionar, inserir, atualizar e deletar)
 
-DCL(Data Control Language): Comando para controlar o acesso aos dados.
+DCL(Data Control Language): Comando para controlar o acesso aos dados. Usado pelo DBA, o analisador do banco de dados.
   ex: GRANT, REVOKE (garantir acesso, revogar acesso)
 
-TCL(Transaction Control Language): Comando para transações financeiras onde se a transação 
-não for bem sucedida ele volta a transação para evitar erro.
+TCL ou DTL(Transaction Control Language): Comando para transações financeiras onde se a transação 
+não for bem sucedida ele volta a transação para evitar erro. Efetiva transação com COMMIT e descarta a transação com ROLLBACK.
   ex: BEGIN, COMMIT, ROLLBACK (iniciar transação, confirmar se deu certo e desfazer a transação caso dê erro)
 
 
