@@ -1,6 +1,7 @@
-require 'pg'
+require 'pg' # Carregue pg para conectar ruby ao banco de dados postgres
 
 #                    CONFIGURANDO A CONEXÃO DO BANCO DE DADOS
+#Aqui preenchemos com as mesmas configs de quando criamos o banco de dados desejado
 conn = PG.connect(
     dbname: 'fliperama',
     user: 'postgres',
@@ -10,17 +11,16 @@ conn = PG.connect(
 )
 
 #               CONSULTA SQL
+#Depois de passar os dados para conexão, vamos criar uma query assim como no PGadmin p realizar as buscas.
 query = 'SELECT * FROM jogo'
 
-begin
-#Executar a consulta
-result = conn.exec(query)
- # Itera sobre as linhas do resultado e imprime os dados
- result.each do |row|
-    puts "ID:#{row['id']} - NOME:#{row['name']} - ANO:#{row['year']} - NOTA:#{row['score']}"
+begin # begin para o inicio do código a ser consultado
+result = conn.exec(query)  # result vai ser igual pegar a conn do pg e executar a query que criamos
+ result.each do |row|      # each do vai passar por cada linha a ser mostrada, faz a iteração delas
+    puts "ID:#{row['id']} - NOME:#{row['name']} - ANO:#{row['year']} - NOTA:#{row['score']}" # puts imprime os dados a serem exibidos
 end
- ensure
-    conn.close if conn
+ ensure            # ensure garante que esse pedaçõ de código sempre seja executado
+    conn.close if conn    # fechar conn se conn estiver aberta
 end
 
 =begin 
