@@ -12,7 +12,7 @@ conn = PG.connect(
 
 #               CONSULTA SQL
 #Depois de passar os dados para conexão, vamos criar uma query assim como no PGadmin p realizar as buscas 
-query = 'SELECT * FROM jogo'
+query = 'SELECT * FROM jogo ORDER BY id ASC'
 
 begin # begin para o inicio do código a ser consultado
 result = conn.exec(query)  # result vai ser igual pegar a conn do pg e executar a query que criamos
