@@ -27,5 +27,5 @@ registros.each do |registro|
   conn.exec(insert_query)
 end
 
-puts "Registros inseridos com sucesso"
-conn.close
+puts "Registros inseridos com sucesso"  # Se quiser uma msg de confirmação coloque isso mas não é obrigatório
+conn.close                              # Encerra a conexão 
