@@ -11,7 +11,7 @@ conn = PG.connect(
 )
 
 #               CONSULTA SQL
-#Depois de passar os dados para conexão, vamos criar uma query assim como no PGadmin p realizar as buscas.
+#Depois de passar os dados para conexão, vamos criar uma query assim como no PGadmin p realizar as buscas 
 query = 'SELECT * FROM jogo'
 
 begin # begin para o inicio do código a ser consultado
@@ -30,3 +30,4 @@ ID:2 - NOME:Super Mario Bros Wonder - ANO:2023 - NOTA:9.5
 ID:3 - NOME:Super Mario Odyssey - ANO:2017 - NOTA:10     
 ID:4 - NOME:Alan Wake 2 - ANO:2023 - NOTA:8.5
 =end
+
