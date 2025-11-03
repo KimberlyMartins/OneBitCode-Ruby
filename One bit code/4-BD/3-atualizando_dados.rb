@@ -24,3 +24,9 @@ conn.exec(update_query)
 puts "Registro atualizado com sucesso"
 
 conn.close
+
+=begin
+Deletar é bem mais simples do que atualizar a tabela com UPDATE,
+mas o DELETE sem o WHERE, pode apagar TODOS os dados da tabela
+então ATENÇÃO!!!
+=end
