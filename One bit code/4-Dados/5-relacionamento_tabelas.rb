@@ -18,4 +18,7 @@ UM PARA UM (1:1)
 Cada linha de uma tabela está relacionada com o máximo de uma linha de outra tabela.
 =begin
 Um usuário possui um endereço, e um endereço só pode pertencer a um usuário.
+
+Para essa aula criamos um novo banco de dados, chamado aula_relacionamento_tabelas no pg admin
+
 =end
