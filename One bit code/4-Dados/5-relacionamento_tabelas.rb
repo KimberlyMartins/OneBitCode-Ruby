@@ -21,4 +21,21 @@ Um usuário possui um endereço, e um endereço só pode pertencer a um usuário
 
 Para essa aula criamos um novo banco de dados, chamado aula_relacionamento_tabelas no pg admin
 
+vamos abrir 2 querys e criar uma tabela em cada 
+
+CREATE TABLE employees (
+id SERIAL PRIMARY KEY,
+NAME VARCHAR(255) NOT NULL,
+phone VARCHAR(30)
+);
+
+CREATE TABLE addresses (
+id SERIAL PRIMARY KEY,
+street VARCHAR(255) NOT NULL,
+number VARCHAR(10),
+complement VARCHAR(255),
+city VARCHAR(255) NOT NULL,
+employee_id INT UNIQUE,
+FOREIGN KEY (employee_id) REFERENCES employees (id)
+);
 =end
