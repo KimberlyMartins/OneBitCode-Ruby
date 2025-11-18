@@ -18,24 +18,27 @@ UM PARA UM (1:1)
 Cada linha de uma tabela está relacionada com o máximo de uma linha de outra tabela.
 =begin
 Um usuário possui um endereço, e um endereço só pode pertencer a um usuário.
+=end
 
-Para essa aula criamos um novo banco de dados, chamado aula_relacionamento_tabelas no pg admin
-
+Para essa aula criamos um novo banco de dados, chamado aula_relacionamento_tabelas no pg admin e 
 vamos abrir 2 querys e criar uma tabela em cada 
-
+- query 1
 CREATE TABLE employees (
 id SERIAL PRIMARY KEY,
 NAME VARCHAR(255) NOT NULL,
 phone VARCHAR(30)
 );
 
+- query 2 
 CREATE TABLE addresses (
 id SERIAL PRIMARY KEY,
 street VARCHAR(255) NOT NULL,
 number VARCHAR(10),
 complement VARCHAR(255),
 city VARCHAR(255) NOT NULL,
-employee_id INT UNIQUE,
+employee_id INT UNIQUE, #nome da tabela+coluna que esta referenciando, tipo de dado e UNIQUE p garantir esclusividade
 FOREIGN KEY (employee_id) REFERENCES employees (id)
 );
-=end
+
+- O campo employee_id é uma FK que aponta para employees.id
+- employee_id está marcado como UNIQUE, garantindo que um funcionário só pode ter um endereço e que um endereço pertença a apenas um funcionário.
