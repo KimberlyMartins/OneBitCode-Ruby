@@ -37,8 +37,15 @@ number VARCHAR(10),
 complement VARCHAR(255),
 city VARCHAR(255) NOT NULL,
 employee_id INT UNIQUE, #nome da tabela+coluna que esta referenciando, tipo de dado e UNIQUE p garantir esclusividade
-FOREIGN KEY (employee_id) REFERENCES employees (id)
+FOREIGN KEY (employee_id) REFERENCES employees (id) #a fk referencia nome da tabela e coluna 
 );
 
+=begin
+ employee_id INT - cria uma coluna chamada employee_id que guarda números inteiros, essa coluna vai ser usada para ligar a tabela atual (addresses) com a tabela employees.
+ UNIQUE - Garante que não pode haver valores repetidos nessa coluna. Assim, cada funcionário (employee) só pode aparecer uma vez na tabela addresses.Isso é o que transforma o relacionamento em 1:1 (um funcionário ↔ um endereço).
+FOREIGN KEY (employee_id) REFERENCES employees(id) - Define que employee_id é uma chave estrangeira (FK). Essa FK aponta para a coluna id da tabela employees. Ou seja: o valor de employee_id deve existir na tabela employees.
+ Isso cria o vínculo entre as duas tabelas.
+
+=end
 - O campo employee_id é uma FK que aponta para employees.id
 - employee_id está marcado como UNIQUE, garantindo que um funcionário só pode ter um endereço e que um endereço pertença a apenas um funcionário.
