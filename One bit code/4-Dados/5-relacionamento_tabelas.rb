@@ -49,3 +49,6 @@ FOREIGN KEY (employee_id) REFERENCES employees(id) - Define que employee_id é u
 =end
 - O campo employee_id é uma FK que aponta para employees.id
 - employee_id está marcado como UNIQUE, garantindo que um funcionário só pode ter um endereço e que um endereço pertença a apenas um funcionário.
+
+UM PARA MUITOS (1:n)
+Agora vamos ver como criar um relacionamento um-para-muitos (1:n). Nesse cenário, criaremos uma tabelas de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
