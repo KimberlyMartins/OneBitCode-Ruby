@@ -52,3 +52,24 @@ FOREIGN KEY (employee_id) REFERENCES employees(id) - Define que employee_id é u
 
 UM PARA MUITOS (1:n)
 Agora vamos ver como criar um relacionamento um-para-muitos (1:n). Nesse cenário, criaremos uma tabelas de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
+
+ALTER TABLE employees ADD COLUMN departament_id INT;
+
+ALTER TABLE employees ADD CONSTRAINT fk_departament 
+FOREIGN KEY (departament_id) REFERENCES departaments(id);
+
+
+
+Ou podemos simplesmente excluir a nossa tabela de funcionários e criá-la novamente:Atenção! Muito cuidado ao fazer isso em um banco de dados real, pois isso excluirá todos os dados da tabela já existente. Esse é apenas um exemplo para mostrar como seria a criação de uma nova tabela do zero já com a chave estrangeira, mas nunca deve ser utilizado em uma tabela já existente. Para isso, use o método anterior com o ALTER TABLE.
+-- Excluimos a tabela
+DROP TABLE employees;
+
+-- E a criamos novamente já definindo a chave estrangeira na criação
+CREATE TABLE employees (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	phone VARCHAR(20),
+	
+	department_id INT NOT NULL,
+	FOREIGN KEY (department_id) REFERENCES departments (id)
+);
