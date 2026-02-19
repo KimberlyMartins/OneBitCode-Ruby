@@ -70,6 +70,99 @@ CREATE TABLE employees (
 	name VARCHAR(100) NOT NULL,
 	phone VARCHAR(20),
 	
-	department_id INT NOT NULL,
-	FOREIGN KEY (department_id) REFERENCES departments (id)
+	departament_id INT NOT NULL,
+	FOREIGN KEY (department_id) REFERENCES departaments (id)
 );
+
+Antes de finalizar a aula, vamos inserir e consultar alguns dados nessas tabelas para ver como elas são usadas na prática. Comece inserindo dados de funcionários, endereços e departamentos:
+
+-- Comece pelos departamentos, a tabela mais simples 
+INSERT INTO departaments (name) VALUES ('Imprensa'), ('Investigação'), ('Diplomacia');
+
+-- Confira os IDs de cada um para usarmos na hora de inserir funcionários
+SELECT * FROM departaments;
+=begin
+aula_relacionamento_tabelas=# SELECT * FROM departaments;
+ id |     name
+----+--------------
+  1 | Imprensa
+  2 | InvestigaþÒo
+  3 | Diplomacia
+(3 linhas)
+=end 
+
+-- Insira os funcionários um por um ou mais de um ao mesmo tempo 
+# INDIVIDUALMENTE
+INSERT INTO employees (name, phone, department_id) 
+	VALUES ('Clark Kent', '1111-1111', 1);
+
+INSERT INTO employees (name, phone, department_id)
+	VALUES ('Bruce Wayne', '2222-2222', 2);
+
+INSERT INTO employees (name, phone, department_id)
+	VALUES ('Diana Prince', '3333-3333', 3);
+
+# OU MAIS DE UM AO MESMO TEMPO
+INSERT INTO employees (name, phone, departament_id) 
+VALUES 
+('Clark Kent', '1111-1111', 1),
+('Bruce Wayne', '2222-2222', 2),
+('Diana Prince', '3333-3333', 3);
+
+=begin
+aula_relacionamento_tabelas=# select * from employees;
+ id |     name     |   phone   | departament_id
+----+--------------+-----------+----------------
+  1 | Clark Kent   | 1111-1111 |              1
+  2 | Bruce Wayne  | 2222-2222 |              2
+  3 | Diana Prince | 3333-3333 |              3
+(3 linhas)
+=end
+
+No relacionamento para muitos, podemos adicionar mais de uma info a um departamento, aqui vamos adicionar outro funcionário com a mesma departament id 
+
+INSERT INTO employees (name, phone, department_id)
+	VALUES ('John Jones', '4444-4444', 2);
+
+=begin
+aula_relacionamento_tabelas=# select * from employees;
+ id |     name     |   phone   | departament_id
+----+--------------+-----------+----------------
+  1 | Clark Kent   | 1111-1111 |              1
+  2 | Bruce Wayne  | 2222-2222 |              2
+  3 | Diana Prince | 3333-3333 |              3
+  4 | John Jones   | 4444-4444 |              2
+(4 linhas)
+
+Agora podemos ver 2 pessoas com a mesma id 
+=end
+
+-- A partir disso, insira os endereços
+# INDIVIDUALMENTE
+INSERT INTO addresses (street, city, employee_id)
+	VALUES ('Rua A', 'Metropolis', 1);
+
+INSERT INTO addresses (street, city, employee_id)
+	VALUES ('Rua B', 'Gotham', 2);
+
+INSERT INTO addresses (street, city, employee_id)
+	VALUES ('Rua C', 'Themyscira', 3);
+
+## OU MAIS DE UM AO MESMO TEMPO
+INSERT INTO addresses (street, city, employee_id)
+VALUES 
+('Rua A', 'Metropolis', 1),
+('Rua B', 'Gotham', 2),
+('Rua C', 'Themyscira', 3);
+=begin
+aula_relacionamento_tabelas=# select * from addresses;
+ id | street | number | complement |    city    | employee_id
+----+--------+--------+------------+------------+-------------
+  1 | Rua A  |        |            | Metropolis |           1
+  2 | Rua B  |        |            | Gotham     |           2
+  3 | Rua C  |        |            | Themyscira |           3
+(3 linhas)
+
+=end
+
+
