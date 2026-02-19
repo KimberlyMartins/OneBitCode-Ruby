@@ -14,7 +14,7 @@ ENDEREÇO
 
 Existem três tipos de relacionamento,  um para um (1:1), um para muitos (1:n), e muitos para muitos (n:n).
 
-UM PARA UM (1:1)
+                                         UM PARA UM (1:1)
 Cada linha de uma tabela está relacionada com o máximo de uma linha de outra tabela.
 =begin
 Um usuário possui um endereço, e um endereço só pode pertencer a um usuário.
@@ -50,7 +50,9 @@ FOREIGN KEY (employee_id) REFERENCES employees(id) - Define que employee_id é u
 - O campo employee_id é uma FK que aponta para employees.id
 - employee_id está marcado como UNIQUE, garantindo que um funcionário só pode ter um endereço e que um endereço pertença a apenas um funcionário.
 
-UM PARA MUITOS (1:n)
+
+
+                             UM PARA MUITOS (1:n)
 Agora vamos ver como criar um relacionamento um-para-muitos (1:n). Nesse cenário, criaremos uma tabelas de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
 
 ALTER TABLE employees ADD COLUMN departament_id INT;
@@ -60,7 +62,7 @@ FOREIGN KEY (departament_id) REFERENCES departaments(id);
 
 
 
-Ou podemos simplesmente excluir a nossa tabela de funcionários e criá-la novamente:Atenção! Muito cuidado ao fazer isso em um banco de dados real, pois isso excluirá todos os dados da tabela já existente. Esse é apenas um exemplo para mostrar como seria a criação de uma nova tabela do zero já com a chave estrangeira, mas nunca deve ser utilizado em uma tabela já existente. Para isso, use o método anterior com o ALTER TABLE.
+Ou podemos simplesmente excluir a nossa tabela de funcionários e criá-la novamente: Atenção! Muito cuidado ao fazer isso em um banco de dados real, pois isso excluirá todos os dados da tabela já existente. Esse é apenas um exemplo para mostrar como seria a criação de uma nova tabela do zero já com a chave estrangeira, mas nunca deve ser utilizado em uma tabela já existente. Para isso, use o método anterior com o ALTER TABLE.
 -- Excluimos a tabela
 DROP TABLE employees;
 
@@ -165,4 +167,15 @@ aula_relacionamento_tabelas=# select * from addresses;
 
 =end
 
+-- Repare que agora não é possível inserir mais endereços para esses IDs, pois a employe id é unica, a ocontrário da nossa departament_id que é nossa foreign key. No caso o funcionário só pode ter um endereço.
 
+INSERT INTO addresses (street, city, employee_id)
+	VALUES ('Fazenda Kent', 'Smallville', 1);
+
+
+ERROR:  duplicar valor da chave viola a restrição de unicidade "addresses_employee_id_key"
+Chave (employee_id)=(1) já existe. 
+
+ERRO:  duplicar valor da chave viola a restrição de unicidade "addresses_employee_id_key"
+SQL state: 23505
+Detail: Chave (employee_id)=(1) já existe.
