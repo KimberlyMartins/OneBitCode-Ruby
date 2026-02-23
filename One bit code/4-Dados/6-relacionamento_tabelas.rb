@@ -1,7 +1,11 @@
                                    JOIN
 Vamos conhecer um conceito importante no relacionamento entre tabelas, o JOIN.
-Ele serve para conseguir obter dados de tabelas relacionadas em uma única consulta. Vamos experimentar obter os dados dos funcionários junto com seus respectivos endereços:
-Ele serve para conseguir obter dados de tabelas relacionadas em uma única consulta. Vamos experimentar obter os dados dos funcionários junto com seus respectivos endereços:
+Ele serve para conseguir obter dados de tabelas relacionadas em uma única consulta. 
+
+Na tabela 1:1 : Vamos experimentar obter os dados dos funcionários junto com seus respectivos endereços
+
+SELECT * FROM employees JOIN addresses ON employees.id = addresses.employee_id;
+#(Selecionar tudo da tabela employees e fazer a JUNÇÃO com a tabela endereços NA CONDIÇAO (ON) onde employees id for igual a chave estrangeira de addresses id)
 
 =begin
 aula_relacionamento_tabelas=# select * from employees JOIN addresses ON employees.id = addresses.employee_id;;
@@ -13,7 +17,7 @@ aula_relacionamento_tabelas=# select * from employees JOIN addresses ON employee
 (3 linhas)
 =end
 
-O mesmo vale para o relacionamento um-para-muitos:Obs.: repare que o cuidado na consulta com qual é a tabela consultada e qual é a tabela da junção é apenas por uma questão de organização, ambos os resultados são os mesmos, mas organizados de forma diferente.
+O mesmo vale para o relacionamento um-para-muitos 1:n :  repare que o cuidado na consulta com qual é a tabela consultada e qual é a tabela da junção é apenas por uma questão de organização, ambos os resultados são os mesmos, mas organizados de forma diferente.
 
 =begin
 aula_relacionamento_tabelas=# SELECT * FROM employees JOIN departaments ON employees.departament_id = departaments.id;

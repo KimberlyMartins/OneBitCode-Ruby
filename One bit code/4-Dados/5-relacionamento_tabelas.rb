@@ -16,6 +16,8 @@ Existem três tipos de relacionamento,  um para um (1:1), um para muitos (1:n), 
 
                                          UM PARA UM (1:1)
 Cada linha de uma tabela está relacionada com o máximo de uma linha de outra tabela.
+Exemplo: Cada pessoa tem exatamente um passaporte, e cada passaporte pertence a uma única pessoa.
+
 =begin
 Um usuário possui um endereço, e um endereço só pode pertencer a um usuário.
 =end
@@ -54,13 +56,14 @@ FOREIGN KEY (employee_id) REFERENCES employees(id) - Define que employee_id é u
 
                              UM PARA MUITOS (1:n)
 Um registro em uma tabela (tabela principal/pai) pode estar associado a zero, um ou vários registros em outra tabela (tabela relacionada/filha).
+Exemplo: Um cliente pode ter vários pedidos, mas cada pedido pertence a apenas um cliente.
+
  Nesse cenário, criaremos uma tabela de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
 
 ALTER TABLE employees ADD COLUMN departament_id INT;
 
 ALTER TABLE employees ADD CONSTRAINT fk_departament 
 FOREIGN KEY (departament_id) REFERENCES departaments(id);
-
 
 
 Ou podemos simplesmente excluir a nossa tabela de funcionários e criá-la novamente: Atenção! Muito cuidado ao fazer isso em um banco de dados real, pois isso excluirá todos os dados da tabela já existente. Esse é apenas um exemplo para mostrar como seria a criação de uma nova tabela do zero já com a chave estrangeira, mas nunca deve ser utilizado em uma tabela já existente. Para isso, use o método anterior com o ALTER TABLE.
