@@ -53,7 +53,8 @@ FOREIGN KEY (employee_id) REFERENCES employees(id) - Define que employee_id é u
 
 
                              UM PARA MUITOS (1:n)
-Agora vamos ver como criar um relacionamento um-para-muitos (1:n). Nesse cenário, criaremos uma tabelas de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
+Um registro em uma tabela (tabela principal/pai) pode estar associado a zero, um ou vários registros em outra tabela (tabela relacionada/filha).
+ Nesse cenário, criaremos uma tabela de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
 
 ALTER TABLE employees ADD COLUMN departament_id INT;
 
