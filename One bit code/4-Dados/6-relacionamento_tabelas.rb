@@ -60,7 +60,7 @@ aula_relacionamento_tabelas=# SELECT employees.id AS ID,employees.name AS Funcio
 (4 linhas)
 =end
 
-          RELACIONAMENTO MUITOS PARA MUITOS (N :N )
+                             RELACIONAMENTO MUITOS PARA MUITOS (N :N )
 A linha de uma tabela pode estar associada a várias linhas da outra tabela e vice e versa. A implementação EXIGE 
 a criação de uma tabela intermediária (tabela de junção) que contém as chaves estrangeiras de ambas as tabelas.
 (Obs.: uma forma comum de nomear as tabelas intermediárias é juntando os nomes das tabelas que estão sendo relacionadas, por exemplo, student_courses)
@@ -79,10 +79,103 @@ CREATE TABLE courses (
     name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE student_courses (       #TABELA DE JUNÇÃO
-    student_id INT,
-    course_id INT,
-    PRIMARY KEY (student_id, course_id),
-    FOREIGN KEY (student_id) REFERENCES students (id),
-    FOREIGN KEY (course_id) REFERENCES courses (id)
+CREATE TABLE student_courses (
+student_id INT,
+course_id INT,
+PRIMARY KEY (student_id, course_id),
+FOREIGN KEY (student_id) REFERENCES students (id),
+FOREIGN KEY (course_id) REFERENCES courses (id)
 );
+
+
+- Inserimos os dados em cada tabela separadamente 
+INSERT INTO students (name) VALUES ('Peter'), ('Matt'), ('Tony'), ('Reed');
+INSERT INTO courses (name) VALUES ('Fotografia'), ('Direito'), ('Física'), ('Engenharia');
+=begin
+aula_relacionamento_tabelas=# SELECT * FROM students;
+ id | name
+----+-------
+  1 | Peter
+  2 | Matt
+  3 | Tony
+  4 | Reed
+(4 linhas)
+
+aula_relacionamento_tabelas=# SELECT * FROM courses;
+ id |    name
+----+------------
+  1 | Fotografia
+  2 | Direito
+  3 | FÝsica
+  4 | Engenharia
+(4 linhas)
+=end
+
+- E só depois podemos inserir dados na tabela de junção (intermediária)
+
+INSERT INTO student_courses (student_id, course_id) VALUES
+    (1, 1),
+    (1, 3),
+    (2, 2),
+    (3, 3),
+    (3, 4),
+    (4, 3),
+    (4, 4);
+
+=begin
+aula_relacionamento_tabelas=# SELECT * FROM student_courses;
+ student_id | course_id
+------------+-----------
+          1 |         1
+          1 |         3
+          2 |         2
+          3 |         3
+          3 |         4
+          4 |         3
+          4 |         4
+(7 linhas)
+=end
+Após o preenchimento dos dados podemos começar a realizar as buscas com o SQL
+
+SELECT *
+FROM student_courses
+JOIN students ON student_courses.student_id = students.id
+JOIN courses ON student_courses.course_id = courses.id;
+
+=begin
+aula_relacionamento_tabelas=# SELECT * FROM student_courses JOIN students ON student_courses.student_id = students.id JOIN courses ON student_courses.course_id = courses.id;
+ student_id | course_id | id | name  | id |    name
+------------+-----------+----+-------+----+------------
+          1 |         1 |  1 | Peter |  1 | Fotografia
+          1 |         3 |  1 | Peter |  3 | FÝsica
+          2 |         2 |  2 | Matt  |  2 | Direito
+          3 |         3 |  3 | Tony  |  3 | FÝsica
+          3 |         4 |  3 | Tony  |  4 | Engenharia
+          4 |         3 |  4 | Reed  |  3 | FÝsica
+          4 |         4 |  4 | Reed  |  4 | Engenharia
+(7 linhas)
+=end
+
+Podemos nomear as buscas para facilitar o entendimento das informações
+
+SELECT
+   students.id AS ID_Estudante,
+   students.name AS Estudante,
+   courses.id AS ID_Curso,
+   courses.name AS Curso
+FROM
+    student_courses
+JOIN students ON student_courses.student_id = students.id
+JOIN courses ON student_courses.course_id = courses.id;
+=begin
+ id_estudante | estudante | id_curso |   curso
+--------------+-----------+----------+------------
+            1 | Peter     |        1 | Fotografia
+            1 | Peter     |        3 | FÝsica
+            2 | Matt      |        2 | Direito
+            3 | Tony      |        3 | FÝsica
+            3 | Tony      |        4 | Engenharia
+            4 | Reed      |        3 | FÝsica
+            4 | Reed      |        4 | Engenharia
+(7 linhas)
+=end
