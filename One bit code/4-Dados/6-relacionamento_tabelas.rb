@@ -63,4 +63,26 @@ aula_relacionamento_tabelas=# SELECT employees.id AS ID,employees.name AS Funcio
           RELACIONAMENTO MUITOS PARA MUITOS (N :N )
 A linha de uma tabela pode estar associada a várias linhas da outra tabela e vice e versa. A implementação EXIGE 
 a criação de uma tabela intermediária (tabela de junção) que contém as chaves estrangeiras de ambas as tabelas.
-EX: Um aluno pode estar em várias disciplinas e cada disciplina pode ter vários alunos.
+(Obs.: uma forma comum de nomear as tabelas intermediárias é juntando os nomes das tabelas que estão sendo relacionadas, por exemplo, student_courses)
+
+EX: Um aluno pode estar em várias disciplinas e cada disciplina pode ter vários alunos. 
+
+No exemplo prático vamos criar as tabelas students e courses para simular um relacionamento muitos-para-muitos, e criar uma tabela intermediária que irá conter os IDs de ambas as tabelas que estamos juntando, permitindo consultar os dados através dela. 
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE courses (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE student_courses (       #TABELA DE JUNÇÃO
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students (id),
+    FOREIGN KEY (course_id) REFERENCES courses (id)
+);
