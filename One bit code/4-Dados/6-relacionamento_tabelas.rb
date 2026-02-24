@@ -179,3 +179,44 @@ JOIN courses ON student_courses.course_id = courses.id;
             4 | Reed      |        4 | Engenharia
 (7 linhas)
 =end
+
+
+                               INTEGRIDADE REFERENCIAL 
+A integridade referencial garante que os relacionamentos entre tabelas em um banco de dados SQL sejam sempre válidos. Isso significa que uma chave estrangeira (foreign key) em uma tabela filha deve sempre apontar para uma chave primária existente na tabela pai.
+Por padrão, quando você cria uma chave estrangeira em SQL sem especificar nenhuma ação de exclusão (ON DELETE), o comportamento geralmente é equivalente a RESTRICT ou NO ACTION, dependendo do banco de dados.
+Então, se você não definir nada, o banco de dados não vai apagar os dados, ele vai bloquear a exclusão para manter a integridade referencial!!!
+
+Para alterar as configurações de integridade usamos o ON DELETE e o ON UPDATE. Essas configurações especificam qual comportamento deverá ser executado em caso de exclusão ou atualização do registro referenciado na chave estrangeira.
+Elas definem o comportamento da chave estrangeira e ajudam a manter a integridade referencial. Usamos as variações de ON DELETE e UPDATE direto na criação das tabelas para que possam ser alteradas depois.
+
+ ON DELETE controla o que acontece quando o registro pai é removido.
+ ON UPDATE controla o que acontece quando a chave primária do pai é alterada.
+
+Para garantir a integridade, temos comandos usados juntos ao delete e update, são eles:
+
+CASCADE: remove ou atualiza automaticamente as linhas da tabela contendo a referência quando a linha correspondente é removida ou atualizada na tabela original.
+- ON DELETE CASCADE → ao excluir o pai, os filhos também são excluídos.
+- ON UPDATE CASCADE → ao atualizar a chave primária do pai, os filhos são atualizados automaticamente.
+
+RESTRICT: impede a remoção ou atualização de uma linha na tabela original se existem linhas correspondentes na tabela que a referencia (comportamento padrão).
+- ON DELETE RESTRICT → impede excluir o pai se houver filhos relacionados.
+- ON UPDATE RESTRICT → impede atualizar a chave primária do pai se houver filhos relacionados.
+
+SET NULL: define a coluna de chave estrangeira como NULL quando a linha correspondente na tabela original é removida ou atualizada (a coluna deve ser capaz de aceitar valores nulos para essa opção ser usada).
+- ON DELETE SET NULL → ao excluir o pai, a chave estrangeira dos filhos vira NULL.
+- ON UPDATE SET NULL → ao atualizar o pai, os filhos ficam com NULL na chave estrangeira.
+
+SET DEFAULT: define a coluna de chave estrangeira com o seu valor padrão quando a linha correspondente na tabela original é removida ou atualizada (a coluna deve ter um valor padrão configurado para essa opção ser usada).
+- ON DELETE SET DEFAULT → ao excluir o pai, os filhos recebem um valor padrão definido.
+- ON UPDATE SET DEFAULT → ao atualizar o pai, os filhos recebem o valor padrão na chave estrangeira.
+
+NO ACTION: similar ao RESTRICT, essa opção fará com que não seja possível remover ou atualizar um registro na tabela original, porém seu comportamento dentro de uma transação é diferente (falaremos sobre transações em aulas futuras), a verificação de integridade apenas ocorrerá no final da transação e não imediatamente.
+- ON DELETE NO ACTION → semelhante ao RESTRICT, não permite excluir o pai se houver filhos.
+- ON UPDATE NO ACTION → semelhante ao RESTRICT, não permite atualizar o pai se houver filhos.
+- Diferença: em alguns bancos, NO ACTION pode ser adiado (deferred constraints).
+
+RESUMINDO
+- CASCADE → propaga a exclusão/atualização para os filhos.
+- SET NULL → deixa filhos órfãos com NULL.
+- SET DEFAULT → redireciona filhos para valor padrão.
+- RESTRICT / NO ACTION → bloqueia exclusão/atualização se houver filhos.
