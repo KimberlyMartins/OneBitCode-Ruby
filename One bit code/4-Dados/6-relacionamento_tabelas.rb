@@ -59,3 +59,8 @@ aula_relacionamento_tabelas=# SELECT employees.id AS ID,employees.name AS Funcio
   4 | John Jones   | 4444-4444 | InvestigaþÒo
 (4 linhas)
 =end
+
+          RELACIONAMENTO MUITOS PARA MUITOS (N :N )
+A linha de uma tabela pode estar associada a várias linhas da outra tabela e vice e versa. A implementação EXIGE 
+a criação de uma tabela intermediária (tabela de junção) que contém as chaves estrangeiras de ambas as tabelas.
+EX: Um aluno pode estar em várias disciplinas e cada disciplina pode ter vários alunos.
