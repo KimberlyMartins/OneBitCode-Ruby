@@ -232,7 +232,7 @@ CREATE TABLE customers (
 );
 
 - Insira dados na tabela de clientes
-INSERT INTO customers (name, phone) VALUES
+INSERT INTO customers (name, email) VALUES
 	('Clark Kent', 'clark@email.com'),
 	('Bruce Wayne', 'bruce@email.com'),
 	('Diana Prince', 'diana@email.com');
@@ -259,8 +259,23 @@ Como não definimos uma cláusula, pelo padrão sql ele vai bloquear a exclusão
 Então recriaremos a tabela com suas constraints definidas para poder fazer as devidas alterações.
 
 - Exclua a tabela para recriá-la com a nova constraint
+DROP TABLE customers;
 DROP TABLE orders; 
 
+- Crie a tabela de clientes
+CREATE TABLE customers (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	phone VARCHAR(100) UNIQUE NOT NULL
+);
+
+- Insira dados na tabela de clientes
+INSERT INTO customers (name, email) VALUES
+	('Clark Kent', 'clark@email.com'),
+	('Bruce Wayne', 'bruce@email.com'),
+	('Diana Prince', 'diana@email.com');
+
+- Crie a tabela de pedidos
 CREATE TABLE orders (
 	id SERIAL PRIMARY KEY,
 	total DECIMAL(10, 2),
@@ -270,7 +285,7 @@ CREATE TABLE orders (
 		ON UPDATE CASCADE
 );
 
--- Reinserir dados na tabela de pedidos
+- Reinserir dados na tabela de pedidos
 INSERT INTO orders (total, customer_id) VALUES
 	(100.00, 1),
 	(240.00, 2),
@@ -282,12 +297,49 @@ Agora sim podemos experimentar excluir e atualizar o ID de alguns registros para
 
 Exclua um cliente e observe o efeito nos pedidos
 DELETE FROM customers WHERE id = 1;
+=begin
+DELETE 1
+Query returned successfully in 91 msec.
+
+aula_relacionamento_tabelas=# select * from customers;
+ id |     name     |      email
+----+--------------+-----------------
+  2 | Bruce Wayne  | bruce@email.com
+  3 | Diana Prince | diana@email.com
+(2 linhas)
+=end
 
 Verifique os pedidos restantes
 SELECT * FROM orders JOIN customers ON customers.id = orders.customer_id;
+=begin
+aula_relacionamento_tabelas=# SELECT * FROM orders JOIN customers ON customers.id = orders.customer_id;
+ id | total  | customer_id | id |     name     |      email
+----+--------+-------------+----+--------------+-----------------
+  2 | 240.00 |           2 |  2 | Bruce Wayne  | bruce@email.com
+  4 | 420.00 |           3 |  3 | Diana Prince | diana@email.com
+  5 | 700.00 |           2 |  2 | Bruce Wayne  | bruce@email.com
+(3 linhas)
+=end
 
 Atualize um cliente e observe o efeito nos pedidos
 UPDATE customers SET id = 40 WHERE id = 2;
+=begin
+aula_relacionamento_tabelas=# select * from customers;
+ id |     name     |      email
+----+--------------+-----------------
+  3 | Diana Prince | diana@email.com
+ 40 | Bruce Wayne  | bruce@email.com
+(2 linhas)
+=end
 
 Verifique os pedidos atualizados
 SELECT * FROM orders JOIN customers ON customers.id = orders.customer_id;
+=begin
+aula_relacionamento_tabelas=# SELECT * FROM orders JOIN customers ON customers.id = orders.customer_id;
+ id | total  | customer_id | id |     name     |      email
+----+--------+-------------+----+--------------+-----------------
+  4 | 420.00 |           3 |  3 | Diana Prince | diana@email.com
+  2 | 240.00 |          40 | 40 | Bruce Wayne  | bruce@email.com
+  5 | 700.00 |          40 | 40 | Bruce Wayne  | bruce@email.com
+(3 linhas)
+=end
