@@ -60,10 +60,32 @@ Exemplo: Um cliente pode ter vários pedidos, mas cada pedido pertence a apenas 
 
  Nesse cenário, criaremos uma tabela de departamentos, onde cada funcionário só pode pertencer a um departamento por vez, mas um departamento é composto de vários funcionários. Para criar uma tabela com esse relacionamento utilizaremos uma estrutura muito parecida. Comece criando a tabela de departamentos:
 
-ALTER TABLE employees ADD COLUMN departament_id INT;
+ CREATE TABLE employees (
+id SERIAL PRIMARY KEY,
+NAME VARCHAR(255) NOT NULL,
+phone VARCHAR(30)
+);
 
+ - Crie uma tabela de departamentos
+CREATE TABLE departments (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE employees ADD COLUMN departament_id INT;
 ALTER TABLE employees ADD CONSTRAINT fk_departament 
 FOREIGN KEY (departament_id) REFERENCES departaments(id);
+
+=begin
+ CREATE TABLE employees (
+id SERIAL PRIMARY KEY,
+NAME VARCHAR(255) NOT NULL,
+phone VARCHAR(30),
+departament_id INT,
+fk_departament 
+FOREIGN KEY (departament_id) REFERENCES departaments(id);
+); 
+=end
 
 
 Ou podemos simplesmente excluir a nossa tabela de funcionários e criá-la novamente: Atenção! Muito cuidado ao fazer isso em um banco de dados real, pois isso excluirá todos os dados da tabela já existente. Esse é apenas um exemplo para mostrar como seria a criação de uma nova tabela do zero já com a chave estrangeira, mas nunca deve ser utilizado em uma tabela já existente. Para isso, use o método anterior com o ALTER TABLE.
