@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS patients (
     address VARCHAR(255)
 );
 
-#       ESPECIALIZAÇÕES - 
+#       ESPECIALIZAÇÕES - um para muitos-  o médico posssui uma esp. mas cada especialização pode estar em vários médicos
 CREATE TABLE IF NOT EXISTS specializations (
     id SERIAL PRIMARY KEY,
     specialization_name VARCHAR(100)
@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS doctors (
     FOREIGN KEY (specialization_id) REFERENCES specializations(id)
 );
 
-#       CONSULTAS - um pra muitos 
+#       CONSULTAS - um pra muitos tanto no doctor quanto no patient fk composta
 CREATE TABLE IF NOT EXISTS consultations (
     id SERIAL PRIMARY KEY,
     patient_id INT NOT NULL,        #NOT NULL pois não existe consulta sem paciente
