@@ -169,7 +169,7 @@ CREATE TABLE Treatments (
 
 
                                    #RESOLUÇÃO  DETALHADA
-Criar as tabelas mais independentes primeiro
+Criar as tabelas mais independentes primeiro pois quando tiver chave estrangeira, a tabela referenciada já precisa existir!!!
 
 #       PACIENTES
 CREATE TABLE IF NOT EXISTS patients (
