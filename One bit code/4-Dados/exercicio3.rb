@@ -216,3 +216,19 @@ CREATE TABLE IF NOT EXISTS treatments (
     treatment_description TEXT,
     FOREIGN KEY (consultation_id) REFERENCES consultations(id)
 );
+
+
+Além das tabelas, crie também as seguintes consultas SQL:
+
+Obter todos os pacientes juntamente com suas consultas e os médicos que os atenderam.
+SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
+
+
+Obter todas as consultas de um determinado médico, incluindo informações dos pacientes e observações.
+
+
+Obter uma lista de todos os tratamentos prescritos em consultas, incluindo informações dos médicos e pacientes.
+Obter todos os médicos com suas respectivas especializações.
+Obter todas as consultas realizadas em uma data específica, incluindo informações de pacientes e médicos.
+Obter uma lista de todos os pacientes que foram atendidos por médicos de uma determinada especialização.
+Obter todos os tratamentos em andamento de um determinado paciente.
