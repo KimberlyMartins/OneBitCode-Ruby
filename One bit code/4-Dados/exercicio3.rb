@@ -222,7 +222,22 @@ Além das tabelas, crie também as seguintes consultas SQL:
 
 Obter todos os pacientes juntamente com suas consultas e os médicos que os atenderam.
 SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
-
+=begin
+Hospital=# SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
+ id |   full_name    | date_of_birth |                       gender                       |   phone   |   address   | id | patient_id | doctor_id | consultation_date |           observations           |   service_type
+----+----------------+---------------+----------------------------------------------------+-----------+-------------+----+------------+-----------+-------------------+----------------------------------+------------------
+  1 | JosÚ da Silva  | 1980-01-01    | M                                                  | 111111111 | Rua A, 123  |  1 |          1 |         1 | 2024-06-01        | Paciente com dores no peito.     | Particular
+  2 | Maria Pereira  | 1990-02-02    | F                                                  | 222222222 | Rua B, 456  |  2 |          2 |         2 | 2024-06-01        | Paciente com irritaþ§es na pele. | Particular
+  3 | Carlos Alberto | 2000-03-03    | M                                                  | 333333333 | Rua C, 789  |  3 |          3 |         3 | 2024-06-01        | Paciente com dores de cabeþa.    | Plano de Sa·de B
+  4 | Ana Paula      | 2010-04-04    | F                                                  | 444444444 | Rua D, 1011 |  4 |          4 |         4 | 2024-06-02        | Paciente com febre e tosse.      | Particular
+  5 | Pedro Henrique | 1975-05-05    | M                                                  | 555555555 | Rua E, 1213 |  5 |          5 |         5 | 2024-06-02        | Paciente com dores nas costas.   | Particular
+  3 | Carlos Alberto | 2000-03-03    | M                                                  | 333333333 | Rua C, 789  |  6 |          1 |         3 | 2024-06-02        | Paciente com tonturas.           | Plano de Sa·de A
+  4 | Ana Paula      | 2010-04-04    | F                                                  | 444444444 | Rua D, 1011 |  7 |          2 |         4 | 2024-06-02        | Paciente com dor de garganta.    | Particular
+  1 | JosÚ da Silva  | 1980-01-01    | M                                                  | 111111111 | Rua A, 123  |  8 |          3 |         1 | 2024-06-04        | Paciente com pressÒo alta.       | Particular
+  2 | Maria Pereira  | 1990-02-02    | F                                                  | 222222222 | Rua B, 456  |  9 |          4 |         2 | 2024-06-05        | Paciente com alergias.           | Particular
+  3 | Carlos Alberto | 2000-03-03    | M                                                  | 333333333 | Rua C, 789  | 10 |          5 |         3 | 2024-06-06        | Paciente com enxaqueca.          | Plano de Sa·de A
+(10 linhas)
+=end
 Obter todas as consultas de um determinado médico, incluindo informações dos pacientes e observações.
 
 
