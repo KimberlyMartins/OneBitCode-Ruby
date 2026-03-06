@@ -62,4 +62,12 @@ end
    -> 0.0323s
 Name: Smartphone, Category: Eletronics, Stock: 7
 Name: Notebook, Category: Eletronics, Stock: 10
+
+A busca retorna 
+ SELECT * FROM products;
+ id |    name    | category_id | stock_quantity
+----+------------+-------------+----------------
+  1 | Smartphone |           1 |              7
+  2 | Notebook   |           1 |             10
+(2 linhas)
 =end
