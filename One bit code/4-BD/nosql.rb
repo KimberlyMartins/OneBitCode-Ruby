@@ -4,3 +4,32 @@ A principal vantagem do NoSQL é a escalabilidade horizontal, ou seja, a capacid
 Entre os benefícios estão a agilidade para adaptar-se a projetos dinâmicos, a facilidade em lidar com dados não estruturados e a alta disponibilidade. Por outro lado, o NoSQL pode apresentar algumas limitações, como menor padronização entre sistemas e, em alguns casos, menor consistência imediata dos dados, já que muitos priorizam velocidade e disponibilidade.
 
 Em resumo, o NoSQL é ideal para cenários em que há grande volume de dados, necessidade de escalabilidade e flexibilidade. Bancos relacionais continuam sendo mais adequados quando é preciso garantir consistência rígida e trabalhar com relações complexas entre tabelas. Assim, a escolha entre SQL e NoSQL depende do tipo de aplicação e das necessidades do projeto.
+
+                                    Categorias NoSQL
+- Orientado a Documentos
+Os bancos de dados orientados a documentos armazenam informações em documentos, geralmente no formato JSON ou BSON. Cada documento contém dados estruturados de forma flexível, como se fosse um “pacote” com campos e valores. Esse modelo é muito usado em aplicações web modernas, pois permite guardar dados complexos sem precisar de tabelas fixas. Um exemplo famoso é o MongoDB.
+   → Armazena dados em documentos (JSON, BSON).
+   → Flexível, sem esquema fixo.
+   → Ideal para aplicações web modernas.
+   → Exemplo: MongoDB.
+
+- Chave-Valor
+os bancos de chave-valor são os mais simples: cada dado é armazenado como um par formado por uma chave única e um valor associado. Esse modelo é extremamente rápido e eficiente para buscas diretas, sendo muito utilizado em cache, sessões de usuário e sistemas que exigem alta performance. Redis e DynamoDB são exemplos comuns.
+→ Estrutura simples: chave única + valor associado.
+→ Extremamente rápido e eficiente.
+→ Usado em cache, sessões de usuário, alta performance.
+→ Exemplo: Redis, DynamoDB.
+
+- Família de Colunas
+Na família de colunas, os dados são organizados em colunas em vez de linhas, o que facilita consultas em grandes volumes de informação. Esse tipo é muito usado em aplicações de análise de dados e big data, pois permite ler e processar rapidamente conjuntos enormes de registros. Exemplos incluem Cassandra e HBase.
+   → Dados organizados em colunas em vez de linhas.
+   → Excelente para grandes volumes e análises.
+   → Muito usado em big data.
+   → Exemplo: Cassandra, HBase.
+
+- Orientado a Grafos
+Já os bancos orientados a grafos são focados em representar relações entre dados. Eles trabalham com nós (entidades) e arestas (conexões), sendo ideais para sistemas que precisam analisar redes de relacionamento, como redes sociais, recomendações ou mapas de rotas. O Neo4j é um dos principais representantes desse modelo.
+   → Focado em relações entre dados.
+   → Usa nós (entidades) e arestas (conexões).
+   → Ótimo para redes sociais, recomendações, rotas.
+   → Exemplo: Neo4j.
