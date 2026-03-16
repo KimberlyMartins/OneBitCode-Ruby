@@ -33,3 +33,60 @@ Já os bancos orientados a grafos são focados em representar relações entre d
    → Usa nós (entidades) e arestas (conexões).
    → Ótimo para redes sociais, recomendações, rotas.
    → Exemplo: Neo4j.
+
+
+                                          Comandos Mongodb
+test> use cruddb;
+switched to db cruddb
+cruddb> show collections;
+
+cruddb> db.createCollection('users'); #Criar Usuario
+{ ok: 1 }
+cruddb> show collections;
+users
+cruddb> db.users.insertOne({name:"Fulano", email:"fulano@email.com", phone:"23214"});  #inserir dados
+{
+  acknowledged: true,
+  insertedId: ObjectId('69b82cce5d079cec557c2907')
+}
+cruddb> db.users.insertOne({name:"Carla", email:"carlinha@email.com", phone:"16544"}); #inserir dados
+{
+  acknowledged: true,
+  insertedId: ObjectId('69b82d055d079cec557c2908')
+}
+cruddb> db.users.find({}); #retornar todos os dados
+[
+  {
+    _id: ObjectId('69b82cce5d079cec557c2907'),
+    name: 'Fulano',
+    email: 'fulano@email.com',
+    phone: '23214'
+  },
+  {
+    _id: ObjectId('69b82d055d079cec557c2908'),
+    name: 'Carla',
+    email: 'carlinha@email.com',
+    phone: '16544'
+  }
+]
+cruddb> db.users.find({name:"Carla"}); #retornar dado específico
+[
+  {
+    _id: ObjectId('69b82d055d079cec557c2908'),
+    name: 'Carla',
+    email: 'carlinha@email.com',
+    phone: '16544'
+  }
+]
+cruddb> db.users.deleteOne({name:"Fulano"}); #deletar dados
+{ acknowledged: true, deletedCount: 1 }
+
+cruddb> db.users.find({}); #retornar todos os dados (aqui só um pois o outro foi excluído)
+[
+  {
+    _id: ObjectId('69b82d055d079cec557c2908'),
+    name: 'Carla',
+    email: 'carlinha@email.com',
+    phone: '16544'
+  }
+]
