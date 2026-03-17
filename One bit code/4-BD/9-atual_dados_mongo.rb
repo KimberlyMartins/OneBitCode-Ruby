@@ -15,3 +15,9 @@ if result.modified_count > 0
 else
   puts "Nenhum documento foi atualizado."
 end
+
+
+=begin
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\One bit code\4-BD> ruby .\9-atual_dados_mongo.rb
+Dados atualizados com sucesso.
+=end
