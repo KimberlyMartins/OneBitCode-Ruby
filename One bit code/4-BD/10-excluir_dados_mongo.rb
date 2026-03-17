@@ -4,7 +4,7 @@ require 'mongo'
 # Configuramos o banco
 client = Mongo::Client.new(['localhost:27017'], :database => 'ecommerce')
 
-#Atualização de um ou mais dados  (update_one ou update_many)
+#Atualização de um ou mais dados  (delete_one ou delete_many)
 result = client[:products].delete_one({name: 'Smartphone'})
 
 #Verificação do resultado de atualização
