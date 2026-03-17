@@ -18,3 +18,9 @@ if result.successful?
 else
     puts "Falha ao inserir dados"
 end
+
+
+=begin
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\One bit code\4-BD> ruby .\7-inserir_mongo.rb
+Dados inseridos com sucesso. Id: 69b96cb6998316c17a8dd47f
+=end
