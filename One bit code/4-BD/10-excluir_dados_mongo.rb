@@ -13,3 +13,13 @@ if result.deleted_count > 0
 else
   puts "Nenhum documento foi excluido"
 end
+
+=begin 
+Em caso de exclusão
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\One bit code\4-BD> ruby .\10-excluir_dados_mongo.rb
+Registro excluído com sucesso
+
+Em caso de não achar dados para excluir
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\One bit code\4-BD> ruby .\10-excluir_dados_mongo.rb
+Nenhum documento foi excluido
+=end
