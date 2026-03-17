@@ -13,3 +13,12 @@ puts "Produtos:"
 documents.each do |document|
   puts "Nome: #{document[:name]}, Categoria:#{document[:category][:name]}"
 end
+
+=begin
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\One bit code\4-BD> ruby .\8-lendo_dados_mongo.rb
+Produtos:
+Nome: Smartphone, Categoria:Eletronics
+Nome: Smartphone, Categoria:Eletronics
+Nome: Smartphone, Categoria:Eletronics
+Nome: Notebook, Categoria:Eletronics
+=end
