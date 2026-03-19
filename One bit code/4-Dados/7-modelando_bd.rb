@@ -8,6 +8,8 @@ Outra funcionalidade importante é a de mensagens/comentários nos chamados. A e
 
 Nesse sistema também queremos ter um perfil individual para cada funcionário da equipe técnica, para que ele possa ser identificado e responder diretamente aos chamados. Também precisamos que nossos clientes possuam seu próprio cadastro, assim os chamados podem ser consultados por cliente ou por responsável da equipe técnica, a fim de metrificar o desempenho de nossa equipe.”
 
+Vamos separar por partes para serem moldadas:
+
 Entidades
 
 Chamados (tickets)
