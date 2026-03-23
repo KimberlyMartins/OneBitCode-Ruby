@@ -315,8 +315,57 @@ doctors.id = 1;
 
 Obter uma lista de todos os tratamentos prescritos em consultas, incluindo informações dos médicos e pacientes.
 
+SELECT 
+treatments.id AS treatment_id,
+treatments.treatment_description,
+treatments.medications,
+consultations.consultation_date,
+patients.full_name AS patients_name
+FROM 
+treatments
+JOIN
+consultations ON treatments.consultation_id = consultations.id
+JOIN 
+patients ON consultations.patient_id = patients.id
+JOIN
+doctors ON doctors.id = consultations.doctor_id;
 
+=begin
+ treatment_id |        treatment_description        |     medications     | consultation_date | patients_name
+--------------+-------------------------------------+---------------------+-------------------+----------------
+            1 | Repouso e medicaþÒo para dor.       | Aspirina            | 2024-06-01        | JosÚ da Silva
+            2 | AplicaþÒo t¾pica dißria.            | Pomada AntialÚrgica | 2024-06-01        | Maria Pereira
+            3 | MedicaþÒo para dor e repouso.       | Paracetamol         | 2024-06-01        | Carlos Alberto
+            4 | MedicaþÒo para infecþÒo e repouso.  | Antibi¾tico         | 2024-06-02        | Ana Paula
+            5 | MedicaþÒo para dor e fisioterapia.  | AnalgÚsico          | 2024-06-02        | Pedro Henrique
+            6 | MedicaþÒo para vertigem e repouso.  | Vertizine           | 2024-06-02        | JosÚ da Silva
+            7 | MedicaþÒo para febre e repouso.     | AntitÚrmico         | 2024-06-02        | Maria Pereira
+            8 | MedicaþÒo para controle da pressÒo. | Anti-hipertensivo   | 2024-06-04        | Carlos Alberto
+            9 | MedicaþÒo para alergia.             | AntialÚrgico        | 2024-06-05        | Ana Paula
+           10 | MedicaþÒo para dor intensa.         | Analgesico          | 2024-06-06        | Pedro Henrique
+(10 linhas)
+=end
 Obter todos os médicos com suas respectivas especializações.
+
+SELECT 
+doctors.id AS doctor_id,
+doctors.full_name AS doctor_name,
+specializations.specialization_name
+FROM
+doctors
+JOIN 
+specializations ON doctors.specialization_id = specializations.id;
+
+=begin
+ doctor_id |     doctor_name     | specialization_name
+-----------+---------------------+---------------------
+         1 | Dr. JoÒo Silva      | Cardiologia
+         2 | Dr. Maria Souza     | Dermatologia
+         3 | Dr. Carlos Oliveira | Neurologia
+         4 | Dr. Ana Lima        | Pediatria
+         5 | Dr. Pedro Santos    | Ortopedia
+(5 linhas)
+=end
 
 Obter todas as consultas realizadas em uma data específica, incluindo informações de pacientes e médicos.
 
