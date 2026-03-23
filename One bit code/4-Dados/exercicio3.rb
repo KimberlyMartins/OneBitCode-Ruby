@@ -368,7 +368,31 @@ specializations ON doctors.specialization_id = specializations.id;
 =end
 
 Obter todas as consultas realizadas em uma data específica, incluindo informações de pacientes e médicos.
+SELECT 
+consultations.id AS consultation_id,
+consultations.consultation_date,
+patients.full_name AS patient_name,
+doctors.full_name AS doctor_name,
+consultations.observations,
+consultations.service_type
+FROM 
+consultations
+JOIN
+patients ON patients.id = consultations.patient_id
+JOIN 
+doctors ON doctors.id = consultations.doctor_id
+WHERE
+consultations.consultation_date = '2024-06-02';
 
+=begin
+ consultation_id | consultation_date |  patient_name  |     doctor_name     |          observations          |   service_type
+-----------------+-------------------+----------------+---------------------+--------------------------------+------------------
+               4 | 2024-06-02        | Ana Paula      | Dr. Ana Lima        | Paciente com febre e tosse.    | Particular
+               5 | 2024-06-02        | Pedro Henrique | Dr. Pedro Santos    | Paciente com dores nas costas. | Particular
+               6 | 2024-06-02        | JosÚ da Silva  | Dr. Carlos Oliveira | Paciente com tonturas.         | Plano de Sa·de A
+               7 | 2024-06-02        | Maria Pereira  | Dr. Ana Lima        | Paciente com dor de garganta.  | Particular
+(4 linhas)
+=end
 
 Obter uma lista de todos os pacientes que foram atendidos por médicos de uma determinada especialização.
 
