@@ -219,7 +219,6 @@ CREATE TABLE IF NOT EXISTS treatments (
 
 
 Além das tabelas, crie também as seguintes consultas SQL:
-
 Obter todos os pacientes juntamente com suas consultas e os médicos que os atenderam.
 
 =begin
@@ -240,6 +239,23 @@ Hospital=# SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
   3 | Carlos Alberto | 2000-03-03    | M                                                  | 333333333 | Rua C, 789  | 10 |          5 |         3 | 2024-06-06        | Paciente com enxaqueca.          | Plano de Sa·de A
 (10 linhas)
 =end
+
+RESOLUÇÃO 
+=begin
+ patient_id |  patient_name  | consultation_id | consultation_date | doctor_id |     doctor_name
+------------+----------------+-----------------+-------------------+-----------+---------------------
+          1 | JosÚ da Silva  |               1 | 2024-06-01        |         1 | Dr. JoÒo Silva
+          2 | Maria Pereira  |               2 | 2024-06-01        |         2 | Dr. Maria Souza
+          3 | Carlos Alberto |               3 | 2024-06-01        |         3 | Dr. Carlos Oliveira
+          4 | Ana Paula      |               4 | 2024-06-02        |         4 | Dr. Ana Lima
+          5 | Pedro Henrique |               5 | 2024-06-02        |         5 | Dr. Pedro Santos
+          1 | JosÚ da Silva  |               6 | 2024-06-02        |         3 | Dr. Carlos Oliveira
+          2 | Maria Pereira  |               7 | 2024-06-02        |         4 | Dr. Ana Lima
+          3 | Carlos Alberto |               8 | 2024-06-04        |         1 | Dr. JoÒo Silva
+          4 | Ana Paula      |               9 | 2024-06-05        |         2 | Dr. Maria Souza
+          5 | Pedro Henrique |              10 | 2024-06-06        |         3 | Dr. Carlos Oliveira
+=end
+
 Obter todas as consultas de um determinado médico, incluindo informações dos pacientes e observações.
 
 
