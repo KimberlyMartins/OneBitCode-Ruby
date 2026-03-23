@@ -241,6 +241,19 @@ Hospital=# SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
 =end
 
 RESOLUÇÃO 
+SELECT
+  patients.id AS patient_id,
+  patients.full_name AS patient_name,
+  consultations.id AS consultation_id,
+  consultations.consultation_date,
+  doctors.id AS doctor_id,
+  doctors.full_name AS doctor_name
+FROM
+	patients
+JOIN
+	consultations ON patients.id = consultations.patient_id
+JOIN
+	doctors ON doctors.id = consultations.doctor_id;
 =begin
  patient_id |  patient_name  | consultation_id | consultation_date | doctor_id |     doctor_name
 ------------+----------------+-----------------+-------------------+-----------+---------------------
@@ -271,3 +284,27 @@ Obter uma lista de todos os pacientes que foram atendidos por médicos de uma de
 
 
 Obter todos os tratamentos em andamento de um determinado paciente.
+
+SELECT
+	patients.id AS patient_id, 
+	patients.full_name AS patient_full_name, 
+	doctors.full_name AS doctor_full_name, 
+	specializations.specialization_name
+FROM
+	patients
+JOIN
+	consultations ON patients.id = consultations.patient_id
+JOIN
+	doctors ON doctors.id = consultations.doctor_id
+JOIN
+	specializations ON doctors.specialization_id = specializations.id
+WHERE
+	specializations.specialization_name = 'Cardiologia';
+
+=begin
+ patient_id | patient_full_name | doctor_full_name | specialization_name
+------------+-------------------+------------------+---------------------
+          1 | JosÚ da Silva     | Dr. JoÒo Silva   | Cardiologia
+          3 | Carlos Alberto    | Dr. JoÒo Silva   | Cardiologia
+(2 linhas)
+=end
