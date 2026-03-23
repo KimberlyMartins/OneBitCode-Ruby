@@ -270,9 +270,48 @@ JOIN
 =end
 
 Obter todas as consultas de um determinado médico, incluindo informações dos pacientes e observações.
+Busca pelo nome
+SELECT 
+doctors.id AS doctor_id,
+doctors.full_name AS doctor_name,
+consultations.id AS consultation_id,
+consultations.consultation_date,
+consultations.observations,
+patients.id AS patient_id,
+patients.full_name AS patient_name
+FROM 
+doctors
+JOIN
+consultations ON doctors.id = consultations.doctor_id
+JOIN
+patients ON consultations.patient_id = patients.id
+WHERE 
+doctors.full_name = 'Dr. João Silva';
 
-
-
+ Busca pelo id            
+SELECT 
+doctors.id AS doctor_id,
+doctors.full_name AS doctor_name,
+consultations.id AS consultation_id,
+consultations.consultation_date,
+consultations.observations,
+patients.id AS patient_id,
+patients.full_name AS patient_name
+FROM 
+doctors
+JOIN
+consultations ON doctors.id = consultations.doctor_id
+JOIN
+patients ON consultations.patient_id = patients.id
+WHERE 
+doctors.id = 1; 
+=begin
+ doctor_id |  doctor_name   | consultation_id | consultation_date |         observations         | patient_id |  patient_name
+-----------+----------------+-----------------+-------------------+------------------------------+------------+----------------
+         1 | Dr. JoÒo Silva |               1 | 2024-06-01        | Paciente com dores no peito. |          1 | JosÚ da Silva
+         1 | Dr. JoÒo Silva |               8 | 2024-06-04        | Paciente com pressÒo alta.   |          3 | Carlos Alberto
+(2 linhas)
+=end
 
 Obter uma lista de todos os tratamentos prescritos em consultas, incluindo informações dos médicos e pacientes.
 
