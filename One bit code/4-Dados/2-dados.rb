@@ -335,6 +335,18 @@ coffee_shop=# SELECT COUNT(id) FROM clients;
 
 #                      RENOMEAR A BUSCA COUNT
 AS é usado para dar um nome ao resultado da consulta. Isso permite que você se referencie ao resultado da contagem como clients_count no resultado da consulta.
+
+O AS serve para criar apelidos (aliases) nas colunas.
+Não é obrigatório, mas é uma boa prática em consultas com várias tabelas.
+Por que usar AS:
+- Clareza → nomes mais intuitivos (ex.: patient_name em vez de full_name).
+- Evitar ambiguidade → colunas iguais em tabelas diferentes (id em patients, consultations, doctors).
+- Facilidade de uso → relatórios e aplicações ficam mais simples de entender.
+- Padronização → mantém consistência em queries complexas.
+Resumo:
+Se os nomes já forem únicos e claros, não precisa usar AS.
+Mas em consultas com JOINs é quase sempre recomendado, porque deixa o resultado mais legível e organizado.
+
 =begin
 Vai ser a mesma busca por id da tabela clients porém renomeando a busca por clients_count.
 
