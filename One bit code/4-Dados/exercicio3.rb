@@ -221,8 +221,10 @@ CREATE TABLE IF NOT EXISTS treatments (
 Além das tabelas, crie também as seguintes consultas SQL:
 
 Obter todos os pacientes juntamente com suas consultas e os médicos que os atenderam.
-SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
+
 =begin
+Tentativa 1 
+SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
 Hospital=# SELECT * FROM patients JOIN consultations ON patients.id = doctor_id;
  id |   full_name    | date_of_birth |                       gender                       |   phone   |   address   | id | patient_id | doctor_id | consultation_date |           observations           |   service_type
 ----+----------------+---------------+----------------------------------------------------+-----------+-------------+----+------------+-----------+-------------------+----------------------------------+------------------
