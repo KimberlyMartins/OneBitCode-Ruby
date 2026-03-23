@@ -272,6 +272,8 @@ JOIN
 Obter todas as consultas de um determinado médico, incluindo informações dos pacientes e observações.
 
 
+
+
 Obter uma lista de todos os tratamentos prescritos em consultas, incluindo informações dos médicos e pacientes.
 
 
