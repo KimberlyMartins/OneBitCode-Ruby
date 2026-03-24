@@ -396,6 +396,29 @@ consultations.consultation_date = '2024-06-02';
 
 Obter uma lista de todos os pacientes que foram atendidos por médicos de uma determinada especialização.
 
+SELECT
+patients.id AS patient_id,
+patients.full_name AS pacient_name,
+doctors.full_name AS doctor_name,
+specializations.specialization_name
+FROM
+patients
+JOIN
+consultations ON patients.id = consultations.patient_id
+JOIN 
+doctors ON doctors.id = consultations.doctor_id
+JOIN
+specializations ON doctors.specialization_id = specializations.id
+WHERE 
+specializations.specialization_name = 'Cardiologia';
+
+=begin
+ patient_id |  pacient_name  |  doctor_name   | specialization_name
+------------+----------------+----------------+---------------------
+          1 | JosÚ da Silva  | Dr. JoÒo Silva | Cardiologia
+          3 | Carlos Alberto | Dr. JoÒo Silva | Cardiologia
+(2 linhas)
+=end
 
 Obter todos os tratamentos em andamento de um determinado paciente.
 
