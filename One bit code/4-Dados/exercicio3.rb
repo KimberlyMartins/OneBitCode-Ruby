@@ -444,23 +444,47 @@ specializations.specialization_name = 'Neurologia';
 =end
 
 Obter todos os tratamentos em andamento de um determinado paciente.
-
 SELECT
-	patients.id AS patient_id, 
-	patients.full_name AS patient_full_name, 
-	doctors.full_name AS doctor_full_name, 
-	specializations.specialization_name
+patients.id AS patient_id,
+patients.full_name AS patient_name,
+treatments.treatment_description,
+treatments.medications,
+consultations.consultation_date
 FROM
-	patients
+patients
 JOIN
-	consultations ON patients.id = consultations.patient_id
+consultations ON patients.id = consultations.patient_id
 JOIN
-	doctors ON doctors.id = consultations.doctor_id
-JOIN
-	specializations ON doctors.specialization_id = specializations.id
+treatments ON treatments.consultation_id = consultations.id
 WHERE
-	specializations.specialization_name = 'Cardiologia';
+patients.id = 1;
 
 =begin
+ patient_id | patient_name  |       treatment_description        | medications | consultation_date
+------------+---------------+------------------------------------+-------------+-------------------
+          1 | JosÚ da Silva | Repouso e medicaþÒo para dor.      | Aspirina    | 2024-06-01
+          1 | JosÚ da Silva | MedicaþÒo para vertigem e repouso. | Vertizine   | 2024-06-02
+(2 linhas)
+
+SELECT
+patients.id AS patient_id,
+patients.full_name AS patient_name,
+treatments.treatment_description,
+treatments.medications,
+consultations.consultation_date
+FROM
+patients
+JOIN
+consultations ON patients.id = consultations.patient_id
+JOIN
+treatments ON treatments.consultation_id = consultations.id
+WHERE
+patients.id = 3;
+
+ patient_id |  patient_name  |        treatment_description        |    medications    | consultation_date
+------------+----------------+-------------------------------------+-------------------+-------------------
+          3 | Carlos Alberto | MedicaþÒo para dor e repouso.       | Paracetamol       | 2024-06-01
+          3 | Carlos Alberto | MedicaþÒo para controle da pressÒo. | Anti-hipertensivo | 2024-06-04
+(2 linhas)
 
 =end
