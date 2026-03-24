@@ -486,5 +486,4 @@ patients.id = 3;
           3 | Carlos Alberto | MedicaþÒo para dor e repouso.       | Paracetamol       | 2024-06-01
           3 | Carlos Alberto | MedicaþÒo para controle da pressÒo. | Anti-hipertensivo | 2024-06-04
 (2 linhas)
-
 =end
