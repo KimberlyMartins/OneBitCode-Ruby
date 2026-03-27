@@ -40,3 +40,17 @@ chamado
 
 Primeiramente  montamos a modelagem no draw io, e seguimos com o código depois de ter a visão mais ampla das tabelas
 a serem criadas.
+
+CREATE TABLE IF NOT EXISTS users(
+id SERIAL PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL UNIQUE,
+password VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS clients(
+id serial PRIMARY KEY,
+CNPJ VARCHAR(32) NOT NULL,
+user_id INT NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
