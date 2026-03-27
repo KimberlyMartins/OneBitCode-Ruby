@@ -73,6 +73,17 @@ status VARCHAR(50)
   
 opened_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-client_id 
-technicians_id
+client_id INT NOT NULL REFERENCES clients(id),
+technicians_id INT REFERENCES technicians(id)
 );
+
+CREATE TABLE IF NOT EXISTS messages (
+  id SERIAL PRIMARY KEY,
+  content TEXT NOT NULL,
+  sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  ticket_id INT NOT NULL,
+  sender_id INT NOT NULL,
+  
+  FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE,
+  FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE
+  );
