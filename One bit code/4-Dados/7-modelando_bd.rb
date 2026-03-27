@@ -37,3 +37,6 @@ conteúdo
 data e hora de envio
 remetente
 chamado
+
+Primeiramente  montamos a modelagem no draw io, e seguimos com o código depois de ter a visão mais ampla das tabelas
+a serem criadas.
