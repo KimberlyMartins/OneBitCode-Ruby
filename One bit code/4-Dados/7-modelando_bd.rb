@@ -51,11 +51,28 @@ password VARCHAR(255)
 CREATE TABLE IF NOT EXISTS clients(
 id serial PRIMARY KEY,
 CNPJ VARCHAR(32) NOT NULL,
-user_id INT NOT NULL,                             #forma completa de referenciar a chave
-FOREIGN KEY (user_id) REFERENCES users(id)
+user_id INT NOT NULL UNIQUE,
+FOREIGN KEY (user_id) REFERENCES users(id)        #Referencia a chave d forma completa
 );
 
 CREATE TABLE IF NOT EXISTS technicians(
 id serial PRIMARY KEY,
-user_id INT NOT NULL REFERENCES users(id)         #forma abreviada de referenciar a chave 
+user_id INT NOT NULL UNIQUE REFERENCES users(id)  #Referencia a chave de forma abreviada
+);
+
+CREATE TABLE IF NOT EXISTS tickets(
+id serial PRIMARY KEY,
+description TEXT NOT NULL,
+category VARCHAR(50)
+  NOT NULL 
+  CHECK (category IN ('hardware', 'installation', 'office', 'printer', 'network', 'others')),
+status VARCHAR(50)
+  NOT NULL 
+  CHECK (status IN ('open', 'queued', 'in_progress', 'closed', 'cancelled'))
+  DEFAULT 'open',
+  
+opened_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+client_id 
+technicians_id
 );
