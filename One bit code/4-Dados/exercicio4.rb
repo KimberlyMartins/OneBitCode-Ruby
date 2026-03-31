@@ -17,4 +17,4 @@ cadastro de autores: nome, biografia, data de nascimento e lista de livros publi
 
 leitores: nome -  email - idade e o gênero opcionais
 
-resenha: leitores e livros q leram nota e comentario detalhado
+resenha: leitores e livros q leram - nota e comentario detalhado
