@@ -49,19 +49,19 @@ password VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS clients(
-id serial PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 CNPJ VARCHAR(32) NOT NULL,
 user_id INT NOT NULL UNIQUE,
 FOREIGN KEY (user_id) REFERENCES users(id)        #Referencia a chave d forma completa
 );
 
 CREATE TABLE IF NOT EXISTS technicians(
-id serial PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 user_id INT NOT NULL UNIQUE REFERENCES users(id)  #Referencia a chave de forma abreviada
 );
 
 CREATE TABLE IF NOT EXISTS tickets(
-id serial PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 description TEXT NOT NULL,
 category VARCHAR(50)
   NOT NULL 
