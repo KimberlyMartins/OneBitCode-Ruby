@@ -19,7 +19,11 @@ leitores: nome -  email - idade e o gênero opcionais
 
 resenha: leitores e livros q leram - nota e comentario detalhado
 
-CREATE TABLE IF NOT EXISTS authors (
+
+
+=begin
+TENTATIVA 1 
+   CREATE TABLE IF NOT EXISTS authors (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   biography TEXT,
@@ -63,10 +67,9 @@ CREATE TABLE IF NOT EXISTS book_authors (
    comment TEXT,
    book_id INT NOT NULL REFERENCES books(id),
    reader_id INT NOT NULL REFERENCES readers(id)
-   );
+   );  
 
-=begin
-     
+TENTATTIVA 2 
    CREATE TABLE IF NOT EXISTS authors (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -184,3 +187,26 @@ CREATE TABLE IF NOT EXISTS book_authors (
    rating INT CHECK (rating >= 1 AND rating <= 5),
    comment TEXT
    );
+
+   
+INSERT INTO authors (name) VALUES
+('Rick Riordan'),
+('J. R. R . Tolkien'),
+('Teste A'),
+('Teste B');
+
+INSERT INTO genres (name) VALUES 
+('Fiction'), ('Non-Fiction'), ('Biography');
+
+INSERT INTO books (title, genre_id) VALUES
+('Percy Jackson', 1 ),
+('O Senhor dos Anéis', 1 ),
+('Livro 3', 2 ),
+('Livro 4', 3 );
+
+INSERT INTO book_authors VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,3),
+(4,4);
