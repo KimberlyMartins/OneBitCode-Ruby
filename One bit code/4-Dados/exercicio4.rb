@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS book_authors (
    );
 
 
-   INSERT INTO authors(name) VALUES
+INSERT INTO authors(name) VALUES
 ('Rick Riordan'),
 ('J. R. R . Tolkien'),
 ('Stephen King'),
