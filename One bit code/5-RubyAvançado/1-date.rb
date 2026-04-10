@@ -29,3 +29,17 @@ birthday.year = 1997
 birthday.day = 7
 birthday.month = 8
 =end
+
+=begin
+                        WDAY (Week Day)
+O método .wday transforma o dia da semana em um número.
+É a forma que o Ruby usa para "contar" os dias.
+A contagem começa no Domingo e o índice vai de 0 a 6.
+0 = Domingo
+1 = Segunda-feira
+2 = Terça-feira
+3 = Quarta-feira
+4 = Quinta-feira
+5 = Sexta-feira
+6 = Sábado
+=end
