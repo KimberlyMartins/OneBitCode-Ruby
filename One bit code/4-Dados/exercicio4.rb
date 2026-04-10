@@ -210,3 +210,12 @@ INSERT INTO book_authors VALUES
 (3,3),
 (4,3),
 (4,4);
+
+INSERT INTO readers (email, password) VALUES
+('userA@email.com' , '000a'),
+('userB@email.com' , '10b0');
+
+INSERT INTO reviews (book_id, reader_id, rating, comment) VALUES
+(1, 9, 1, 'Achei chatinho pois...' ),
+(2, 10, 5, 'Magnífico como  oautor escreve lindamente...')
+;
