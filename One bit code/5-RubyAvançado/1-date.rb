@@ -43,3 +43,9 @@ A contagem começa no Domingo e o índice vai de 0 a 6.
 5 = Sexta-feira
 6 = Sábado
 =end
+
+puts birthday.wday # Retorna 4 ou seja quinta feira 
+
+puts birthday.monday? # retorna  false
+puts birthday.friday?  # retorna false
+puts birthday.thursday?  # retorna true
