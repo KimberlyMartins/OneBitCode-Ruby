@@ -30,3 +30,18 @@ puts some_time.day
 puts some_time.hour
 puts some_time.min
 puts some_time.sec
+
+=begin 
+Retorna especificamente:
+2023
+10
+5
+18
+43
+51
+=end
+
+#Podemos verificar os dias da semana também assim como no date 
+puts some_time.wday # 4
+puts some_time.monday? # false
+puts some_time.sunday? # false
