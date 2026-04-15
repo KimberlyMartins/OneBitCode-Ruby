@@ -81,3 +81,8 @@ a formula foi:  puts start_year + (60 * 60 * 24 * 30)
 Aqui retornamos 30 dias além da data default com os * 30 no final 
 2024-01-31 00:00:00 -0300
 =end
+
+puts start_year + (60 * 60 * 24 * 50) # 2024-02-20 00:00:00 -0300
+=begin 
+Aqui segue a mesma lógica só alterando a quantidade de dias a ser somada 
+=end
