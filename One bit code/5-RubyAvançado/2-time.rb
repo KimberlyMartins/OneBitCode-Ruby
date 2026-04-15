@@ -41,7 +41,23 @@ Retorna especificamente:
 51
 =end
 
-#Podemos verificar os dias da semana também assim como no date 
+=begin
+                        WDAY (Week Day)
+Pelo time, também podemos verificar os dias da semana assim como no date.
+
+O método .wday transforma o dia da semana em um número.
+É a forma que o Ruby usa para "contar" os dias.
+A contagem começa no Domingo e o índice vai de 0 a 6.
+0 = Domingo
+1 = Segunda-feira
+2 = Terça-feira
+3 = Quarta-feira
+4 = Quinta-feira
+5 = Sexta-feira
+6 = Sábado
+=end
+
 puts some_time.wday # 4
 puts some_time.monday? # false
 puts some_time.sunday? # false
+puts some_time.thursday? # true    aqui retorna true pois o índice 4 é quinta feira
