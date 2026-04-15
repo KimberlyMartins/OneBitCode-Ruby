@@ -61,3 +61,23 @@ puts some_time.wday # 4
 puts some_time.monday? # false
 puts some_time.sunday? # false
 puts some_time.thursday? # true    aqui retorna true pois o índice 4 é quinta feira
+
+=begin
+                     Adição e multiplicação 
+No Ruby, a unidade de medida do objeto Time é sempre o segundo, e como o Ruby entende "1" como "1 segundo", precisamos da multiplicação para chegar em unidades humanas.
+Para 1 minuto: + (60)         =  60 seg
+Para 1 hora: + (60 * 60)      = 60 seg * 60 min 
+Para 1 dia: + (24 * 60 * 60)  =  24 hrs * 60 min * 60 seg
+
+=end
+start_year = Time.new(2024)
+puts start_year  # Retorna o padrão 2024-01-01 00:00:00 -0300
+
+puts start_year + (60 * 60 * 24 * 30) 
+=begin
+a formula foi:  puts start_year + (60 * 60 * 24 * 30) 
+( 60 segundos em um minuto * 60 minutos em uma hora *24 horas em um dia * 30 dias)
+
+Aqui retornamos 30 dias além da data default com os * 30 no final 
+2024-01-31 00:00:00 -0300
+=end
