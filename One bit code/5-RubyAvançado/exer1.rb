@@ -6,6 +6,22 @@ Escreva uma função chamada calcular_data_entrega que recebe dois parâmetros: 
 Montando a resolução 
 calcular_data_entrega >  data_envio (no formato "YYYY-MM-DD") e tempo_entrega_dias
 retornando  data estimada "YYYY-MM-DD" contando somente dias uteis 
+ 
+e lembrar que:
+O método .wday transforma o dia da semana em um número.
+É a forma que o Ruby usa para "contar" os dias.
+A contagem começa no Domingo e o índice vai de 0 a 6.
+0 = Domingo
+1 = Segunda-feira
+2 = Terça-feira
+3 = Quarta-feira
+4 = Quinta-feira
+5 = Sexta-feira
+6 = Sábado
 =end
-calcular_data_entrega >  data_envio (no formato "YYYY-MM-DD") e tempo_entrega_dias
-retornando  data estimada "YYYY-MM-DD" contando somente dias uteis 
+require "date"
+
+def calcular_data_entrega
+
+  
+end
