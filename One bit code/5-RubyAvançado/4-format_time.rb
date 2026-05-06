@@ -11,7 +11,7 @@ Tabela de referências da formatação de tempo
 %y - Two-digit year (no century) - Ano em dois dígitos
 %Y - Four-digit year - Ano em quatro dígitos
 
-Lembrando que para a formatação podemos também usar o TRAÇO -  ESPAÇO e a BARRA /
+Lembrando que para a formatação podemos também usar o TRAÇO (-)  ESPAÇO ( ) e a BARRA (/)
 ("%Y-%m-%d") 2025-03-31
 ("%Y %m %d") 2025/03/31
 ("%B-%d-%y") 2025 03 31  
