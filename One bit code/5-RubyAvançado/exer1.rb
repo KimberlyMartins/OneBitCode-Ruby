@@ -21,7 +21,7 @@ A contagem começa no Domingo e o índice vai de 0 a 6.
 =end
 require "date"
 
-def calcular_data_entrega
+def calcular_data_entrega(data_envio, tempo_entrega_dias)
 
   
 end
