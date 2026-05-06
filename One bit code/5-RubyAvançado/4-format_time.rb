@@ -27,4 +27,6 @@ puts someday.strftime("%m-%d-%Y") # 03-31-2025
 puts someday.strftime("%Y/%m/%d") # 2025/03/31 
 puts someday.strftime("%Y %m %d") # 2025 03 31
 puts someday.strftime("%B-%d-%y") # March-31-25
+puts someday.strftime("%B-%d-%Y") # March-31-2025
+
 
