@@ -11,7 +11,20 @@ Tabela de referências da formatação de tempo
 %y - Two-digit year (no century) - Ano em dois dígitos
 %Y - Four-digit year - Ano em quatro dígitos
 
+Lembrando que para a formatação podemos também usar o TRAÇO -  ESPAÇO e a BARRA /
+("%Y-%m-%d") 2025-03-31
+("%Y %m %d") 2025/03/31
+("%B-%d-%y") 2025 03 31  
 =end
 
 someday = Time.new(2025, 3, 31)
+puts someday # 2025-03-31 00:00:00 
+puts someday.class # Time
+
+#puts someday.to_s
+puts someday.strftime("%Y-%m-%d") # 2025-03-31
+puts someday.strftime("%m-%d-%Y") # 03-31-2025
+puts someday.strftime("%Y/%m/%d") # 2025/03/31 
+puts someday.strftime("%Y %m %d") # 2025 03 31
+puts someday.strftime("%B-%d-%y") # March-31-25
 
