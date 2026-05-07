@@ -22,6 +22,19 @@ A contagem começa no Domingo e o índice vai de 0 a 6.
 require "date"
 
 def calcular_data_entrega(data_envio, tempo_entrega_dias)
+    data = Date.parse(data_envio)
+    dias_uteis = 0
 
-  
+    while dias_uteis < tempo_entrega_dias
+    data += 1 
+    dias_uteis += 1 unless [0,6].include?(data.wday)
+    end
+    data.to_s
 end
+
+data_envio = "2026-05-07"
+tempo_entrega_dias = 7
+data_estimada_entrega = calcular_data_entrega(data_envio, tempo_entrega_dias)
+puts "A data estimada para a entrega é: #{data_estimada_entrega}"
+
+#que retorna:  A data estimada para a entrega é: 2026-05-18 ( e nesse caso temos 2 fim de semanas entre o prazo)
