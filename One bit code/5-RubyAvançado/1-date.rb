@@ -2,6 +2,8 @@
                               DATE 
 O objeto Date no Ruby é a ferramenta essencial para lidar com datas de calendário (ano, mês e dia) sem se preocupar com frações de tempo (horas, minutos e segundos). Ele faz parte da biblioteca padrão do Ruby, oferecendo uma interface intuitiva para cálculos e manipulações temporais.
 Diferente de classes básicas como String ou Array, a classe Date não é carregada automaticamente. Você precisa importá-la com o require 'date'
+
+ Em Ruby, o método PARSE serve para transformar dados em texto (como JSON ou CSV) em estruturas Ruby — Arrays, Hashes, Strings, etc. — que podem ser manipuladas diretamente no código. Ele é usado principalmente em bibliotecas como JSON e CSV para interpretar dados serializados. Ou seja, o PARSE serve para converter texto em uma data real, permitindo cálculos e manipulações que seriam impossíveis com uma string simples. O que acontece é que o Date.parse pega uma string que representa uma data (data_envio) e a transforma em um objeto Date do Ruby.
 =end
 
 require "date"
