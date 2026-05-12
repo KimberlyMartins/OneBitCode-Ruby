@@ -26,4 +26,17 @@ p phrase =~ /R/ # nil pois não tem R maíusculo
 p phrase =~ /r/ # 12 
 p phrase =~ /a/ # 7
 
-p phrase =~ /gua/
+p phrase =~ /gua/ #5
+
+#Para buscar se determinada palavra está no texto
+
+string = "Love of my life"
+pattern = /life/
+
+if string =~ pattern
+    puts "A string contém a palavra 'life'"
+else
+    puts "A string não contém a palavra 'life'"
+end
+
+#A string contém a palavra 'life' 
