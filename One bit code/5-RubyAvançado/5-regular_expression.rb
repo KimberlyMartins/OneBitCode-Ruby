@@ -21,4 +21,7 @@ Referencia
 
 p /T/.class # Regexp 
 
-
+# Primeira ocorreêcia de letras da frase "A linguagem ruby é divertida!" está em qual posição
+p phrase =~ /R/ # nil pois não tem R maíusculo
+p phrase =~ /r/ # 12 
+p phrase =~ /a/ # 7
