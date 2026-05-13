@@ -20,3 +20,30 @@ numbers = string2.scan(/\d+/).map(&:to_i)
 sum = numbers.sum
 puts "Os números encontrados são: #{numbers.join(',')}" #Os números encontrados são: 3,2,5
 puts "A soma de todos os números é: #{sum}" #A soma de todos os números é: 10
+
+=begin
+Explicação da expressão acima 
+STRING 1:
+string.scan(/-?\d+/) → procura qualquer sequência de dígitos (com ou sem sinal negativo).
+Resultado: ["13", "19", "99"] 
+
+ Note que 19.99 foi quebrado em duas partes (19 e 99), porque o regex não considera o ponto como parte do número.
+
+string.scan(/-?\d+\.\d+/) → procura números decimais com ponto.
+Resultado: ["19.99"].
+
+STRING 2
+string2.scan(/\d+/) → captura todos os dígitos: ["3", "2", "5"].
+
+.map(&:to_i) → converte cada string em inteiro: [3, 2, 5].
+
+.sum → soma os valores: 10.
+
+
+Em resumo:
+scan percorre a string e retorna todas as correspondências.
+
+O regex que você usou para inteiros (\d+) também pega partes de decimais, por isso 19.99 virou 19 e 99.
+
+Para evitar isso, use um padrão que aceite opcionalmente a parte decimal: \d+(?:\.\d+)?.
+=end 
