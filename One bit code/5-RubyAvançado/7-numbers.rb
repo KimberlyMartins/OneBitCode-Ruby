@@ -7,9 +7,9 @@
 # seguido por um ou mais dígitos numéricos de 0 a 9.
 =end
 
-string = "A temperatura é 13 graus Celsius e o preço é 19,99"
+string = "A temperatura é 13 graus Celsius e o preço é 19.99"
 numeros_inteiros = string.scan(/-?\d+/)
-numeros_decimais = string.scan(/-?\d+\.d+/)
+numeros_decimais = string.scan(/-?\d+\.\d+/)
 
-puts "Números inteiros encontrados: #{numeros_inteiros.join(',')}"
-puts "Números decimais encontrados: #{numeros_decimais.join(',')}"
+puts "Números inteiros encontrados: #{numeros_inteiros.join(',')}" # Números inteiros encontrados: 13,19,99
+puts "Números decimais encontrados: #{numeros_decimais.join(',')}" # Números decimais encontrados: 19.99
