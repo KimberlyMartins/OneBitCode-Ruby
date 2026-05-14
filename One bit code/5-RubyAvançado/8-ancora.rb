@@ -1,4 +1,18 @@
 =begin
+                REGEX Âncora
+A metáfora vem da ideia de um navio ancorado: ele está fixo em um ponto específico, não pode se mover livremente. O nome vem da ideia de “fixar” o padrão, como uma âncora fixa um navio.
+Da mesma forma, uma regex com âncora está “presa” a uma posição específica na string.
+Sem âncoras, o padrão pode “flutuar” e casar em qualquer parte do texto.
+
+
+Com âncoras, você fixa o padrão em lugares estratégicos (início, fim, fronteira de palavra).
+
+ lembre-se: âncoras não “capturam” texto, apenas definem onde a regex deve casar. Elas são muito úteis para validar formatos, como verificar se uma string começa com um prefixo ou termina com uma extensão específica.
+
+Âncora	- Símbolo  -           	Uso                    -     Exemplo
+Início  - 	^     -   Marca o começo da string/linha   -    /^Olá/
+Fim     -	$	  -   Marca o fim da string/linha	   -    /mundo$/
+
 
 Seguimos a mesma referencia dos reg ex
 \\d: Corresponde a qualquer dígito de 0 a 9.
