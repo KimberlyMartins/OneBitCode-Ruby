@@ -1,3 +1,9 @@
+=begin
+Regular Expressions (ou Regex) são sequências de caracteres que formam um padrão de busca. Em Ruby, elas são nativas (instâncias da classe Regexp), delimitadas por barras /.../. São usadas para validar dados (como e-mails), extrair informações específicas e buscar ou substituir textos de forma rápida e flexível.
+
+Expressões regulares Ruby são definidas entre duas barras diretas para diferenciá-los da sintaxe de outras linguagens. As expressões mais simples correspondem a uma palavra ou mesmo a uma única letra.
+=end
+
 phrase = "A linguagem ruby é divertida!"
 
 p phrase.include?("gua") # true
