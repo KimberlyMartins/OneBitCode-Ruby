@@ -59,7 +59,7 @@ Finished in 0.002405s, 415.7658 runs/s, 415.7658 assertions/s.
 1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
 
 
-Teste com a falha 
+TESTE COM A FALHA
 
 require "minitest/autorun"
 
