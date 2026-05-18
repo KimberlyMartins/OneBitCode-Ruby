@@ -1,4 +1,10 @@
+=begin
+                                 MINITEST
+Minitest é um módulo da biblioteca padrão Ruby que fornece uma suite completa de testes: unitários, de especificação (spec), mocks/stubs e benchmarks.
+É minimalista e rápido, permitindo que o código do framework seja lido em pouco tempo.
 
+Para usar o minitest automaticamente, requisitamos (require 'minitest/autorun') no início do seu teste. (Ele cuida de rodar automaticamente todos os testes que você definiu na classe ou no estilo spec.) Assim, você não precisa escrever manualmente um comando para iniciar os testes — basta rodar o arquivo Ruby e o autorun executa tudo.
+=end
 
 require "minitest/autorun"
 
@@ -22,7 +28,7 @@ end
 class TestPalindromo < Minitest::Test
   def test_palindromo
     assert_equal(true, palindromo?('ovo'))
-    assert_equal(true, palindromo?('Ame a ema'))
+    assert_equal(true, palindromo?('Ame a ema')) #Não da erro por conta do downcase
     assert_equal(false, palindromo?('Olá)'))
   end
 end
