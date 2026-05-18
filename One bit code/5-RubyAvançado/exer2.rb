@@ -22,4 +22,8 @@ verificar_e_converter_data(data)
 Insira uma data n formato dd/mm/yyyy
 07/08/1996
 A nova data é 1996- 08- 07
+
+Insira uma data n formato dd/mm/yyyy
+10/1995/19
+A data inserida não está no formato correto 'dd/mm/yyy'
 =end
