@@ -23,6 +23,7 @@ Referencia
 \\A: Corresponde ao início da string.
 \\Z: Corresponde ao final da string, ou ao final da linha se a opção multiline estiver habilitada.
 
+. (ponto) corresponde a qualquer caractere exceto uma nova linha
 ^ busca no início da string
 $ busca no final da string
 + significa uma ou mais vezes 
