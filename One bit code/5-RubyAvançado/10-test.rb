@@ -4,6 +4,9 @@ Minitest é um módulo da biblioteca padrão Ruby que fornece uma suite completa
 É minimalista e rápido, permitindo que o código do framework seja lido em pouco tempo.
 
 Para usar o minitest automaticamente, requisitamos (require 'minitest/autorun') no início do seu teste. (Ele cuida de rodar automaticamente todos os testes que você definiu na classe ou no estilo spec.) Assim, você não precisa escrever manualmente um comando para iniciar os testes — basta rodar o arquivo Ruby e o autorun executa tudo.
+
+                               ASSERT_EQUAL
+Dentro do minitest podemops usar o método assert_equal, que é usado para comparar dois valores. Ele verifica se o valor esperado é igual ao valor obtido no teste. Se os valores baterem, o teste passa, se forem diferentes o teste acusa falha e mostra a diferença.
 =end
 
 require "minitest/autorun"
