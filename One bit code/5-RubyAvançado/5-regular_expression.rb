@@ -17,6 +17,10 @@ Referencia
 \\A: Corresponde ao início da string.
 \\Z: Corresponde ao final da string, ou ao final da linha se a opção multiline estiver habilitada.
 
+^ busca no início da string
+$ busca no final da string
++ significa uma ou mais vezes 
+/\w+/  significa qualquer alfanumérico um ou mais vezes 
 =end
 
 p /T/.class # Regexp 
