@@ -24,8 +24,54 @@ class TestCalculator < Minitest::Test
     @calculator = Calculator.new
   end
 
-  def  test_addition
-    @result = @calculator.add(3,4)
+  def test_addition
+    result = @calculator.add(3,4)
     assert_equal(7, result, "Falha na adição de números positivos")
   end
 end
+
+=begin
+Run options: --seed 20366
+
+# Running:
+
+.
+
+Finished in 0.001782s, 561.1043 runs/s, 561.1043 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+
+
+Run options: --seed 48481
+
+
+E
+
+Finished in 0.002904s, 344.3526 runs/s, 0.0000 assertions/s.
+
+  1) Error:
+TestCalculator#test_addition:
+NameError: undefined local variable or method `result' for an instance of TestCalculator
+    ./exer3.rb:29:in `test_addition'
+
+1 runs, 0 assertions, 0 failures, 1 errors, 0 skips
+
+
+
+Caso de erro
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\5-RubyAvancado> ruby .\exer3.rb
+Run options: --seed 38851
+
+# Running:
+F
+
+Finished in 0.002139s, 467.5737 runs/s, 467.5737 assertions/s.
+
+  1) Failure:
+TestCalculator#test_addition [./exer3.rb:29]:
+Falha na adição de números positivos.
+Expected: 7
+  Actual: 8
+
+1 runs, 1 assertions, 1 failures, 0 errors, 0 skips
+=end
