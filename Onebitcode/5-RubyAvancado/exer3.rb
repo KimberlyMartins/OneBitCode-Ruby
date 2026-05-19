@@ -28,6 +28,22 @@ class TestCalculator < Minitest::Test
     result = @calculator.add(3,4)
     assert_equal(7, result, "Falha na adição de números positivos")
   end
+
+    def test_subtraction
+    result = @calculator.subtract(8,3)
+    assert_equal(5, result, "Falha na subtração de números positivos")
+  end
+
+    def test_subtraction_negatives
+    result = @calculator.subtract(5,-3)
+    assert_equal(8, result, "Falha na subtração de números negativos")
+   end
+
+   def test_division_by_zero
+    assert_raises(ZeroDivisionError, "Não está gerando uma exceção ao dividir por zero") do 
+      @calculator.divide(10,0)
+    end
+   end
 end
 
 =begin
@@ -74,4 +90,15 @@ Expected: 7
   Actual: 8
 
 1 runs, 1 assertions, 1 failures, 0 errors, 0 skips
+
+DEPOIS DE ADICIONAR TODOS OS TESTES
+Run options: --seed 341
+
+# Running:
+
+....
+
+Finished in 0.002931s, 1364.5822 runs/s, 1364.5822 assertions/s.
+
+4 runs, 4 assertions, 0 failures, 0 errors, 0 skips
 =end
