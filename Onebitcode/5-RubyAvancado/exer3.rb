@@ -74,7 +74,7 @@ NameError: undefined local variable or method `result' for an instance of TestCa
 
 
 
-Caso de erro
+CASO DÊ ERRO
 PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\5-RubyAvancado> ruby .\exer3.rb
 Run options: --seed 38851
 
