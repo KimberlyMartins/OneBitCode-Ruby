@@ -1,4 +1,11 @@
-
+=begin
+                              MINITEST EM UMA CLASSE
+Em resumo, o Minitest é como um fiscal automático que garante que sua classe Ruby faz exatamente o que deveria.
+require 'minitest/autorun': carrega o Minitest e executa os testes automaticamente.
+setup: método especial que roda antes de cada teste, útil para inicializar objetos.
+assert_equal: verifica se o valor esperado é igual ao valor obtido.
+Cada método que começa com test_ é considerado um caso de teste.
+=end
 
 require 'minitest/autorun'
 class Pessoa
