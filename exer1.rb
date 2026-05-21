@@ -110,10 +110,10 @@ def fahrenheit_to_celsius(fahrenheit):
 
 def main():   
   while True:
+    print("Bem-vindo ao conversor de temperaturas!")
     choice = input("Digite 'C' para converter Celsius para Fahrenheit ou 'F' para converter Fahrenheit para Celsius: ").upper()
 
   if choice == 'C':
-     print("Bem-vindo ao conversor de temperaturas!")
      temp_c = float(input("Digite a temperatura em Celsius: "))
      temp_f = celsius_to_fahrenheit(temp_c)
      print(f"{temp_c}°C é igual a {temp_f}°F")
