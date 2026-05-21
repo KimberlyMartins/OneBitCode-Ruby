@@ -49,3 +49,10 @@ Nomeie seus commits com cuidado, sendo claro e objetivo para garantir que no fut
 Revise as mudanças antes de commitá-las, isso ajuda a evitar commits de código errado ou incompleto. Use git diff para ver as mudanças que serão comitadas e git status para ver os arquivos modificados.
 
 Commits pequenos e frequentes pois são mais facil de revisar e reverter se necessário. Tente fazer commit toda vez q você completar uma funcionalidade ou correção.
+
+Tipos de versões semânticas:
+Major (Versão pricipal): Indicada pela primeira parte do número da versão. Essa versão inclui mudanças significativas, grandes novas funcionalidades ou reestruturações que podem quebrar a compatibilidade com versões anteriores.
+
+Minor: Indicada pela segunda parte do número da versão. Essa versão adiciona funcionalidades ou melhorias novas, mas mantém a compatibilidade com versões anteriores.
+
+Patch: Indicada pela terceira parte do número da versão. Essa versão é focada na correção de bugs e pequenas melhorias que não afetam a compatibilidade com as versões anteriores.
