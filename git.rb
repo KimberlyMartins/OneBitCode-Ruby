@@ -56,3 +56,25 @@ Major (Versão pricipal): Indicada pela primeira parte do número da versão. Es
 Minor: Indicada pela segunda parte do número da versão. Essa versão adiciona funcionalidades ou melhorias novas, mas mantém a compatibilidade com versões anteriores.
 
 Patch: Indicada pela terceira parte do número da versão. Essa versão é focada na correção de bugs e pequenas melhorias que não afetam a compatibilidade com as versões anteriores.
+
+
+                                BRANCHES
+Branches são ramificações que permitem trabalhar em diferentes linhas  de desenvolvimento dentro de um mesmo projeto.
+Cada branch pode conter uma série de commits independentes, permitindo que desenvolvedores trabalhem em diferentes funcionalidades ou correções sem interferir na branch principal, que favorece para a colaboração de desenvolvedores, já que cada um trabalha na sua prórpia branch e depois integra (merge) as mudanças.
+
+PRINCIPAIS TIPOS DE BRANCHES 
+Branch principal (MAIN/MASTER): É a linha principal de desenvolvimento onde o cógigo mais estável é mantido.
+
+Branch de funcionalidades: Usada para desenvolver novas funcionalidades ou melhorias. É criada a aprtir da branch main e depois de finalizada suas mudanças são integradas de volta a branch principal.
+
+Branch de correção: Usada para corrigir bugs, funciona de maneira similar a de funcionalidade mas foca em resolver problemas específicos.
+
+
+                      TRABALHANDO COM BRANCHES
+- Para criar uma nova branch usamos git branch nome_da_branch
+- depois git checkout nome_da_branch para mudar para uma branch diferente.
+(Você também pode usar git checkout -b nome_da branch para criar e mudar a nova branch com um unico comando - é a junção dos 2 passos anteriores)
+
+git branch lista todas as branches do repositório
+
+- E para integrar mudanças de uma branch para a outra, use git merge nome_da_branch. Esse comando aplica as mudanças da branch específica na branch atual.
