@@ -35,7 +35,7 @@ git restore: descarta alterações em arquivos, voltando ao estado anterior.
 
 
 O fluxo de uso geralmente vai ser:
-git init ou git clone - Editar/criar arquivos
+git init ou git clone - editar/criar arquivos
 git status para ver mudanças
 git add para preparar
 git commit -m "mensagem"
