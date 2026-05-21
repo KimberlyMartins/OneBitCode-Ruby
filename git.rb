@@ -42,3 +42,10 @@ git commit -m "mensagem"
 git push para enviar ao remoto
 git pull para atualizar com o remoto
 Usar branch, merge e checkout conforme necessário
+
+              BOAS PRÁTICAS COM GIT 
+Nomeie seus commits com cuidado, sendo claro e objetivo para garantir que no futuro esteja claro  o que foi alterado e o motivo.
+
+Revise as mudanças antes de commitá-las, isso ajuda a evitar commits de código errado ou incompleto. Use git diff para ver as mudanças que serão comitadas e git status para ver os arquivos modificados.
+
+Commits pequenos e frequentes pois são mais facil de revisar e reverter se necessário. Tente fazer commit toda vez q você completar uma funcionalidade ou correção.
