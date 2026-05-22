@@ -32,6 +32,8 @@ git reset: remove arquivos da staging ou volta commits.
 
 git restore: descarta alterações em arquivos, voltando ao estado anterior.
 
+git cherry-pick: permite copiar um commit específico (pelo hash) de uma branch e aplicar na outra, sem trazer o restante do histórico daquela branch. Diferente do merge que traz a branch completa. Para ver  hash do commit, usamos o git log.
+
 
 
 O fluxo de uso geralmente vai ser:
