@@ -78,3 +78,13 @@ Branch de correção: Usada para corrigir bugs, funciona de maneira similar a de
 git branch lista todas as branches do repositório
 
 - E para integrar mudanças de uma branch para a outra, use git merge nome_da_branch. Esse comando aplica as mudanças da branch específica na branch atual.
+
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git>git branch add_tela_contato          #Adiciona a nova branch
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git branch --list
+  add_tela_contato
+* master                 #Lista as branchs e mostra em qual está logada
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git checkout add_tela_contato
+Switched to branch 'add_tela_contato'    #Troca para a nova branch
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git branch --list
+* add_tela_contato      #Lista as branchs e mostra que agora esta logada na nova
+  master 
