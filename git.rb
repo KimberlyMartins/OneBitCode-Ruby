@@ -14,7 +14,7 @@ git commit -m: registra as alterações adicionadas no histórico do repositóri
 
 git commit -a -m : faz commit direto de todos os arquivos modificados/deletados sem precisar do git add. Não inclui arquivos novos.
 
-git log: exibe o histórico de commits, quem fez e quando.
+git log: exibe o histórico de commits, quem fez e quando. Para sair pressione a tecla Q.
 
 git diff: mostra as diferenças entre o que está no diretório e o que está no último commit ou na staging.
 
@@ -86,5 +86,4 @@ PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git branch --li
 PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git checkout add_tela_contato
 Switched to branch 'add_tela_contato'    #Troca para a nova branch
 PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git branch --list
-* add_tela_contato      #Lista as branchs e mostra que agora esta logada na nova
-  master 
+* add_tela_contato      #Lista as branchs e mostra que agora esta logada na nova branch
