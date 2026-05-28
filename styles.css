@@ -2,3 +2,8 @@ body {
     background-color: #232323;
     color: #ffff;
 }
+.contact-form > * {
+     display: block;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
