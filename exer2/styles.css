@@ -1,0 +1,11 @@
+#message.right {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #008000;
+}
+
+#message.wrong {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffa500;
+}
