@@ -77,7 +77,20 @@ Branch de correção: Usada para corrigir bugs, funciona de maneira similar a de
 - depois git checkout nome_da_branch para mudar para uma branch diferente.
 (Você também pode usar git checkout -b nome_da branch para criar e mudar a nova branch com um unico comando - é a junção dos 2 passos anteriores)
 
-git branch lista todas as branches do repositório
+git branch -l: mostra todas as branches do repositório
+=begin
+ git branch -l
+  add_tela_contato
+* add_tela_sobre
+On branch add_tela_sobre
+=end
+git branch -d (+nome_branch ): remove a branch selecionada.
+=begin
+git branch -d add_tela_sobre add_tela_contato
+Deleted branch add_tela_sobre (was 45a3b39).
+Deleted branch add_tela_contato (was be0f2cc).
+=end
+git branch -m: altera o nome da branch
 
 - E para integrar mudanças de uma branch para a outra, use git merge nome_da_branch. Esse comando aplica as mudanças da branch específica na branch atual.
 
