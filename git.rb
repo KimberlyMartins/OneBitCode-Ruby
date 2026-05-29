@@ -89,3 +89,36 @@ PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git checkout ad
 Switched to branch 'add_tela_contato'    #Troca para a nova branch
 PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git branch --list
 * add_tela_contato      #Lista as branchs e mostra que agora esta logada na nova branch
+
+                                CONFLITO DE MERGE
+=begin 
+tivemos um conflito de merge 
+git merge add_tela_contato
+Auto-merging git.rb
+CONFLICT (content): Merge conflict in git.rb
+Automatic merge failed; fix conflicts and then commit the result.
+<<<<<<< HEAD
+* add_tela_contato      #Lista as branchs e mostra que agora esta logada na nova branch
+========
+* add_tela_contato      #Lista as branchs e mostra que agora esta logada na nova
+  master 
+>>>>>>> add_tela_contato
+
+git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   contact.html
+        modified:   index.html
+        modified:   styles.css
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   git.rb
+
+
+=end
+Ao dar erro na merge, precisamos editar os arquivos de forma adequada, apagar as marcações de conflito  (<<<<<< , ======= , >>>>>>>). Depois adiciona os arquivos com git add e faz o git commit normalmente.
