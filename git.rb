@@ -122,3 +122,16 @@ Unmerged paths:
 
 =end
 Ao dar erro na merge, precisamos editar os arquivos de forma adequada, apagar as marcações de conflito  (<<<<<< , ======= , >>>>>>>). Depois adiciona os arquivos com git add e faz o git commit normalmente.
+
+E quando o merge é feito com sucesso retorna
+
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git checkout master 
+Switched to branch 'master'
+PS C:\Users\Acer\Documents\OneBitCode-Ruby\Onebitcode\Curso-Git> git merge add_tela_sobre
+Updating 6f32cfe..45a3b39
+Fast-forward
+ about.html   | 22 ++++++++++++++++++++++
+ contact.html |  3 ++-
+ index.html   |  5 +++--
+ 3 files changed, 27 insertions(+), 3 deletions(-)
+ create mode 100644 about.html
