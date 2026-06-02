@@ -152,3 +152,9 @@ Fast-forward
 
                                   FORKS
 Fork é uma cópia independente de um repositório que permite modificar o projeto sem afetar o original. No GitHub, ao criar um fork, você passa a ter uma versão própria do código, podendo editar, testar e propor mudanças. Em termos simples, é como pegar uma receita e fazer sua versão sem alterar a receita publicada.
+
+
+
+
+                                GITIGNORE
+O gitignore é um arquivo usado no Git para indicar quais arquivos ou pastas devem ser ignorados pelo controle de versão. Isso significa que qualquer item listado nele não será rastreado, não aparecerá nos commits e não será enviado para o repositório remoto. Ele é muito útil para evitar que arquivos temporários, configurações locais ou dependências geradas automaticamente sejam incluídas no projeto. Em termos simples, o gitignore funciona como uma lista de exceções: você escreve os nomes ou padrões de arquivos que não quer que o Git acompanhe, e assim mantém o repositório limpo e organizado.
