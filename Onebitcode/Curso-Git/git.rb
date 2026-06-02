@@ -148,3 +148,7 @@ Fast-forward
  index.html   |  5 +++--
  3 files changed, 27 insertions(+), 3 deletions(-)
  create mode 100644 about.html   
+
+
+                                  FORKS
+Fork é uma cópia independente de um repositório que permite modificar o projeto sem afetar o original. No GitHub, ao criar um fork, você passa a ter uma versão própria do código, podendo editar, testar e propor mudanças. Em termos simples, é como pegar uma receita e fazer sua versão sem alterar a receita publicada.
