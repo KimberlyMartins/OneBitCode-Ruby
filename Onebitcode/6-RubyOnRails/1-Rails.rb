@@ -23,20 +23,11 @@ O Rails utiliza o padrão MVC (Model-View-Controller).
 MODEL: gerencia os dados e o banco de dados. Exemplo: informações de usuários, produtos, pedidos.
 VIEW: exibe as informações para o usuário (interface). Exemplo: páginas HTML, formulários, botões.
 CONTROLLER: recebe as requisições do usuário, processa as informações e conecta o Model à View. Exemplo: clicar em um botão, e decide o que mostrar ou salvar.
-Banco de dados
+
 
 O Rails utiliza o Active Record, que facilita a comunicação entre o sistema e o banco de dados, permitindo manipular dados usando Ruby em vez de escrever SQL o tempo todo.
-Vantagens
-Desenvolvimento rápido.
-Código limpo e organizado.
-Grande quantidade de bibliotecas (gems).
-Comunidade ativa.
-Fácil manutenção.
-Resumindo
+
+                       *     RESUMINDO      *
 Ruby é a linguagem de programação.
-Ruby on Rails é o framework que utiliza Ruby para criar aplicações web de forma rápida, organizada e seguindo o padrão MVC.
-Dica para memorizar:
-Ruby = linguagem
-Rails = framework
+Rails é o framework que utiliza Ruby para criar aplicações web de forma rápida, organizada e seguindo o padrão MVC.
 Ruby + Rails = desenvolvimento de aplicações web de forma rápida e organizada.
-=end
